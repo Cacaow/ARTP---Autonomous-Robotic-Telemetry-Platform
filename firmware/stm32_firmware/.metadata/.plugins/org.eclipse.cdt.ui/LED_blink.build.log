@@ -1,0 +1,16 @@
+15:44:40 **** Build of configuration Debug for project LED_blink ****
+make -j24 all 
+arm-none-eabi-gcc -o "LED_blink.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\LED_blink\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LED_blink.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LED_blink.elf
+ 
+arm-none-eabi-size  LED_blink.elf 
+arm-none-eabi-objdump -h -S LED_blink.elf  > "LED_blink.list"
+   text	   data	    bss	    dec	    hex	filename
+  10112	    104	   1912	  12128	   2f60	LED_blink.elf
+Finished building: default.size.stdout
+ 
+Finished building: LED_blink.list
+ 
+
+15:44:42 Build Finished. 0 errors, 0 warnings. (took 1s.461ms)
+
