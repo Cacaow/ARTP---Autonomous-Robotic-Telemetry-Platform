@@ -1,15 +1,24 @@
-# STM32
+# STM32 build output
 Debug/
 Release/
 *.o
 *.d
+*.elf
+*.bin
+*.hex
+*.map
+*.list
 
 # VSCode
 .vscode/
 
+#STM32CubeIDE metadata that is local-user specific
+.metadata/
+
 # Python
 __pycache__/
 *.pyc
+*.venv/
 
 # OS
 .DS_Store

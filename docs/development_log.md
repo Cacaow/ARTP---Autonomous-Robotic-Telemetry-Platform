@@ -5,4 +5,5 @@
 
 ## 2026-04-29
 - Imported existing STM32 project into Github repo
-- Verified LED blink working after import
+- Verified LED blinking on STM32 working after import
+- Debugged printoff feature
