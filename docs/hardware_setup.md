@@ -14,10 +14,10 @@
 |               |               |
 
 ## UART Settings
-|   Baud Rate   |               |
-|   Data Bits   |               |
-|    Parity     |               |
-|               |               |
+|   Baud Rate   |    115200     |
+|   Data Bits   |    8 bits     |
+|    Parity     |     None      |
+|   Stop Bits   |       1       |
 
 ## Notes
 - Pull-up resistors required for I2C
