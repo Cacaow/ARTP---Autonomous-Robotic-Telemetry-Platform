@@ -31,3 +31,87 @@ COM6
 
 !ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-29 23:14:33.793
 !MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-29 23:21:34.551
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-29 23:21:34.551
+!MESSAGE port: 
+!SESSION 2026-04-30 21:18:24.474 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-04-30 21:18:47.122
+!MESSAGE Log4j2 initialized with config file C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-04-30 21:19:00.768
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-30 21:19:04.622
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-30 21:19:04.623
+!MESSAGE port: 
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-30 21:29:30.981
+!MESSAGE Indexed 'STM32_mainmodule' (23 sources, 120 headers) in 3.58 sec: 11,081 declarations; 43,160 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.44%)
+!SESSION 2026-04-30 21:30:31.619 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Framework arguments:  C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-04-30 21:30:42.162
+!MESSAGE Log4j2 initialized with config file C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-04-30 21:30:52.722
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-30 21:30:55.668
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-30 21:30:55.670
+!MESSAGE port: 
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-30 21:30:58.149
+!MESSAGE Indexed 'STM32_mainmodule' (23 sources, 120 headers) in 5.27 sec: 11,081 declarations; 43,160 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.44%)
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-30 21:47:37.787
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM6
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-30 21:47:37.788
+!MESSAGE port: COM6
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-30 21:48:29.277
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-30 21:50:57.615
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-30 21:52:21.623
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-30 21:54:38.755
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2026-04-30 22:16:48.855
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-30 22:20:13.756
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-30 22:33:52.893
+!MESSAGE Indexed 'STM32_mainmodule' (23 sources, 120 headers) in 2.69 sec: 11,090 declarations; 43,187 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.44%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-30 22:34:24.166
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50

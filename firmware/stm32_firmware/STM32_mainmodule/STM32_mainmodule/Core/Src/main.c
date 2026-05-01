@@ -18,13 +18,13 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "usart.h"
 #include "gpio.h"
-#include <stdio.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,7 +57,10 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+uint8_t isSent = 1;
+
 uint8_t count = 0;
+uint8_t sent_count = 0;
 
 int _write(int file, char *ptr, int len) {
 	int i=0;
@@ -66,6 +69,17 @@ int _write(int file, char *ptr, int len) {
 	}
 	return len;
 }
+
+//can be used for DMA and IT
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
+  isSent = 1;
+  sent_count++;
+  printf("sent %d\n", sent_count);
+  if (sent_count > 10) {
+	  HAL_UART_DMAStop(&huart2);
+  }
+}
+
 
 
 /* USER CODE END 0 */
@@ -99,26 +113,53 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
+  const uint32_t maxlen = 50000;
+
+  uint8_t val[maxlen];
+
+  for (uint32_t i = 0; i < maxlen; i++) {
+    val[i] = 48;
+  }
+  
+ 
+  	//DMA in Circular mode
+  {
+	HAL_UART_Transmit_DMA(&huart2, val, maxlen);
+
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  /* USER CODE END WHILE */
-	  /* USER CODE BEGIN 3 */
-	  HAL_UART_Transmit(&huart2, "hello", 6, 1000);
+    /* USER CODE END WHILE */
 
+    /* USER CODE BEGIN 3 */
+    
+  
+    //HAL_UART_Transmit(&huart2, val, maxlen, HAL_MAX_DELAY);
 
-	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-	  count++;
-	  printf("Hello World count = %d\n", count);
-	  HAL_Delay(500); //500mx delay
+	/*
+	//DMA in Normal Mode
 
+    if (isSent == 1) {
+      //HAL_UART_Transmit_IT(&huart2, val, maxlen);
+    	HAL_UART_Transmit_DMA(&huart2, val, maxlen);
+    	isSent = 0;
+    }
+    */
 
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+    count++;
+    printf("Hello World count = %d\n", count);
+    HAL_Delay(500); //500mx delay
+
+    
 
   }
   /* USER CODE END 3 */
