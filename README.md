@@ -33,4 +33,10 @@ Building a real-time embedded system with STM32 + ESP32 + Python dashboard.
 
 - Day 2: STM32 setup + LED blink
 
+- Day 3: Set up UART TX
+
+- Day 4: Set up UART RX and error handling
+ 
+- Day 5: UART Receive in DMA + Idle + Normal mode 
+
 

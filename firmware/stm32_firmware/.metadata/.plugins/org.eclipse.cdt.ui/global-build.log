@@ -918,3 +918,470 @@ arm-none-eabi-size  STM32_mainmodule.elf
   21424	    108	  52084	  73616	  11f90	STM32_mainmodule.elf
 Finished building: default.size.stdout
  
+22:24:30 **** Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
+../Core/Src/main.c:96:16: error: variably modified 'rx_val' at file scope
+   96 | static uint8_t rx_val[maxlen];
+      |                ^~~~~~
+../Core/Src/main.c:97:9: error: variably modified 'rx_temp' at file scope
+   97 | uint8_t rx_temp[MAXTEMPLEN];
+      |         ^~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:204:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  204 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+make: *** [Core/Src/subdir.mk:46: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+22:28:22 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:202:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  202 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21516	    108	   6436	  28060	   6d9c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+22:32:52 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:202:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  202 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21516	    108	   6436	  28060	   6d9c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+22:35:53 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:202:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  202 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21512	    108	   6180	  27800	   6c98	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+22:36:16 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21512	    108	   6180	  27800	   6c98	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+22:39:51 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21512	    108	   6180	  27800	   6c98	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+22:58:53 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:220:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  220 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21704	    108	   6188	  28000	   6d60	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+23:02:37 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:220:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  220 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21708	    108	   6188	  28004	   6d64	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+23:02:57 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21708	    108	   6188	  28004	   6d64	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+23:17:23 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21708	    108	   6188	  28004	   6d64	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+23:21:57 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:220:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  220 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21800	    108	   6188	  28096	   6dc0	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+23:24:13 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21800	    108	   6188	  28096	   6dc0	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+23:26:06 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:220:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  220 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21656	    108	   6188	  27952	   6d30	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+23:44:27 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/stm32f4xx_it.c:55:8: error: type defaults to 'int' in declaration of 'enable_timer' [-Wimplicit-int]
+   55 | extern enable_timer;
+      |        ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:46: Core/Src/stm32f4xx_it.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:223:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  223 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+23:44:53 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21732	    108	   6196	  28036	   6d84	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+23:44:57 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21732	    108	   6196	  28036	   6d84	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+23:46:54 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:223:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  223 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21732	    108	   6196	  28036	   6d84	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:13:44 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:223:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  223 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21724	    108	   6196	  28028	   6d7c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:19:40 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:223:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  223 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21744	    108	   6196	  28048	   6d90	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:29:35 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21748	    108	   6196	  28052	   6d94	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:38:34 **** Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:229:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  229 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21532	    108	   6188	  27828	   6cb4	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:43:16 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:149:9: error: 'status' undeclared (first use in this function); did you mean 'ITStatus'?
+  149 |         status = HAL_UARTEx_ReceiveToIdle_DMA(&huart2, rx_temp, MAXTEMPLEN);
+      |         ^~~~~~
+      |         ITStatus
+../Core/Src/main.c:149:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:152:30: warning: unused variable 'temp_buf' [-Wunused-variable]
+  152 |                         char temp_buf[256];
+      |                              ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:237:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  237 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+make: *** [Core/Src/subdir.mk:46: Core/Src/main.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+21:45:15 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:153:30: warning: unused variable 'temp_buf' [-Wunused-variable]
+  153 |                         char temp_buf[256];
+      |                              ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:238:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  238 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21608	    108	   6188	  27904	   6d00	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:45:17 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21608	    108	   6188	  27904	   6d00	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+21:53:13 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:144:30: warning: unused variable 'temp_buf' [-Wunused-variable]
+  144 |                         char temp_buf[256];
+      |                              ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:229:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  229 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21764	    108	   6188	  28060	   6d9c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:55:00 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21764	    108	   6188	  28060	   6d9c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+21:59:49 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:131:13: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  131 |         if (rx_temp[0] = 0) {
+      |             ^~~~~~~
+../Core/Src/main.c:147:30: warning: unused variable 'temp_buf' [-Wunused-variable]
+  147 |                         char temp_buf[256];
+      |                              ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:232:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  232 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21700	    108	   6188	  27996	   6d5c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+22:00:56 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:147:30: warning: unused variable 'temp_buf' [-Wunused-variable]
+  147 |                         char temp_buf[256];
+      |                              ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:232:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  232 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21852	    108	   6188	  28148	   6df4	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+22:05:30 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:147:30: warning: unused variable 'temp_buf' [-Wunused-variable]
+  147 |                         char temp_buf[256];
+      |                              ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:234:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  234 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21872	    108	   6188	  28168	   6e08	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+22:07:41 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/main.c:147:30: warning: unused variable 'temp_buf' [-Wunused-variable]
+  147 |                         char temp_buf[256];
+      |                              ^~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:234:22: warning: unused variable 'temp_buf' [-Wunused-variable]
+  234 |                 char temp_buf[256];
+      |                      ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  21872	    108	   6188	  28168	   6e08	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 

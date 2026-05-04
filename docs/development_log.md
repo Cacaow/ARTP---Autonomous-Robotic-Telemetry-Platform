@@ -7,3 +7,15 @@
 - Imported existing STM32 project into Github repo
 - Verified LED blinking on STM32 working after import
 - Debugged printoff feature
+
+## 2026-04-30
+- Completed UART Transmit with Polling, IT, and DMA Normal and Circular mode
+
+## 2026-05-01
+- Completed UART Receive with Polling and IT
+- Implemented error handling for UART Transmit and UART receive
+- Attempted to implemented local data logging
+
+## 2026-05-03
+- Completed UART Receive with DMA + Normal/Circular mode + IDLE
+- Implemented timer

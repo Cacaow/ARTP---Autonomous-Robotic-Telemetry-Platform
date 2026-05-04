@@ -1,33 +1,36 @@
-2026-05-01 20:48:50,309 [INFO] Activator:176 - 
+2026-05-03 21:10:31,283 [INFO] Activator:176 - 
 
 
-2026-05-01 20:48:50,329 [INFO] Activator:177 - !SESSION log4j initialized
-2026-05-01 20:49:00,712 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-05-01 23:26:18,399 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Exception in thread "SWV client thread" java.lang.NullPointerException: Cannot invoke "com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.isDebugging()" because "com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.plugin" is null
-2026-05-01 23:26:18,402 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.debugTrace(SWVPlugin.java:85)
-2026-05-01 23:26:18,407 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.TRACE(SWVClient.java:768)
-2026-05-01 23:26:18,409 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.readByte(SWVClient.java:296)
-2026-05-01 23:26:18,413 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.getNextByte(SWVClient.java:277)
-2026-05-01 23:26:18,418 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.run(SWVClient.java:313)
-2026-05-01 23:33:04,421 [INFO] Activator:176 - 
+2026-05-03 21:10:31,297 [INFO] Activator:177 - !SESSION log4j initialized
+2026-05-03 21:10:42,951 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-05-03 21:19:44,985 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2026-05-03 21:19:47,556 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2026-05-03 21:28:33,190 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Exception in thread "SWV client thread" java.lang.NullPointerException: Cannot invoke "com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.isDebugging()" because "com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.plugin" is null
+2026-05-03 21:28:33,196 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.debugTrace(SWVPlugin.java:85)
+2026-05-03 21:28:33,200 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.TRACE(SWVClient.java:768)
+2026-05-03 21:28:33,206 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.readByte(SWVClient.java:296)
+2026-05-03 21:28:33,210 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.getNextByte(SWVClient.java:277)
+2026-05-03 21:28:33,213 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.run(SWVClient.java:313)
+2026-05-03 21:29:10,376 [INFO] Activator:176 - 
 
 
-2026-05-01 23:33:04,431 [INFO] Activator:177 - !SESSION log4j initialized
-2026-05-01 23:33:13,254 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-05-01 23:39:27,116 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Exception in thread "SWV client thread" java.lang.NullPointerException: Cannot invoke "com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.isDebugging()" because "com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.plugin" is null
-2026-05-01 23:39:27,119 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.debugTrace(SWVPlugin.java:85)
-2026-05-01 23:39:27,123 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.TRACE(SWVClient.java:768)
-2026-05-01 23:39:27,128 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.readByte(SWVClient.java:296)
-2026-05-01 23:39:27,131 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.getNextByte(SWVClient.java:277)
-2026-05-01 23:39:27,133 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.run(SWVClient.java:313)
-2026-05-01 23:39:44,583 [INFO] Activator:176 - 
+2026-05-03 21:29:10,381 [INFO] Activator:177 - !SESSION log4j initialized
+2026-05-03 21:29:21,744 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-05-03 21:29:25,980 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2026-05-03 21:30:53,007 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Exception in thread "SWV client thread" java.lang.NullPointerException: Cannot invoke "com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.isDebugging()" because "com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.plugin" is null
+2026-05-03 21:30:53,010 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.debugTrace(SWVPlugin.java:85)
+2026-05-03 21:30:53,012 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.TRACE(SWVClient.java:768)
+2026-05-03 21:30:53,015 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.createProtocolPacket(SWVClient.java:472)
+2026-05-03 21:30:53,017 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.run(SWVClient.java:370)
+2026-05-03 21:31:25,099 [INFO] Activator:176 - 
 
 
-2026-05-01 23:39:44,592 [INFO] Activator:177 - !SESSION log4j initialized
-2026-05-01 23:39:52,939 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-05-01 23:42:22,909 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Exception in thread "SWV client thread" java.lang.NullPointerException: Cannot invoke "com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.isDebugging()" because "com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.plugin" is null
-2026-05-01 23:42:22,913 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.debugTrace(SWVPlugin.java:85)
-2026-05-01 23:42:22,915 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.TRACE(SWVClient.java:768)
-2026-05-01 23:42:22,918 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.readByte(SWVClient.java:296)
-2026-05-01 23:42:22,923 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.getNextByte(SWVClient.java:277)
-2026-05-01 23:42:22,926 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.run(SWVClient.java:313)
+2026-05-03 21:31:25,105 [INFO] Activator:177 - !SESSION log4j initialized
+2026-05-03 21:31:35,817 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-05-03 21:38:10,979 [INFO] Activator:176 - 
+
+
+2026-05-03 21:38:10,983 [INFO] Activator:177 - !SESSION log4j initialized
+2026-05-03 21:38:22,174 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-05-03 21:45:19,843 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2026-05-03 21:45:22,398 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out

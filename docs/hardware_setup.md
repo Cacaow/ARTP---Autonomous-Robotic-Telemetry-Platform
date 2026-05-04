@@ -10,6 +10,9 @@
 ## Wiring
 |   Component   |   STM32 Pin   |
 |---------------|---------------|
+|   LED GPIO    |      PA5      |
+|    UART TX    |      PA2      |
+|    UART RX    |      PA3      |
 |  BME280 SDA   |      PB7      |
 |               |               |
 
@@ -18,6 +21,8 @@
 |   Data Bits   |    8 bits     |
 |    Parity     |     None      |
 |   Stop Bits   |       1       |
+|    TX Mode    |      DMA      |
+|    RX Mode    |DMA+Normal+Idle|
 
 ## Notes
 - Pull-up resistors required for I2C

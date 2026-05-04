@@ -51,7 +51,8 @@
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+extern uint16_t timer;
+extern int enable_timer;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -188,7 +189,9 @@ void SysTick_Handler(void)
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
-
+  if (enable_timer == 1) {
+		  timer++;
+  }
   /* USER CODE END SysTick_IRQn 1 */
 }
 
