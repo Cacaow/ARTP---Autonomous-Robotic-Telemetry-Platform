@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "dma.h"
+#include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -26,6 +27,9 @@
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
 #include "string.h"
+
+#include "ssd1306.h"
+#include "ssd1306_fonts.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -202,7 +206,15 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_USART2_UART_Init();
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+  ssd1306_Init();
+  //ssd1306_Fill(White);
+  ssd1306_SetCursor(10, 10);
+  ssd1306_WriteString("Hello OLED", Font_11x18, White);
+  ssd1306_UpdateScreen();
+
+
   rx_val[0] = 0;
 
 

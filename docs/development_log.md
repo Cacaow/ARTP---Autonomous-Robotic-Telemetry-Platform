@@ -19,3 +19,6 @@
 ## 2026-05-03
 - Completed UART Receive with DMA + Normal/Circular mode + IDLE
 - Implemented timer
+
+## 2026-05-05
+- Set up and tested I2C for OLED with SSD1306 OLED

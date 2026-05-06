@@ -18,3 +18,7 @@
 - Cause: RxEventCallBack is called twice simultaneously
 - Fix: After starting DMA, disable the half transfer interrupt by implementing this line: 
        __HAL_DMA_DISABLE_IT(&hdma_usart1_rx, DMA_IT_HT);
+
+# Issue: Debugging error when implementing I2C
+- Cause: Missing header file
+- Fix: Add fonts header file and rename conf_template.h to conf.h

@@ -39,4 +39,4 @@ Building a real-time embedded system with STM32 + ESP32 + Python dashboard.
  
 - Day 5: UART Receive in DMA + Idle + Normal mode 
 
-
+- Day 6: I2C OLED set up
