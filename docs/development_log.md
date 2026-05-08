@@ -22,3 +22,6 @@
 
 ## 2026-05-05
 - Set up and tested I2C for OLED with SSD1306 OLED
+
+## 2026-05-07
+- Seperated OLED and LED code from main.c

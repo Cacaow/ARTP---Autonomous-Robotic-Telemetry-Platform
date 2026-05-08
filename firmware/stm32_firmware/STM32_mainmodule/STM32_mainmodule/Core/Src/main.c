@@ -25,11 +25,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "OLED.h"
+#include "LED.h"
 #include "stdio.h"
 #include "string.h"
-
-#include "ssd1306.h"
-#include "ssd1306_fonts.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -72,12 +71,9 @@ void logging(char *msg) {
   }
 
   fprintf(fptr, "ERROR %s\n", msg);
-
   fclose(fptr);
 
 }
-
-
 
 int _write(int file, char *ptr, int len) {
 	int i=0;
@@ -171,7 +167,6 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
 }
 
 
-
 /* USER CODE END 0 */
 
 /**
@@ -208,11 +203,10 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  ssd1306_Init();
-  //ssd1306_Fill(White);
-  ssd1306_SetCursor(10, 10);
-  ssd1306_WriteString("Hello OLED", Font_11x18, White);
-  ssd1306_UpdateScreen();
+
+  LED_init();
+  OLED_init();
+
 
 
   rx_val[0] = 0;
@@ -296,14 +290,22 @@ int main(void)
     }
     */
 
-    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+	LED_blink();
     count++;
     printf("Hello World count = %d\n", count);
-    HAL_Delay(500); //500mx delay
 
+    char buffer[1000];
+
+    sprintf(buffer, "Hello World count = %d\n", count);
+
+    OLED_update(buffer);
+
+    HAL_Delay(500); //500mx delay
     
 
   }
+  LED_close();
+  OLED_close();
   /* USER CODE END 3 */
 }
 

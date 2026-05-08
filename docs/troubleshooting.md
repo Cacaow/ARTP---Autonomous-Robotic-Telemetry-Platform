@@ -22,3 +22,7 @@
 # Issue: Debugging error when implementing I2C
 - Cause: Missing header file
 - Fix: Add fonts header file and rename conf_template.h to conf.h
+
+# Issue: OLED screen not on when running code
+- Cause: Loose wire
+- Fix: Insert wire firmly into port

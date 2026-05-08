@@ -1,5 +1,26 @@
-2026-05-05 22:30:57,994 [INFO] Activator:176 - 
+2026-05-07 21:42:51,427 [INFO] Activator:176 - 
 
 
-2026-05-05 22:30:58,008 [INFO] Activator:177 - !SESSION log4j initialized
-2026-05-05 22:31:10,597 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-05-07 21:42:51,440 [INFO] Activator:177 - !SESSION log4j initialized
+2026-05-07 21:43:02,869 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-05-07 22:48:50,835 [INFO] Activator:176 - 
+
+
+2026-05-07 22:48:50,847 [INFO] Activator:177 - !SESSION log4j initialized
+2026-05-07 22:49:03,025 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-05-07 23:17:36,709 [INFO] Activator:176 - 
+
+
+2026-05-07 23:17:36,726 [INFO] Activator:177 - !SESSION log4j initialized
+2026-05-07 23:17:48,904 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-05-07 23:24:05,980 [INFO] Activator:176 - 
+
+
+2026-05-07 23:24:06,022 [INFO] Activator:177 - !SESSION log4j initialized
+2026-05-07 23:24:17,817 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-05-07 23:25:53,391 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Exception in thread "SWV client thread" java.lang.NullPointerException: Cannot invoke "com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.isDebugging()" because "com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.plugin" is null
+2026-05-07 23:25:53,394 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVPlugin.debugTrace(SWVPlugin.java:85)
+2026-05-07 23:25:53,397 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.TRACE(SWVClient.java:768)
+2026-05-07 23:25:53,401 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.readByte(SWVClient.java:296)
+2026-05-07 23:25:53,406 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.getNextByte(SWVClient.java:277)
+2026-05-07 23:25:53,408 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 	at com.st.stm32cube.ide.mcu.debug.swv.core.SWVClient.run(SWVClient.java:313)
