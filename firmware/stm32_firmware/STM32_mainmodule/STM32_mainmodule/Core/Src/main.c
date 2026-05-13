@@ -29,6 +29,7 @@
 #include "LED.h"
 #include "stdio.h"
 #include "string.h"
+#include "UARTCom.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,6 +51,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+uint8_t count = 0;
+extern uint16_t timer;
+extern int enable_timer;
 
 /* USER CODE END PV */
 
@@ -81,89 +85,6 @@ int _write(int file, char *ptr, int len) {
 		ITM_SendChar((*ptr++));
 	}
 	return len;
-}
-
-uint8_t count = 0;
-
-//RECIEVING CODE
-
-uint8_t isReceive = 1;
-uint8_t receive_count = 0;
-
-//RECEIVING VALUES
-static uint8_t rx_val[MAXLEN];
-uint8_t rx_temp[MAXTEMPLEN];
-
-
-//can be used for DMA and IT
-//Currently DMA Mode
-uint16_t temp_index = 0;
-uint16_t rx_index = 0;
-
-int enable_timer = 0;
-uint16_t timer = 0;
-/*
-void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
-	printf("Received buffer value = %s, Size of message=%d, Receive_count index=%d, Temporary Count Index=%d\n", rx_temp, Size, receive_count, temp_index);
-
-	memcpy(rx_val + receive_count, rx_temp + temp_index, Size - temp_index);
-
-	if (Size == MAXTEMPLEN) {
-		//DMA wrapped, reset rx_temp
-		rx_index++;
-		receive_count = MAXTEMPLEN * rx_index;
-		temp_index = 0;
-	} else {
-		//rx_temp not full
-		receive_count += (Size - temp_index);
-		temp_index = Size;
-	}
-	printf("Received value = %s, Total message size = %d, Temporary Count Index=%d\n", rx_val, receive_count, temp_index);
-	enable_timer = 1;
-	timer = 0;
-}
-*/
-
-//DMA Idle Receive Normal Mode
-void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
-	HAL_StatusTypeDef status = HAL_OK;
-	printf("Received buffer value = %s, Size of message=%d, Receive_count index=%d, Temporary Count Index=%d\n", rx_temp, Size, receive_count, temp_index);
-	if (rx_temp[0] != 0) {
-		memcpy(rx_val + receive_count, rx_temp, Size);
-
-		receive_count += Size;
-		printf("Received value = %s, Total message size = %d, Temporary Count Index=%d\n", rx_val, receive_count, temp_index);
-	}
-	else {
-		printf("ERROR - rx_temp[0] != 0\n");
-	}
-	enable_timer = 1;
-	timer = 0;
-	rx_temp[0] = 0;
-	//call the function again
-	status = HAL_UARTEx_ReceiveToIdle_DMA(&huart2, rx_temp, MAXTEMPLEN);
-	  if (status != HAL_OK) {
-			printf("HAL_UARTEx_ReceiveToIdle_DMA Error - %d \n", status);
-			char temp_buf[256];
-	  }
-	  //Important to prevent splicing in the middle of a message (can lead to busy error code)
-	  __HAL_DMA_DISABLE_IT(huart2.hdmarx, DMA_IT_HT);
-
-}
-
-//SENDING CODE
-
-uint8_t isSent = 1;
-uint8_t sent_count = 0;
-
-//can be used for DMA and IT
-void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
-  isSent = 1;
-  sent_count++;
-  printf("sent %d\n", sent_count);
-  if (sent_count > 10) {
-	  HAL_UART_DMAStop(&huart2);
-  }
 }
 
 
@@ -206,42 +127,10 @@ int main(void)
 
   LED_init();
   OLED_init();
-
-
-
-  rx_val[0] = 0;
-
-
-  //SENDING VALUES
-  uint8_t val[MAXLEN];
-
-  for (uint32_t i = 0; i < MAXLEN; i++) {
-    val[i] = 48;
-  }
+  UARTCom_init();
   
-  HAL_StatusTypeDef status = HAL_OK;
-  	//DMA in Circular mode
-  {
-	status = HAL_UART_Transmit_DMA(&huart2, val, MAXLEN);
-	if (status != HAL_OK)
-	{
-		printf("HAL_Tranmit_Error - %d", status);
-		char temp_buf[256];
-		sprintf(temp_buf, "HAL_Tranmit_Error - %d", status);
-		logging(temp_buf);
-	}
-
-  }
-
   //RECEIVING VALUES
-  status = HAL_UARTEx_ReceiveToIdle_DMA(&huart2, rx_temp, MAXTEMPLEN);
-  if (status != HAL_OK) {
-		printf("HAL_UARTEx_ReceiveToIdle_DMA Error - %d", status);
-		char temp_buf[256];
-  }
-
-  __HAL_DMA_DISABLE_IT(huart2.hdmarx, DMA_IT_HT);
-
+  UARTCom_rx();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -251,57 +140,27 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  //SENDING VALUES
+	  UARTCom_tx();
+
+	  //Timer for UART receive timeout
 	  if (timer >= 1000) {
 		  //entire data has been received
 		  timer = 0;
 		  enable_timer = 0;
 	  }
 
-	//RECEIVING VALUES
-
-
-
-/*
-	if (isReceive == 1) {
-		rx_temp[0] = 0;
-		//HAL_UART_Receive_IT(&huart2, temp, 1);
-		status = HAL_UART_Receive_DMA(&huart2, rx_temp, 1);
-		if (status != HAL_OK) {
-			printf("HAL_UART_RECEIVE_ERROR %d\n", status );
-			char temp_buf[256];
-			sprintf(temp_buf, "HAL_Recieve_Error - %d", status);
-			logging(temp_buf);
-		}
-		else if (rx_temp[0] != 0) {
-			isReceive = 0;
-		}
-	}
-*/
-	//SENDING VALUES
-    //HAL_UART_Transmit(&huart2, val, MAXLEN, HAL_MAX_DELAY);
-
-	/*
-	//DMA in Normal Mode
-
-    if (isSent == 1) {
-      //HAL_UART_Transmit_IT(&huart2, val, maxlen);
-    	HAL_UART_Transmit_DMA(&huart2, val, maxlen);
-    	isSent = 0;
-    }
-    */
 
 	LED_blink();
     count++;
-    printf("Hello World count = %d\n", count);
 
     char buffer[1000];
 
-    sprintf(buffer, "Hello World count = %d\n", count);
-
+    sprintf(buffer, "Hello World count = %d, Timer = %d\n", count, timer);
+    printf(buffer);
     OLED_update(buffer);
 
-    HAL_Delay(500); //500mx delay
-    
+    HAL_Delay(1000); //500ms delay
 
   }
   LED_close();

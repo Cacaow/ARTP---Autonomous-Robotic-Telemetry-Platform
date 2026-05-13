@@ -25,3 +25,8 @@
 
 ## 2026-05-07
 - Seperated OLED and LED code from main.c
+
+## 2026-05-10
+- Seperated UART-Tx and UART-Idle-Rx code from main.c
+- Cleaned UART-Tx and UART-Rx code, keeping UART-Tx DMA Normal and UART-Idle-Rx Normal
+

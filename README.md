@@ -37,8 +37,10 @@ Building a real-time embedded system with STM32 + ESP32 + Python dashboard.
 
 - Day 4: Set up UART RX and error handling
  
-- Day 5: UART Receive in DMA + Idle + Normal mode 
+- Day 5: UART RX in DMA + Idle + Normal mode 
 
 - Day 6: I2C OLED set up
 
 - Day 7: Moved OLED and LED test code into unique test module files
+
+- Day 7: Moved UART Transmit DMA + Normal mode and UART Receive DMA + Idle + Normal into unique test module files

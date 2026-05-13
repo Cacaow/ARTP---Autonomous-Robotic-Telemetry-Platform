@@ -26,3 +26,7 @@
 # Issue: OLED screen not on when running code
 - Cause: Loose wire
 - Fix: Insert wire firmly into port
+
+# Issue: Unable to receive values through UART RX when UART TX is running
+- Cause: DMA stop is called before value is received
+- Fix: Move DMA stop to the UART deinitialize function
