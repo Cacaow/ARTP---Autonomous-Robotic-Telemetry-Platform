@@ -39,7 +39,7 @@ extern "C" {
 /* USER CODE END ET */
 /* USER CODE BEGIN EC */
 int UARTCom_init();
-int UARTCom_tx();
+int UARTCom_tx(uint8_t* tx_val);
 int UARTCom_rx();
 int UARTCom_close();
 

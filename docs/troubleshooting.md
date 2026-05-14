@@ -30,3 +30,7 @@
 # Issue: Unable to receive values through UART RX when UART TX is running
 - Cause: DMA stop is called before value is received
 - Fix: Move DMA stop to the UART deinitialize function
+
+# Issue: UART Tx only transmit first four characters
+- Cause: Using sizeof on an uint8_t* returns the size of the address which is always four (does not the full length of the data) 
+- Fix: Replace sizeof with strlen(const char*) (which calculates the number of characters in the data)

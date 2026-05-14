@@ -137,11 +137,17 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
+
 
     /* USER CODE BEGIN 3 */
+	  char buffer[1000];
+
+	  //make sure all transmitted values have \r\n endings
+	  sprintf(buffer, "Hello World count = %d, Timer = %d\r\n", count, timer);
+	  printf(buffer);
+
 	  //SENDING VALUES
-	  UARTCom_tx();
+	  UARTCom_tx((uint8_t*)buffer);
 
 	  //Timer for UART receive timeout
 	  if (timer >= 1000) {
@@ -150,23 +156,20 @@ int main(void)
 		  enable_timer = 0;
 	  }
 
-
 	LED_blink();
     count++;
 
-    char buffer[1000];
 
-    sprintf(buffer, "Hello World count = %d, Timer = %d\n", count, timer);
-    printf(buffer);
     OLED_update(buffer);
 
-    HAL_Delay(1000); //500ms delay
+    HAL_Delay(1000); //500ms delay minimum for current transmit value
 
   }
   LED_close();
   OLED_close();
   /* USER CODE END 3 */
 }
+/* USER CODE END WHILE */
 
 /**
   * @brief System Clock Configuration

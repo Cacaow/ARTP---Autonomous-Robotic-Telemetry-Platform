@@ -33,6 +33,7 @@
 /* USER CODE BEGIN PD */
 #define MAXLEN 4096
 #define MAXTEMPLEN 256
+#define MAXVALUES 40
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -54,6 +55,12 @@ uint16_t timer;
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+//TRANSMITTING CODE
+uint8_t isSent = 1;
+uint8_t sent_count = 0;
+uint8_t tx_values[MAXVALUES][2048];
+
 
 //RECIEVING CODE
 uint8_t isReceive = 1;
@@ -94,9 +101,6 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
 
 
 //UART TRANSMITTING CODE
-uint8_t isSent = 1;
-uint8_t sent_count = 0;
-
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
   isSent = 1;
   sent_count++;
@@ -128,16 +132,18 @@ int UARTCom_init() {
 
 
   //UART TRANSMITTING VALUES
-int UARTCom_tx() {
-	  uint8_t tx_val[MAXLEN];
+int UARTCom_tx(uint8_t* tx_val) {
 	  HAL_StatusTypeDef status = HAL_OK;
+	  /*
+	  uint8_t tx_val[MAXLEN];
 
 	  for (uint32_t i = 0; i < MAXLEN; i++) {
 		tx_val[i] = 48;
 	  }
+	  */
 
 	  if (isSent == 1) {
-	    	status = HAL_UART_Transmit_DMA(&huart2, tx_val, MAXLEN);
+	    	status = HAL_UART_Transmit_DMA(&huart2, tx_val, strlen((const char*)tx_val));
 	    	if (status != HAL_OK) {
 	    			printf("HAL_UART_Transmit_DMA Error - %d", status);
 	    			return status;

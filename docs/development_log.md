@@ -30,3 +30,5 @@
 - Seperated UART-Tx and UART-Idle-Rx code from main.c
 - Cleaned UART-Tx and UART-Rx code, keeping UART-Tx DMA Normal and UART-Idle-Rx Normal
 
+## 2026-05-12
+- Allowed variable input for UART Tx values
