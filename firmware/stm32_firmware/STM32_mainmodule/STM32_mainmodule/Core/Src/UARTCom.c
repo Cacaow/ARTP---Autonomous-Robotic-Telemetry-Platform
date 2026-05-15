@@ -79,10 +79,25 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
 	HAL_StatusTypeDef status = HAL_OK;
 	printf("Received buffer value = %s, Size of message=%d, Receive_count index=%d, Temporary Count Index=%d\n", rx_temp, Size, receive_count, temp_index);
 	if (rx_temp[0] != 0) {
-		memcpy(rx_val + receive_count, rx_temp, Size);
 
-		receive_count += Size;
-		printf("Received value = %s, Total message size = %d, Temporary Count Index=%d\n", rx_val, receive_count, temp_index);
+		for (int i = 0; i < Size; i++) {
+			if (rx_temp[i] == '\n' || rx_temp[i] == '\r') {
+				rx_val[rx_index] = 0;
+				if (rx_val[0] != 0) {
+					printf("Buffer reset, Received Value: %s\n", rx_val);
+					/*add processed data*/
+					rx_index = 0;
+					rx_val[0] = 0;
+				}
+			}
+			else {
+				rx_val[rx_index] = rx_temp[i];
+				rx_index++;
+			}
+		}
+		//memcpy(rx_val + receive_count, rx_temp, Size);
+		//receive_count += Size;
+		//printf("Received value = %s, Total message size = %d, Temporary Count Index=%d\n", rx_val, receive_count, temp_index);
 	}
 	else {
 		printf("ERROR - rx_temp[0] != 0\n");

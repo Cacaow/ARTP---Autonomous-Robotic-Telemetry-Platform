@@ -46,3 +46,5 @@ Building a real-time embedded system with STM32 + ESP32 + Python dashboard.
 - Day 7: Moved UART Transmit DMA + Normal mode and UART Receive DMA + Idle + Normal into unique test module files
 
 - Day 8: Allowed variable input for UART Tx values
+
+- Day 9: Developed buffer reset method for UART Rx messages  

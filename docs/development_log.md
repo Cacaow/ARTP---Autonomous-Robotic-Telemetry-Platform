@@ -32,3 +32,6 @@
 
 ## 2026-05-12
 - Allowed variable input for UART Tx values
+
+## 2026-05-14
+- Developed buffer reset method for UART Rx messages  
