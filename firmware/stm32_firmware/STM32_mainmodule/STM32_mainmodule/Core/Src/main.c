@@ -60,7 +60,7 @@ extern int enable_timer;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+void I2C_ClearBus(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -99,7 +99,6 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
 
-
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -123,6 +122,7 @@ int main(void)
   MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_I2C1_Init();
+  I2C_ClearBus();
   /* USER CODE BEGIN 2 */
 
   LED_init();
@@ -130,7 +130,7 @@ int main(void)
   UARTCom_init();
   
   //RECEIVING VALUES
-  UARTCom_rx();
+  //UARTCom_rx();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -143,11 +143,11 @@ int main(void)
 	  char buffer[1000];
 
 	  //make sure all transmitted values have \r\n endings
-	  sprintf(buffer, "Hello World count = %d, Timer = %d\r\n", count, timer);
+	  sprintf(buffer, "Hello World count = %d, Timer = %d\r\n       ", count, timer);
 	  printf(buffer);
 
 	  //SENDING VALUES
-	  UARTCom_tx((uint8_t*)buffer);
+	  //UARTCom_tx((uint8_t*)buffer);
 
 	  //Timer for UART receive timeout
 	  if (timer >= 1000) {
@@ -217,6 +217,21 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void I2C_ClearBus(void) {
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_SET);  // SDA
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET);  // SCL
+    for(uint8_t i = 0; i < 9; i++) {
+        HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_8);
+        HAL_Delay(1);
+    }
+    //STOP
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET);
+    HAL_Delay(1);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET);
+}
+
 
 /* USER CODE END 4 */
 

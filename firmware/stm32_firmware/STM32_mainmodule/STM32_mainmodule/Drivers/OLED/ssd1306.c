@@ -255,17 +255,20 @@ char ssd1306_WriteChar(char ch, SSD1306_Font_t Font, SSD1306_COLOR color) {
 }
 
 /* Write full string to screenbuffer */
-char ssd1306_WriteString(char* str, SSD1306_Font_t Font, SSD1306_COLOR color) {
+int ssd1306_WriteString(char* str, SSD1306_Font_t Font, SSD1306_COLOR color) {
     while (*str) {
-        if (ssd1306_WriteChar(*str, Font, color) != *str) {
+    	char WriteChar = ssd1306_WriteChar(*str, Font, color);
+    	if (WriteChar == 0) {
+    		return -1;
+    	} else if (WriteChar != *str) {
             // Char could not be written
-            return *str;
+            return -1;
         }
         str++;
     }
     
     // Everything ok
-    return *str;
+    return 0;
 }
 
 /* Position the cursor */

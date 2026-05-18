@@ -48,3 +48,5 @@ Building a real-time embedded system with STM32 + ESP32 + Python dashboard.
 - Day 8: Allowed variable input for UART Tx values
 
 - Day 9: Developed buffer reset method for UART Rx messages  
+
+- Day 10: Moved connection between STM32 and OLED onto a breadboard and implemented error handling for OLED

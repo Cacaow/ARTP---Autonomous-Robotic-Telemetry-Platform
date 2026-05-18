@@ -34,3 +34,7 @@
 # Issue: UART Tx only transmit first four characters
 - Cause: Using sizeof on an uint8_t* returns the size of the address which is always four (does not the full length of the data) 
 - Fix: Replace sizeof with strlen(const char*) (which calculates the number of characters in the data)
+
+# Issue: OLED SDA line has no voltage after connecting to STM32 through a breadboard
+- Cause: Voltage will not be automatically pulled-up when connecting through a wire longer than 20cm
+- Fix: Implement two 4.7K pull-up resistors between the 3.3V power source and SCL and SDA respectively (commonly required by I2C)

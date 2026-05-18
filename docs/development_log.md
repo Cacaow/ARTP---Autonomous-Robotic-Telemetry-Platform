@@ -35,3 +35,7 @@
 
 ## 2026-05-14
 - Developed buffer reset method for UART Rx messages  
+
+## 2026-05-17
+- Moved connection between STM32 and OLED onto a breadboard to allow multiple I2C device connections to STM32
+- Implemented error handling for OLED

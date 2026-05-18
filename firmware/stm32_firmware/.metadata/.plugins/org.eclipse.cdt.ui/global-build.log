@@ -572,3 +572,396 @@ Finished building: default.size.stdout
  
 Finished building: STM32_mainmodule.list
  
+14:51:10 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29528	    108	   7652	  37288	   91a8	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+15:01:30 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29528	    108	   7652	  37288	   91a8	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+15:03:52 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29528	    108	   7652	  37288	   91a8	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+15:05:49 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  28868	    108	   7652	  36628	   8f14	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+15:10:39 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28868	    108	   7652	  36628	   8f14	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+15:28:43 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+../Core/Src/OLED.c: In function 'OLED_init':
+../Core/Src/OLED.c:75:25: warning: comparison between pointer and integer
+   75 |         if (WriteString != "Hello OLED") {
+      |                         ^~
+../Core/Src/OLED.c:75:25: warning: comparison with string literal results in unspecified behavior [-Waddress]
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  28932	    108	   7652	  36692	   8f54	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+15:29:06 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28932	    108	   7652	  36692	   8f54	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+15:30:11 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28932	    108	   7652	  36692	   8f54	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+15:30:40 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28932	    108	   7652	  36692	   8f54	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+15:34:27 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  28948	    108	   7652	  36708	   8f64	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+15:37:54 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  29008	    108	   7652	  36768	   8fa0	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+15:41:34 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Drivers/OLED/ssd1306.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/OLED/ssd1306.d" -MT"Drivers/OLED/ssd1306.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/OLED/ssd1306.o"
+arm-none-eabi-gcc "../Drivers/OLED/ssd1306_fonts.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/OLED/ssd1306_fonts.d" -MT"Drivers/OLED/ssd1306_fonts.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/OLED/ssd1306_fonts.o"
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  29004	    108	   7652	  36764	   8f9c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+15:44:54 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Drivers/OLED/ssd1306.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/OLED/ssd1306.d" -MT"Drivers/OLED/ssd1306.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/OLED/ssd1306.o"
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  29016	    108	   7652	  36776	   8fa8	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+15:46:44 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  29016	    108	   7652	  36776	   8fa8	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+15:57:15 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29016	    108	   7652	  36776	   8fa8	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+16:11:26 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Drivers/OLED/ssd1306.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/OLED/ssd1306.d" -MT"Drivers/OLED/ssd1306.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/OLED/ssd1306.o"
+../Drivers/OLED/ssd1306.c: In function 'ssd1306_WriteString':
+../Drivers/OLED/ssd1306.c:261:9: error: expected ',' or ';' before 'if'
+  261 |         if (WriteChar == 0) {
+      |         ^~
+../Drivers/OLED/ssd1306.c:264:9: error: 'else' without a previous 'if'
+  264 |         else if (WriteChar != *str) {
+      |         ^~~~
+make: *** [Drivers/OLED/subdir.mk:22: Drivers/OLED/ssd1306.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+16:12:29 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Drivers/OLED/ssd1306.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/OLED/ssd1306.d" -MT"Drivers/OLED/ssd1306.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/OLED/ssd1306.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  29028	    108	   7652	  36788	   8fb4	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+16:13:50 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29028	    108	   7652	  36788	   8fb4	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+16:15:04 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29028	    108	   7652	  36788	   8fb4	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+16:15:43 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29028	    108	   7652	  36788	   8fb4	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+16:16:35 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Drivers/OLED/ssd1306.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/OLED/ssd1306.d" -MT"Drivers/OLED/ssd1306.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/OLED/ssd1306.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  29024	    108	   7652	  36784	   8fb0	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+16:18:16 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29024	    108	   7652	  36784	   8fb0	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+16:22:30 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Drivers/OLED/ssd1306.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/OLED/ssd1306.d" -MT"Drivers/OLED/ssd1306.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/OLED/ssd1306.o"
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  29020	    108	   7652	  36780	   8fac	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+16:29:27 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  29156	    108	   7652	  36916	   9034	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+16:45:09 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29156	    108	   7652	  36916	   9034	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+16:46:42 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29156	    108	   7652	  36916	   9034	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+16:52:16 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29156	    108	   7652	  36916	   9034	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+17:10:29 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+../Core/Src/OLED.c: In function 'OLED_update':
+../Core/Src/OLED.c:114:9: error: implicit declaration of function 'OLED_StartScroll'; did you mean 'OLED_StopScroll'? [-Wimplicit-function-declaration]
+  114 |         OLED_StartScroll(0x26, 2, 3);
+      |         ^~~~~~~~~~~~~~~~
+      |         OLED_StopScroll
+make: *** [Core/Src/subdir.mk:58: Core/Src/OLED.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+17:11:18 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+../Core/Src/OLED.c: In function 'OLED_update':
+../Core/Src/OLED.c:114:9: error: too many arguments to function 'OLED_StartScroll'
+  114 |         OLED_StartScroll(0x26, 2, 3);
+      |         ^~~~~~~~~~~~~~~~
+../Core/Src/OLED.c:61:6: note: declared here
+   61 | void OLED_StartScroll(uint8_t start_page, uint8_t stop_page) {
+      |      ^~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:58: Core/Src/OLED.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+17:11:48 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  29244	    108	   7652	  37004	   908c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+17:18:51 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  29248	    108	   7652	  37008	   9090	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+17:19:26 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  29248	    108	   7652	  37008	   9090	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+17:27:42 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+../Core/Src/OLED.c: In function 'OLED_StartScroll':
+../Core/Src/OLED.c:62:9: error: implicit declaration of function 'OLED_StopScroll'; did you mean 'OLED_StartScroll'? [-Wimplicit-function-declaration]
+   62 |         OLED_StopScroll();
+      |         ^~~~~~~~~~~~~~~
+      |         OLED_StartScroll
+../Core/Src/OLED.c: At top level:
+../Core/Src/OLED.c:76:6: warning: conflicting types for 'OLED_StopScroll'; have 'void(void)'
+   76 | void OLED_StopScroll(void) {
+      |      ^~~~~~~~~~~~~~~
+../Core/Src/OLED.c:62:9: note: previous implicit declaration of 'OLED_StopScroll' with type 'void(void)'
+   62 |         OLED_StopScroll();
+      |         ^~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:58: Core/Src/OLED.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+17:27:54 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+../Core/Src/OLED.c: In function 'OLED_StartScroll':
+../Core/Src/OLED.c:62:9: error: implicit declaration of function 'OLED_StopScroll'; did you mean 'OLED_StartScroll'? [-Wimplicit-function-declaration]
+   62 |         OLED_StopScroll();
+      |         ^~~~~~~~~~~~~~~
+      |         OLED_StartScroll
+../Core/Src/OLED.c: At top level:
+../Core/Src/OLED.c:76:6: warning: conflicting types for 'OLED_StopScroll'; have 'void(void)'
+   76 | void OLED_StopScroll(void) {
+      |      ^~~~~~~~~~~~~~~
+../Core/Src/OLED.c:62:9: note: previous implicit declaration of 'OLED_StopScroll' with type 'void(void)'
+   62 |         OLED_StopScroll();
+      |         ^~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:58: Core/Src/OLED.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+17:28:22 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  27744	    108	   7652	  35504	   8ab0	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+17:28:51 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  27744	    108	   7652	  35504	   8ab0	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 

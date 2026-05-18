@@ -1,11 +1,14 @@
 # Hardware Setup
 
 ## Components
-- STM32 Nucleo-F411RE
-- OLED display SSD1306
+- STM32 Nucleo-F411RE 
+- OLED display SSD1306 (I2C)
 - BME280 sensor (I2C)
-- ESP32
-- DHT22
+- MPU-6050 (I2C)
+- ESP32 (UART)
+- SD Card (SPI)
+- TB6612FNG x 2 (GPIO)
+
 
 ## Wiring
 |   Component   |   STM32 Pin   |
