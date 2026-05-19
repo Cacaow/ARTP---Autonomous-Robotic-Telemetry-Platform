@@ -965,3 +965,68 @@ arm-none-eabi-size  STM32_mainmodule.elf
   27744	    108	   7652	  35504	   8ab0	STM32_mainmodule.elf
 Finished building: default.size.stdout
  
+16:30:07 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+../Core/Src/OLED.c: In function 'OLED_scroll_start':
+../Core/Src/OLED.c:34:26: error: expected ')' before ';' token
+   34 | #define SCROLL_FONT_W   6;
+      |                          ^
+../Core/Src/OLED.c:125:57: note: in expansion of macro 'SCROLL_FONT_W'
+  125 |                 scroll_txt_px = (int16_t)(strlen(txt) * SCROLL_FONT_W);
+      |                                                         ^~~~~~~~~~~~~
+../Core/Src/OLED.c:125:42: note: to match this '('
+  125 |                 scroll_txt_px = (int16_t)(strlen(txt) * SCROLL_FONT_W);
+      |                                          ^
+../Core/Src/OLED.c: At top level:
+../Core/Src/OLED.c:42:16: warning: 'scroll_x' defined but not used [-Wunused-variable]
+   42 | static int16_t scroll_x = 128;
+      |                ^~~~~~~~
+make: *** [Core/Src/subdir.mk:58: Core/Src/OLED.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+16:30:42 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+../Core/Src/OLED.c: In function 'OLED_scroll_start':
+../Core/Src/OLED.c:127:9: error: expected ';' before '}' token
+  127 |         }
+      |         ^
+../Core/Src/OLED.c: At top level:
+../Core/Src/OLED.c:42:16: warning: 'scroll_x' defined but not used [-Wunused-variable]
+   42 | static int16_t scroll_x = 128;
+      |                ^~~~~~~~
+make: *** [Core/Src/subdir.mk:58: Core/Src/OLED.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+16:30:59 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+../Core/Src/OLED.c:42:16: warning: 'scroll_x' defined but not used [-Wunused-variable]
+   42 | static int16_t scroll_x = 128;
+      |                ^~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  27640	    108	   7652	  35400	   8a48	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:10:46 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Drivers/OLED/ssd1306.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/OLED/ssd1306.d" -MT"Drivers/OLED/ssd1306.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/OLED/ssd1306.o"
+arm-none-eabi-gcc "../Drivers/OLED/ssd1306_fonts.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/OLED/ssd1306_fonts.d" -MT"Drivers/OLED/ssd1306_fonts.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/OLED/ssd1306_fonts.o"
+arm-none-eabi-gcc "../Core/Src/OLED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/OLED.d" -MT"Core/Src/OLED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/OLED.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  29236	    108	   7652	  36996	   9084	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 

@@ -594,3 +594,33 @@ void ssd1306_SetDisplayOn(const uint8_t on) {
 uint8_t ssd1306_GetDisplayOn() {
     return SSD1306.DisplayOn;
 }
+
+void ssd1306_scroll_blue_right(uint8_t speed)
+{
+    ssd1306_WriteCommand(SSD1306_RIGHT_HORIZONTAL_SCROLL);
+    ssd1306_WriteCommand(0x00);      // dummy
+    ssd1306_WriteCommand(0x02);      // begin line = 2
+    ssd1306_WriteCommand(speed);     // 0x00 fastest ~ 0x07 slowest
+    ssd1306_WriteCommand(0x07);
+    ssd1306_WriteCommand(0x00);
+    ssd1306_WriteCommand(0xFF);
+    ssd1306_WriteCommand(SSD1306_ACTIVATE_SCROLL);
+}
+
+void ssd1306_scroll_blue_left(uint8_t speed)
+{
+    ssd1306_WriteCommand(SSD1306_LEFT_HORIZONTAL_SCROLL);
+    ssd1306_WriteCommand(0x00);
+    ssd1306_WriteCommand(0x02);      // start line = 2
+    ssd1306_WriteCommand(speed);
+    ssd1306_WriteCommand(0x07);      // last line = 7
+    ssd1306_WriteCommand(0x00);
+    ssd1306_WriteCommand(0xFF);
+    ssd1306_WriteCommand(SSD1306_ACTIVATE_SCROLL);
+}
+
+void ssd1306_stop_scroll(void)
+{
+    ssd1306_WriteCommand(SSD1306_DEACTIVATE_SCROLL);
+}
+

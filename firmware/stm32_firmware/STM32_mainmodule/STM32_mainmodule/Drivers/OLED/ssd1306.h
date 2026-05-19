@@ -124,6 +124,13 @@ extern SPI_HandleTypeDef SSD1306_SPI_PORT;
 #define SSD1306_BUFFER_SIZE   SSD1306_WIDTH * SSD1306_HEIGHT / 8
 #endif
 
+/* Scrolling Commands */
+#define SSD1306_RIGHT_HORIZONTAL_SCROLL  0x26
+#define SSD1306_LEFT_HORIZONTAL_SCROLL   0x27
+#define SSD1306_DEACTIVATE_SCROLL        0x2E
+#define SSD1306_ACTIVATE_SCROLL          0x2F
+
+
 // Enumeration for screen colors
 typedef enum {
     Black = 0x00, // Black color, no pixel
@@ -173,6 +180,10 @@ void ssd1306_Polyline(const SSD1306_VERTEX *par_vertex, uint16_t par_size, SSD13
 void ssd1306_DrawRectangle(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, SSD1306_COLOR color);
 void ssd1306_FillRectangle(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, SSD1306_COLOR color);
 
+/*Scrolling Commands */
+void ssd1306_scroll_blue_right(uint8_t speed);
+void ssd1306_scroll_blue_left(uint8_t speed);
+void ssd1306_stop_scroll(void);
 /**
  * @brief Invert color of pixels in rectangle (include border)
  * 

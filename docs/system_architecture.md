@@ -22,4 +22,5 @@ Sensor -> STM32 -> UART -> ESP32 -> WiFi -> PC Dashboard
 - Implement nested array for UART Tx to avoid missing transmissions due to short period
 - Add ROS interface
 - Replace UART with SPI for higher speed
+- Replace Hardware scrolling feature with software scrolling on OLED
 

@@ -47,7 +47,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-static int16_t scroll_x = 128;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -69,11 +69,14 @@ int OLED_init(void)
 	ssd1306_Init();
 	//ssd1306_Fill(White);
 	ssd1306_SetCursor(0, 0);
-	int WriteString = ssd1306_WriteString("Hello OLED", Font_7x10, White);
+	int WriteString = ssd1306_WriteString("Hello OLED", Font_11x18, White);
 	if (WriteString != 0) {
 		printf("ERROR: OLED_init-String could not be written \n");
 		//return -1;
 	}
+
+	ssd1306_scroll_blue_right(0x03);
+
 	ssd1306_UpdateScreen();
 
 	return 0;
@@ -105,8 +108,11 @@ int OLED_close(void) {
 	ssd1306_SetCursor(10, 10);
 	ssd1306_WriteString("", Font_11x18, White);
 	ssd1306_UpdateScreen();
+	ssd1306_stop_scroll();
 
 	return 0;
   /* USER CODE END 3 */
 }
+
+
 

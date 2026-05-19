@@ -39,3 +39,6 @@
 ## 2026-05-17
 - Moved connection between STM32 and OLED onto a breadboard to allow multiple I2C device connections to STM32
 - Implemented error handling for OLED
+
+## 2026-05-18
+- Implemented hardware scrolling on OLED text
