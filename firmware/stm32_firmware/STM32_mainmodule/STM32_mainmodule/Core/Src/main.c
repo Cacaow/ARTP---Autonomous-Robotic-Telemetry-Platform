@@ -17,6 +17,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <BME280.h>
 #include "main.h"
 #include "dma.h"
 #include "i2c.h"
@@ -25,11 +26,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "OLED.h"
-#include "LED.h"
 #include "stdio.h"
 #include "string.h"
+#include "LED.h"
 #include "UARTCom.h"
+#include "OLED.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -54,6 +55,8 @@
 uint8_t count = 0;
 extern uint16_t timer;
 extern int enable_timer;
+
+BME280_Data_t BME280;
 
 /* USER CODE END PV */
 
@@ -126,8 +129,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   LED_init();
-  OLED_init();
   UARTCom_init();
+  BME280_init();
+  OLED_init();
   
   //RECEIVING VALUES
   //UARTCom_rx();
@@ -159,6 +163,9 @@ int main(void)
 	LED_blink();
     count++;
 
+    BME280_calculation(&BME280);
+    sprintf(buffer, "BME Temperature = %.2f C\n", BME280.Temperature);
+    printf(buffer);
 
     OLED_update(buffer);
 
@@ -166,6 +173,7 @@ int main(void)
 
   }
   LED_close();
+  BME280_close();
   OLED_close();
   /* USER CODE END 3 */
 }

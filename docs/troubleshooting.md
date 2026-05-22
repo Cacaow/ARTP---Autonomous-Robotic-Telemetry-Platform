@@ -38,3 +38,7 @@
 # Issue: OLED SDA line has no voltage after connecting to STM32 through a breadboard
 - Cause: Voltage will not be automatically pulled-up when connecting through a wire longer than 20cm
 - Fix: Implement two 4.7K pull-up resistors between the 3.3V power source and SCL and SDA respectively (commonly required by I2C)
+
+# Issue: Numerous undeclared errors
+- Cause: Missing inclusions
+- Fix: Add inclusions

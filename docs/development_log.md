@@ -22,6 +22,7 @@
 
 ## 2026-05-05
 - Set up and tested I2C for OLED with SSD1306 OLED
+- Reference library github: https://github.com/adafruit/adafruit_ssd1306
 
 ## 2026-05-07
 - Seperated OLED and LED code from main.c
@@ -42,3 +43,7 @@
 
 ## 2026-05-18
 - Implemented hardware scrolling on OLED text
+
+## 2026-05-21
+- Implemented BME280 using I2C
+- Reference code github: https://github.com/Afebia/BME280-STM32-V2

@@ -23,7 +23,12 @@
 | I2C OLED SCL  |    PB8/SCL    |
 | I2C OLED SDA  |    PB9/SDA    |
 |               |               |
-|  BME280 SDA   |      PB7      |
+|I2C BME280 VCC |      3V3      |
+|I2C BME280 GND |      GND      |
+|I2C BME280 SCL |    PB8/SCL    |
+|I2C BME280 SDA |    PB9/SDA    |
+|I2C BME280 CSB |       -       |
+|I2C BME280 SDO |      GND      |
 
 
 ## UART Settings
