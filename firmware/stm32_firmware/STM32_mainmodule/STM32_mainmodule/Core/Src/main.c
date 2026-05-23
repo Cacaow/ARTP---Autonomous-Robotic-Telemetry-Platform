@@ -57,6 +57,8 @@ extern uint16_t timer;
 extern int enable_timer;
 
 BME280_Data_t BME280;
+int start_y = 20;
+int end_y = 0;
 
 /* USER CODE END PV */
 
@@ -147,7 +149,7 @@ int main(void)
 	  char buffer[1000];
 
 	  //make sure all transmitted values have \r\n endings
-	  sprintf(buffer, "Hello World count = %d, Timer = %d\r\n       ", count, timer);
+	  sprintf(buffer, "Hello World count = %d, Timer = %d\r\n", count, timer);
 	  printf(buffer);
 
 	  //SENDING VALUES
@@ -162,12 +164,16 @@ int main(void)
 
 	LED_blink();
     count++;
+    start_y = 20;
+    end_y = 0;
 
     BME280_calculation(&BME280);
-    sprintf(buffer, "BME Temperature = %.2f C\n", BME280.Temperature);
+    sprintf(buffer, "Temperature: %.2f C\nPressure: %.2f hPa\nHumidity: %.2f RH\nAltitudeP: %.2f m\n",
+    				BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP);
     printf(buffer);
 
-    OLED_update(buffer);
+    OLED_update(buffer, start_y, &end_y);
+    start_y = end_y;
 
     HAL_Delay(1000); //500ms delay minimum for current transmit value
 

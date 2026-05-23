@@ -39,6 +39,11 @@
 |    TX Mode    |      DMA      |
 |    RX Mode    |DMA+Normal+Idle|
 
+## I2C Settings
+| OLED Address  |       3C      |
+|BME280 Address |       76      |
+
+
 ## Notes
 - Pull-up resistors required for I2C
 - Power supply stability is critical

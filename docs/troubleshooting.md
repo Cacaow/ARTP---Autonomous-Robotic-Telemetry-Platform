@@ -42,3 +42,7 @@
 # Issue: Numerous undeclared errors
 - Cause: Missing inclusions
 - Fix: Add inclusions
+
+# Issue: Unidentified float printf error
+- Cause: STM32CubeIDE u_printf_float is disabled by default
+- Fix: C/C++ Build -> Settings -> MCU Settings, enable "Use float with printf from newlib-nano (-u_printf_float)

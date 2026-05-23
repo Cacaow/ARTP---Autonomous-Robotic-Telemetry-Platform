@@ -53,7 +53,7 @@
 /* Private function prototypes -----------------------------------------------*/
 
 /* USER CODE BEGIN PFP */
-
+int enable_OLED = 1;
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -63,19 +63,21 @@
 
 int OLED_init(void)
 {
-
   /* USER CODE BEGIN 1 */
+	if (enable_OLED == 0) {
+		return 0;
+	}
 
 	ssd1306_Init();
 	//ssd1306_Fill(White);
 	ssd1306_SetCursor(0, 0);
-	int WriteString = ssd1306_WriteString("Hello OLED", Font_11x18, White);
+	int WriteString = ssd1306_WriteString("ARTP Data", Font_11x18, White);
 	if (WriteString != 0) {
 		printf("ERROR: OLED_init-String could not be written \n");
 		//return -1;
 	}
 
-	ssd1306_scroll_blue_right(0x03);
+	//ssd1306_scroll_blue_right(0x03);
 
 	ssd1306_UpdateScreen();
 
@@ -85,18 +87,37 @@ int OLED_init(void)
 
 
 
-int OLED_update(char *txt) {
+int OLED_update(char *txt, int start_y, int *end_y) {
    /* USER CODE BEGIN 2 */
+	if (enable_OLED == 0) {
+		return 0;
+	}
 	//ssd1306_Fill(White);
-	ssd1306_SetCursor(0, 20);
-	int WriteString = ssd1306_WriteString(txt, Font_6x8, White);
-	//can also be written as if (WriteString == '\0')
-	if (WriteString != 0) {
-			printf("ERROR: OLED_update-String could not be written \n");
+	char *delimiter = "\n";
+
+	char *token = strtok(txt, delimiter);
+	int y_val = start_y;
+
+	while (token != NULL) {
+		ssd1306_SetCursor(0, y_val);
+		int WriteString = ssd1306_WriteString(token, Font_6x8, White);
+		//can also be written as if (WriteString == '\0')
+		if (WriteString == -1) {
+			printf("ERROR: OLED invalid string\n");
 			//return -1;
 		}
-	ssd1306_UpdateScreen();
+		else if (WriteString == -2) {
+			printf("ERROR: OLED string out of screen\n");
+		}
+		else if (WriteString != 0) {
+			printf("ERROR: Unknown error\n");
+		}
+		y_val += 10;
+		token = strtok(NULL, delimiter);
+	}
 
+	*end_y = y_val;
+	ssd1306_UpdateScreen();
 
 	return 0;
 
@@ -105,6 +126,9 @@ int OLED_update(char *txt) {
 
 int OLED_close(void) {
    /* USER CODE BEGIN 3 */
+	if (enable_OLED == 0) {
+		return 0;
+	}
 	ssd1306_SetCursor(10, 10);
 	ssd1306_WriteString("", Font_11x18, White);
 	ssd1306_UpdateScreen();

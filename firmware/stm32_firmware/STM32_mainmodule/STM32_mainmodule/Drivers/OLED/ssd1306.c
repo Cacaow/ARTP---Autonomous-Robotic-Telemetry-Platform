@@ -218,12 +218,12 @@ void ssd1306_DrawPixel(uint8_t x, uint8_t y, SSD1306_COLOR color) {
  * Font     => Font waarmee we gaan schrijven
  * color    => Black or White
  */
-char ssd1306_WriteChar(char ch, SSD1306_Font_t Font, SSD1306_COLOR color) {
+int ssd1306_WriteChar(char ch, SSD1306_Font_t Font, SSD1306_COLOR color) {
     uint32_t i, b, j;
     
     // Check if character is valid
     if (ch < 32 || ch > 126)
-        return 0;
+        return -1;
     
     // Char width is not equal to font width for proportional font
     const uint8_t char_width = Font.char_width ? Font.char_width[ch-32] : Font.width;
@@ -232,7 +232,7 @@ char ssd1306_WriteChar(char ch, SSD1306_Font_t Font, SSD1306_COLOR color) {
         SSD1306_HEIGHT < (SSD1306.CurrentY + Font.height))
     {
         // Not enough space on current line
-        return 0;
+        return -2;
     }
     
     // Use the font to write
@@ -251,19 +251,16 @@ char ssd1306_WriteChar(char ch, SSD1306_Font_t Font, SSD1306_COLOR color) {
     SSD1306.CurrentX += char_width;
     
     // Return written char for validation
-    return ch;
+    return 0;
 }
 
 /* Write full string to screenbuffer */
 int ssd1306_WriteString(char* str, SSD1306_Font_t Font, SSD1306_COLOR color) {
     while (*str) {
-    	char WriteChar = ssd1306_WriteChar(*str, Font, color);
-    	if (WriteChar == 0) {
-    		return -1;
-    	} else if (WriteChar != *str) {
-            // Char could not be written
-            return -1;
-        }
+    	int WriteChar = ssd1306_WriteChar(*str, Font, color);
+    	if (WriteChar != 0) {
+    		return WriteChar;
+    	}
         str++;
     }
     

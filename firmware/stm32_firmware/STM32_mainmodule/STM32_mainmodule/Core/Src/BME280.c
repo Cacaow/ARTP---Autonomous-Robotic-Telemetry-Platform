@@ -16,6 +16,7 @@ unsigned short dig_T1,dig_P1, dig_H1, dig_H3;
 signed short dig_T2, dig_T3,dig_P2, dig_P3, dig_P4, dig_P5, dig_P6, dig_P7, dig_P8, dig_P9, dig_H2,dig_H4, dig_H5, dig_H6;
 
 int32_t t_fine;
+int enable_BME = 1;
 /**
   * @brief  Software Reset to BME280
   *
@@ -225,7 +226,9 @@ void InitBME280(BME280_Init_t BME280Init){
 
 int BME280_init(void)
 {
-
+	if (enable_BME == 0) {
+		return 0;
+	}
   //Init structure definition section
 	BME280_Init_t BME280_InitStruct = {0};
 
@@ -249,6 +252,9 @@ int BME280_init(void)
 
 int BME280_close(void)
 {
+	if (enable_BME == 0) {
+		return 0;
+	}
 
 	Reset_BME280();
 
@@ -265,6 +271,15 @@ int BME280_close(void)
   */
 int BME280_calculation(BME280_Data_t *result)
 {
+	if (enable_BME == 0) {
+		result->Temperature = -999;
+		result->Pressure = -999;
+		result->Humidity = -999;
+		result->AltitudeP = -999;
+		result->AltitudeTP = -999;
+		return 0;
+	}
+
 	Raw_Data_t rawData = RawdataBME280();
 
 	Calibdata_BME280();

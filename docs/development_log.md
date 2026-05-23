@@ -47,3 +47,8 @@
 ## 2026-05-21
 - Implemented BME280 using I2C
 - Reference code github: https://github.com/Afebia/BME280-STM32-V2
+
+## 2026-05-23
+- Displayed all BME280 data onto OLED
+- Revamped OLED display layout and error logging 
+- Added toggle flag for OLED and BME to allow for software enabling and disabling
