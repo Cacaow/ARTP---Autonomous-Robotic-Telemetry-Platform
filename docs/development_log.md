@@ -52,3 +52,7 @@
 - Displayed all BME280 data onto OLED
 - Revamped OLED display layout and error logging 
 - Added toggle flag for OLED and BME to allow for software enabling and disabling
+
+## 2026-05-26
+- Implemented MPU6050 using I2C
+- Reference code: https://controllerstech.com/how-to-interface-mpu6050-gy-521-with-stm32/

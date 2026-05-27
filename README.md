@@ -56,3 +56,5 @@ Building a real-time embedded system with STM32 + ESP32 + Python dashboard.
 - Day 12: Implemented BME280
 
 - Day 13: Displayed all BME280 data into OLED
+
+- Day 14: Implement MPU6050 basic functions
