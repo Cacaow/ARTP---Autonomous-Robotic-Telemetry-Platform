@@ -58,3 +58,5 @@ Building a real-time embedded system with STM32 + ESP32 + Python dashboard.
 - Day 13: Displayed all BME280 data into OLED
 
 - Day 14: Implement MPU6050 basic functions
+
+- Day 15: Implemented roll and pitch calculations and Kalman filter algorithm for MPU6050

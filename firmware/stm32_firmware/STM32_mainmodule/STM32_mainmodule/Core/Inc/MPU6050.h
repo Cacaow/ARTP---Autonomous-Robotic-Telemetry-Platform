@@ -28,6 +28,8 @@ extern I2C_HandleTypeDef MPU6050_I2C_PORT;
 #define GYRO_XOUT_H_REG			(0x43)
 #define TEMP_OUT_H_REG			(0x41)
 
+#define RAD_TO_DEG 57.295779513082320876798154814105
+
 //Functions
 
 
@@ -53,17 +55,29 @@ typedef struct {
 	float Gy;
 	float Gz;
 
-    float Pressure;
-    float Humidity;
-    float AltitudeP;
-    float AltitudeTP;
+	float roll;
+	float pitch;
+
+	double KalmanAngleX;
+	double KalmanAngleY;
 }MPU6050_Data_t;
+
+// Kalman structure
+typedef struct
+{
+    double Q_angle;
+    double Q_bias;
+    double R_measure;
+    double angle;
+    double bias;
+    double P[2][2];
+} Kalman_t;
 
 int MPU6050_init(void);
 int MPU6050_close(void);
 int MPU6050_Read_Accel (MPU6050_Data_t *result);
 int MPU6050_Read_Gyro (MPU6050_Data_t *result);
 int MPU6050_Read_All (MPU6050_Data_t *result);
-
+double Kalman_getAngle(Kalman_t *Kalman, double newAngle, double newRate, double dt);
 
 #endif /* INC_MPU6050_H_ */

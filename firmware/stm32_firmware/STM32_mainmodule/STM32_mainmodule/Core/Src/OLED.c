@@ -87,10 +87,13 @@ int OLED_init(void)
 
 
 
-int OLED_update(char *txt, int start_y, int *end_y) {
+int OLED_update(char *txt, int start_y, int *end_y, int clear) {
    /* USER CODE BEGIN 2 */
 	if (enable_OLED == 0) {
 		return 0;
+	}
+	if (clear) {
+		ssd1306_FillRectangle(0, 20, 128, 64, Black);
 	}
 	//ssd1306_Fill(White);
 	char *delimiter = "\n";

@@ -50,7 +50,7 @@ extern "C" {
 
 /* Exported functions prototypes ---------------------------------------------*/
 int OLED_init(void);
-int OLED_update(char *txt, int start_y, int *end_y);
+int OLED_update(char *txt, int start_y, int *end_y, int clear);
 int OLED_close(void);
 
 /* USER CODE BEGIN EFP */

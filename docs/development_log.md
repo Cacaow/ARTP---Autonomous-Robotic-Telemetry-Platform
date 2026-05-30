@@ -56,3 +56,9 @@
 ## 2026-05-26
 - Implemented MPU6050 using I2C
 - Reference code: https://controllerstech.com/how-to-interface-mpu6050-gy-521-with-stm32/
+
+## 2026-05-29
+- Implemented roll and pitch calculations and Kalman filter algorithm for MPU6050
+- Reference code: https://github.com/leech001/MPU6050/blob/ 
+- Implemented pagination on OLED to avoid screen overflow
+- Added I2C scanner code to detect connected I2C devices

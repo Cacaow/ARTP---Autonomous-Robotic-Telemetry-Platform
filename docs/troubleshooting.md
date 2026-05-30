@@ -46,3 +46,10 @@
 # Issue: Unidentified float printf error
 - Cause: STM32CubeIDE u_printf_float is disabled by default
 - Fix: C/C++ Build -> Settings -> MCU Settings, enable "Use float with printf from newlib-nano (-u_printf_float)
+
+# Issue: BME280 Undefined Chip Id error
+- Cause: SDO connectivity issue
+- Fix: Ensure SDO wire is fully connected
+
+# Issue: MPU6050 readings equal to zero
+- Currently Investigating
