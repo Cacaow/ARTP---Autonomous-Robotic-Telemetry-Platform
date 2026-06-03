@@ -62,3 +62,8 @@
 - Reference code: https://github.com/leech001/MPU6050/blob/ 
 - Implemented pagination on OLED to avoid screen overflow
 - Added I2C scanner code to detect connected I2C devices
+
+## 2026-06-02
+- Replaced pull-up resistors (from 4.7K to 10K) to accomodate for pre-existing pull-up resistors in sensors
+- WHO_AM_I register for MPU6050 model (SY-104) readback is 72 by default
+- Incorrect gyroscope readings on the Z-axis

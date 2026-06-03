@@ -29,30 +29,49 @@ int MPU6050_init(void)
 
 	//WHO_AM_I check device ID
 	HAL_I2C_Mem_Read (&MPU6050_I2C_PORT, MPU6050_ADDR, WHO_AM_I_REG, 1, &check, 1, 1000);  // read WHO_AM_I
-	if (check != 0x68)  // if device is not present, return error code
+	if (check != 0x68 && check != 0x72 )  // if device is not present, return error code
 	{
 	  return -1;
 	}
 
 	// power management register 0X6B we should write all 0's to wake the sensor up
 	Data = 0;
-	HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
+	HAL_StatusTypeDef status;
+	status = HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
+	if (status != HAL_OK) {
+		printf("Error: %d\n", status);
+	}
 
 	// Set DATA RATE of 1KHz by writing SMPLRT_DIV register
 	Data = 0x07;
-	HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, SMPLRT_DIV_REG, 1, &Data, 1, 1000);
+	status = HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, SMPLRT_DIV_REG, 1, &Data, 1, 1000);
+	if (status != HAL_OK) {
+		printf("Error: %d\n", status);
+	}
 
 	//set DLPF_CFG = 0
 	Data = 0x00;
-	HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, CONFIG_REG, 1, &Data, 1, 1000);
+	status = HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, CONFIG_REG, 1, &Data, 1, 1000);
+	if (status != HAL_OK) {
+		printf("Error: %d\n", status);
+	}
+
 
 	// Set accelerometer configuration in ACCEL_CONFIG Register
 	Data = 0x00;  // XA_ST=0,YA_ST=0,ZA_ST=0, FS_SEL=0 -> <strong>±</strong> 2g
-	HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, ACCEL_CONFIG_REG, 1, &Data, 1, 1000);
+	status = HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, ACCEL_CONFIG_REG, 1, &Data, 1, 1000);
+	if (status != HAL_OK) {
+		printf("Error: %d\n", status);
+	}
+
 
 	// Set Gyroscopic configuration in GYRO_CONFIG Register
 	Data = 0x00;  // XG_ST=0,YG_ST=0,ZG_ST=0, FS_SEL=0 -> <strong>±</strong> 250 ̐/s
-	HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, GYRO_CONFIG_REG, 1, &Data, 1, 1000);
+	status = HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, GYRO_CONFIG_REG, 1, &Data, 1, 1000);
+	if (status != HAL_OK) {
+		printf("Error: %d\n", status);
+	}
+
 
 	return 0;
 }
@@ -82,7 +101,12 @@ int MPU6050_Read_Accel (MPU6050_Data_t *result)
 	uint8_t Rec_Data[6];
 
 	// Read 6 BYTES of data starting from ACCEL_XOUT_H (0x3B) register
-	HAL_I2C_Mem_Read (&MPU6050_I2C_PORT, MPU6050_ADDR, ACCEL_XOUT_H_REG, 1, Rec_Data, 6, 1000);
+	HAL_StatusTypeDef read_status;
+	read_status = HAL_I2C_Mem_Read (&MPU6050_I2C_PORT, MPU6050_ADDR, ACCEL_XOUT_H_REG, 1, Rec_Data, 6, 1000);
+	if (read_status != HAL_OK) {
+		printf("Error: Data reading error %d\n", read_status);
+	}
+
 
 	result->Accel_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
 	result->Accel_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
@@ -156,7 +180,11 @@ int MPU6050_Read_All (MPU6050_Data_t *result)
 	uint8_t Rec_Data[Size];
 
 	// Read 14 BYTES of data starting from ACCEL_XOUT_H (0x3B) register
-	HAL_I2C_Mem_Read (&MPU6050_I2C_PORT, MPU6050_ADDR, ACCEL_XOUT_H_REG, 1, Rec_Data, Size, 1000);
+	HAL_StatusTypeDef read_status;
+	read_status = HAL_I2C_Mem_Read (&MPU6050_I2C_PORT, MPU6050_ADDR, ACCEL_XOUT_H_REG, 1, Rec_Data, Size, 1000);
+	if (read_status != HAL_OK) {
+		printf("Error: Data reading error %d\n", read_status);
+	}
 
 	result->Accel_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data [1]);
 	result->Accel_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data [3]);
@@ -181,16 +209,16 @@ int MPU6050_Read_All (MPU6050_Data_t *result)
 	tr = HAL_GetTick();
 	double roll;
 	double roll_sqrt = sqrt(
-		result->Accel_X_RAW * result->Accel_X_RAW + result->Accel_Z_RAW * result->Accel_Z_RAW);
+		result->Ax * result->Ax + result->Az * result->Az);
 	if (roll_sqrt != 0.0)
 	{
-		roll = atan(result->Accel_Y_RAW / roll_sqrt) * RAD_TO_DEG;
+		roll = atan(result->Ay / roll_sqrt) * RAD_TO_DEG;
 	}
 	else
 	{
 		roll = 0.0;
 	}
-	double pitch = atan2(-result->Accel_X_RAW, result->Accel_Z_RAW) * RAD_TO_DEG;
+	double pitch = atan2(-result->Ax, result->Az) * RAD_TO_DEG;
 	result->roll = roll;
 	result->pitch = pitch;
 

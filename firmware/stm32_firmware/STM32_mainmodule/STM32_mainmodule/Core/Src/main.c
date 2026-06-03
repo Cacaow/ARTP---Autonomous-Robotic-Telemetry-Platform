@@ -209,7 +209,7 @@ int main(void)
     HAL_Delay(1000);
 
     MPU6050_Read_All(&MPU6050);
-    sprintf(buffer, "Roll: %.2f \nPitch: %.2f \nAx: %.2f \nAy: %.2f \nAz: %.2f \nGx: %.2f \nGy: %.2f \nGz: %.2f \n",
+    sprintf(buffer, "Roll: %.2f Deg\nPitch: %.2f Deg\nAx: %.2f g\nAy: %.2f g\nAz: %.2f g\nGx: %.2f Deg/s\nGy: %.2f Deg/s\nGz: %.2f Deg/s\n",
     				MPU6050.roll , MPU6050.pitch, MPU6050.Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz);
     printf(buffer);
     sprintf(buffer, "KalmanX: %.2f Deg\nKalmanY: %.2f Deg\n",

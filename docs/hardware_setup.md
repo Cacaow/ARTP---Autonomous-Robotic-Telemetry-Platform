@@ -45,5 +45,5 @@
 
 
 ## Notes
-- Pull-up resistors required for I2C
+- Pull-up resistors required for I2C SCL and SDA channels (10K pull-up resistors)
 - Power supply stability is critical
