@@ -54,3 +54,7 @@
 # Issue: MPU6050 readings equal to zero
 - Cause: Pre-existing pull-up resistors in sensors in parallel to added pull-up resistor on the SCL and SDA I2C channels
 - Fix: Replace 4.7K pull-up resistors with 10K pull up resistors
+
+# Issue: I2C unrecognized
+- Cause: STM32 hung up during debugging
+- Fix: Cycle power

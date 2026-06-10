@@ -62,3 +62,5 @@ Building a real-time embedded system with STM32 + ESP32 + Python dashboard.
 - Day 15: Implemented roll and pitch calculations and Kalman filter algorithm for MPU6050
 
 - Day 16: Replaced pull-up resistors
+
+- Day 17: Implement MPU6050 Calibration and error handling 

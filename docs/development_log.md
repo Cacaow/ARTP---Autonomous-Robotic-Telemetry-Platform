@@ -67,3 +67,8 @@
 - Replaced pull-up resistors (from 4.7K to 10K) to accomodate for pre-existing pull-up resistors in sensors
 - WHO_AM_I register for MPU6050 model (SY-104) readback is 72 by default
 - Incorrect gyroscope readings on the Z-axis
+
+## 2026-06-09
+- Implemented MPU6050 Calibration
+- Enhanced error handling for MPU6050 functions
+- Adjusted OLED screen content
