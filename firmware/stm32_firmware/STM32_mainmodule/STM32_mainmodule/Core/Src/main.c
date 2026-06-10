@@ -131,7 +131,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+	char buffer[1000];
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -163,8 +163,10 @@ int main(void)
   UARTCom_init();
   BME280_init();
   MPU6050_init();
+  MPU6050_Calibrate(&MPU6050);
   OLED_init();
   
+  printf("\n");
 
 
   //RECEIVING VALUES
@@ -178,7 +180,6 @@ int main(void)
 
 
     /* USER CODE BEGIN 3 */
-	  char buffer[1000];
 
 	  //make sure all transmitted values have \r\n endings
 	  sprintf(buffer, "Hello World count = %d, Timer = %d\r\n", count, timer);
@@ -198,28 +199,33 @@ int main(void)
     count++;
 
     BME280_calculation(&BME280);
-    sprintf(buffer, "Temp: %.2f C\nPres: %.2f hPa\nHumi: %.2f RH\nAlti: %.2f m\n",
+    sprintf(buffer, "BME280: Temp: %.2f C, Pres: %.2f hPa, Humi: %.2f RH, Alti: %.2f m\n",
     				BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP);
     printf(buffer);
     start_y = 20;
     end_y = 0;
+    sprintf(buffer, "Temp: %.2f C\nPres: %.2f hPa\nHumi: %.2f RH\nAlti: %.2f m\n",
+    				BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP);
     OLED_update(buffer, start_y, &end_y, 1);
     start_y = end_y;
 
     HAL_Delay(1000);
 
     MPU6050_Read_All(&MPU6050);
-    sprintf(buffer, "Roll: %.2f Deg\nPitch: %.2f Deg\nAx: %.2f g\nAy: %.2f g\nAz: %.2f g\nGx: %.2f Deg/s\nGy: %.2f Deg/s\nGz: %.2f Deg/s\n",
-    				MPU6050.roll , MPU6050.pitch, MPU6050.Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz);
+    sprintf(buffer, "MPU6050: Ax: %.2f g, Ay: %.2f g, Az: %.2f g, Gx: %.2f Deg/s, Gy: %.2f Deg/s, Gz: %.2f Deg/s\n",
+    				MPU6050.Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz);
     printf(buffer);
-    sprintf(buffer, "KalmanX: %.2f Deg\nKalmanY: %.2f Deg\n",
-    				MPU6050.KalmanAngleX, MPU6050.KalmanAngleY);
+    sprintf(buffer, "MPU6050: Roll: %.2f Deg, Pitch: %.2f Deg, KalmanX: %.2f Deg, KalmanY: %.2f Deg\n",
+    				MPU6050.roll , MPU6050.pitch, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY);
 	printf(buffer);
 	start_y = 20;
 	end_y = 0;
+    sprintf(buffer, "Roll: %.2f Deg\nPitch: %.2f Deg\n",
+    				MPU6050.KalmanAngleX, MPU6050.KalmanAngleY);
 	OLED_update(buffer, start_y, &end_y, 1);
 	start_y = end_y;
 
+	printf("\n");
     HAL_Delay(1000); //500ms delay minimum for current transmit value
 
   }

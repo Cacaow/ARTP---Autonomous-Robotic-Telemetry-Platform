@@ -38,19 +38,25 @@ extern I2C_HandleTypeDef MPU6050_I2C_PORT;
   */
 
 typedef struct {
+	uint16_t Ax_RAW_Offset;
+	uint16_t Ay_RAW_Offset;
+	uint16_t Az_RAW_Offset;
+	uint16_t Gx_RAW_Offset;
+	uint16_t Gy_RAW_Offset;
+	uint16_t Gz_RAW_Offset;
+
     uint16_t Accel_X_RAW;
 	uint16_t Accel_Y_RAW;
 	uint16_t Accel_Z_RAW;
-	float Ax;
-	float Ay;
-	float Az;
-
 	uint16_t Temp_RAW;
-	float Temperature;
-
 	uint16_t Gyro_X_RAW;
 	uint16_t Gyro_Y_RAW;
 	uint16_t Gyro_Z_RAW;
+
+	float Ax;
+	float Ay;
+	float Az;
+	float Temperature;
 	float Gx;
 	float Gy;
 	float Gz;
@@ -77,6 +83,7 @@ int MPU6050_init(void);
 int MPU6050_close(void);
 int MPU6050_Read_Accel (MPU6050_Data_t *result);
 int MPU6050_Read_Gyro (MPU6050_Data_t *result);
+int MPU6050_Calibrate (MPU6050_Data_t *result);
 int MPU6050_Read_All (MPU6050_Data_t *result);
 double Kalman_getAngle(Kalman_t *Kalman, double newAngle, double newRate, double dt);
 
