@@ -58,3 +58,7 @@
 # Issue: I2C unrecognized
 - Cause: STM32 hung up during debugging
 - Fix: Cycle power
+
+# Issue: Incorrect MPU6050 calculated values
+- Cause: Incorrect type defined for calculated values
+- Fix: Use int instead of uint for all values

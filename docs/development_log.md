@@ -72,3 +72,8 @@
 - Implemented MPU6050 Calibration
 - Enhanced error handling for MPU6050 functions
 - Adjusted OLED screen content
+
+## 2026-06-11
+- Debugged MPU6050 values
+- Implemented motion status for MPU6050
+- Disabled Kalman

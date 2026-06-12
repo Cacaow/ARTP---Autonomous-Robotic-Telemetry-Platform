@@ -215,13 +215,13 @@ int main(void)
     sprintf(buffer, "MPU6050: Ax: %.2f g, Ay: %.2f g, Az: %.2f g, Gx: %.2f Deg/s, Gy: %.2f Deg/s, Gz: %.2f Deg/s\n",
     				MPU6050.Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz);
     printf(buffer);
-    sprintf(buffer, "MPU6050: Roll: %.2f Deg, Pitch: %.2f Deg, KalmanX: %.2f Deg, KalmanY: %.2f Deg\n",
-    				MPU6050.roll , MPU6050.pitch, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY);
+    sprintf(buffer, "MPU6050: Roll: %.2f Deg, Pitch: %.2f Deg, KalmanX: %.2f Deg, KalmanY: %.2f Deg, State:%s\n",
+    				MPU6050.roll , MPU6050.pitch, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
 	printf(buffer);
 	start_y = 20;
 	end_y = 0;
-    sprintf(buffer, "Roll: %.2f Deg\nPitch: %.2f Deg\n",
-    				MPU6050.KalmanAngleX, MPU6050.KalmanAngleY);
+    sprintf(buffer, "Roll: %.2f Deg\nPitch: %.2f Deg\nState: %s\n",
+    				MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
 	OLED_update(buffer, start_y, &end_y, 1);
 	start_y = end_y;
 

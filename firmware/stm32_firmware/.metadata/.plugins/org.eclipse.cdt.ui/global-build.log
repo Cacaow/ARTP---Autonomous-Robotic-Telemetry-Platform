@@ -3749,3 +3749,1027 @@ Finished building: default.size.stdout
  
 Finished building: STM32_mainmodule.list
  
+21:06:56 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+../Core/Src/MPU6050.c: In function 'MPU6050_Calibrate':
+../Core/Src/MPU6050.c:212:21: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  212 |                 if (i = 0) {
+      |                     ^
+../Core/Src/MPU6050.c:214:62: warning: format '%f' expects argument of type 'double', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                           ~~~^
+      |                                                              |
+      |                                                              double
+      |                                                           %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                 ~~~~~~                        
+      |                                 |
+      |                                 uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:78: warning: format '%f' expects argument of type 'double', but argument 4 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                           ~~~^
+      |                                                                              |
+      |                                                                              double
+      |                                                                           %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                          ~~~~~~                               
+      |                                          |
+      |                                          uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:94: warning: format '%f' expects argument of type 'double', but argument 5 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                                           ~~~^
+      |                                                                                              |
+      |                                                                                              double
+      |                                                                                           %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                  ~~~~~~                                       
+      |                                                  |
+      |                                                  uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:110: warning: format '%f' expects argument of type 'double', but argument 6 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                                                           ~~~^
+      |                                                                                                              |
+      |                                                                                                              double
+      |                                                                                                           %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                           ~~~~~~                                              
+      |                                                           |
+      |                                                           uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:130: warning: format '%f' expects argument of type 'double', but argument 7 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                                                                               ~~~^
+      |                                                                                                                                  |
+      |                                                                                                                                  double
+      |                                                                                                                               %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                                   ~~~~~~                                                          
+      |                                                                   |
+      |                                                                   uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:150: warning: format '%f' expects argument of type 'double', but argument 8 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                                                                                                   ~~~^
+      |                                                                                                                                                      |
+      |                                                                                                                                                      double
+      |                                                                                                                                                   %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                                            ~~~~~~                                                                     
+      |                                                                            |
+      |                                                                            uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:231:45: warning: format '%f' expects argument of type 'double', but argument 3 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                          ~~~^
+      |                                             |
+      |                                             double
+      |                                          %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~
+      |                                       |
+      |                                       int
+../Core/Src/MPU6050.c:231:64: warning: format '%f' expects argument of type 'double', but argument 4 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                             ~~~^
+      |                                                                |
+      |                                                                double
+      |                                                             %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                         ~~~~~~~~~~~~~~~~~~~~~
+      |                                                               |
+      |                                                               int
+../Core/Src/MPU6050.c:231:83: warning: format '%f' expects argument of type 'double', but argument 5 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                                                ~~~^
+      |                                                                                   |
+      |                                                                                   double
+      |                                                                                %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                      |
+      |                                                                                      int
+../Core/Src/MPU6050.c:231:102: warning: format '%f' expects argument of type 'double', but argument 6 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                                                                   ~~~^
+      |                                                                                                      |
+      |                                                                                                      double
+      |                                                                                                   %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                                        ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                              |
+      |                                                                                                              int
+../Core/Src/MPU6050.c:231:125: warning: format '%f' expects argument of type 'double', but argument 7 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                                                                                          ~~~^
+      |                                                                                                                             |
+      |                                                                                                                             double
+      |                                                                                                                          %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                                                               ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                     |
+      |                                                                                                                                     int
+../Core/Src/MPU6050.c:231:148: warning: format '%f' expects argument of type 'double', but argument 8 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                                                                                                                 ~~~^
+      |                                                                                                                                                    |
+      |                                                                                                                                                    double
+      |                                                                                                                                                 %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                                                                                       ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                                             |
+      |                                                                                                                                                             int
+../Core/Src/MPU6050.c:234:2: error: expected expression before '/' token
+  234 | */
+      |  ^
+make: *** [Core/Src/subdir.mk:64: Core/Src/MPU6050.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+21:07:17 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+../Core/Src/MPU6050.c: In function 'MPU6050_Calibrate':
+../Core/Src/MPU6050.c:212:21: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  212 |                 if (i = 0) {
+      |                     ^
+../Core/Src/MPU6050.c:214:62: warning: format '%f' expects argument of type 'double', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                           ~~~^
+      |                                                              |
+      |                                                              double
+      |                                                           %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                 ~~~~~~                        
+      |                                 |
+      |                                 uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:78: warning: format '%f' expects argument of type 'double', but argument 4 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                           ~~~^
+      |                                                                              |
+      |                                                                              double
+      |                                                                           %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                          ~~~~~~                               
+      |                                          |
+      |                                          uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:94: warning: format '%f' expects argument of type 'double', but argument 5 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                                           ~~~^
+      |                                                                                              |
+      |                                                                                              double
+      |                                                                                           %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                  ~~~~~~                                       
+      |                                                  |
+      |                                                  uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:110: warning: format '%f' expects argument of type 'double', but argument 6 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                                                           ~~~^
+      |                                                                                                              |
+      |                                                                                                              double
+      |                                                                                                           %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                           ~~~~~~                                              
+      |                                                           |
+      |                                                           uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:130: warning: format '%f' expects argument of type 'double', but argument 7 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                                                                               ~~~^
+      |                                                                                                                                  |
+      |                                                                                                                                  double
+      |                                                                                                                               %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                                   ~~~~~~                                                          
+      |                                                                   |
+      |                                                                   uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:150: warning: format '%f' expects argument of type 'double', but argument 8 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                                                                                                   ~~~^
+      |                                                                                                                                                      |
+      |                                                                                                                                                      double
+      |                                                                                                                                                   %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                                            ~~~~~~                                                                     
+      |                                                                            |
+      |                                                                            uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:231:45: warning: format '%f' expects argument of type 'double', but argument 3 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                          ~~~^
+      |                                             |
+      |                                             double
+      |                                          %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~
+      |                                       |
+      |                                       int
+../Core/Src/MPU6050.c:231:64: warning: format '%f' expects argument of type 'double', but argument 4 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                             ~~~^
+      |                                                                |
+      |                                                                double
+      |                                                             %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                         ~~~~~~~~~~~~~~~~~~~~~
+      |                                                               |
+      |                                                               int
+../Core/Src/MPU6050.c:231:83: warning: format '%f' expects argument of type 'double', but argument 5 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                                                ~~~^
+      |                                                                                   |
+      |                                                                                   double
+      |                                                                                %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                      |
+      |                                                                                      int
+../Core/Src/MPU6050.c:231:102: warning: format '%f' expects argument of type 'double', but argument 6 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                                                                   ~~~^
+      |                                                                                                      |
+      |                                                                                                      double
+      |                                                                                                   %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                                        ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                              |
+      |                                                                                                              int
+../Core/Src/MPU6050.c:231:125: warning: format '%f' expects argument of type 'double', but argument 7 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                                                                                          ~~~^
+      |                                                                                                                             |
+      |                                                                                                                             double
+      |                                                                                                                          %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                                                               ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                     |
+      |                                                                                                                                     int
+../Core/Src/MPU6050.c:231:148: warning: format '%f' expects argument of type 'double', but argument 8 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                                                                                                                 ~~~^
+      |                                                                                                                                                    |
+      |                                                                                                                                                    double
+      |                                                                                                                                                 %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                                                                                       ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                                             |
+      |                                                                                                                                                             int
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58784	    632	   7800	  67216	  10690	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:08:25 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  58784	    632	   7800	  67216	  10690	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+21:10:47 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+../Core/Src/MPU6050.c: In function 'MPU6050_Calibrate':
+../Core/Src/MPU6050.c:214:62: warning: format '%f' expects argument of type 'double', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                           ~~~^
+      |                                                              |
+      |                                                              double
+      |                                                           %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                 ~~~~~~                        
+      |                                 |
+      |                                 uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:78: warning: format '%f' expects argument of type 'double', but argument 4 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                           ~~~^
+      |                                                                              |
+      |                                                                              double
+      |                                                                           %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                          ~~~~~~                               
+      |                                          |
+      |                                          uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:94: warning: format '%f' expects argument of type 'double', but argument 5 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                                           ~~~^
+      |                                                                                              |
+      |                                                                                              double
+      |                                                                                           %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                  ~~~~~~                                       
+      |                                                  |
+      |                                                  uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:110: warning: format '%f' expects argument of type 'double', but argument 6 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                                                           ~~~^
+      |                                                                                                              |
+      |                                                                                                              double
+      |                                                                                                           %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                           ~~~~~~                                              
+      |                                                           |
+      |                                                           uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:130: warning: format '%f' expects argument of type 'double', but argument 7 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                                                                               ~~~^
+      |                                                                                                                                  |
+      |                                                                                                                                  double
+      |                                                                                                                               %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                                   ~~~~~~                                                          
+      |                                                                   |
+      |                                                                   uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:150: warning: format '%f' expects argument of type 'double', but argument 8 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %.2f g, Ay_sum: %.2f g, Az_sum: %.2f g, Gx_sum: %.2f Deg/s, Gy_sum: %.2f Deg/s, Gz_sum: %.2f Deg/s\n",
+      |                                                                                                                                                   ~~~^
+      |                                                                                                                                                      |
+      |                                                                                                                                                      double
+      |                                                                                                                                                   %.2ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                                            ~~~~~~                                                                     
+      |                                                                            |
+      |                                                                            uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:231:45: warning: format '%f' expects argument of type 'double', but argument 3 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                          ~~~^
+      |                                             |
+      |                                             double
+      |                                          %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~
+      |                                       |
+      |                                       int
+../Core/Src/MPU6050.c:231:64: warning: format '%f' expects argument of type 'double', but argument 4 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                             ~~~^
+      |                                                                |
+      |                                                                double
+      |                                                             %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                         ~~~~~~~~~~~~~~~~~~~~~
+      |                                                               |
+      |                                                               int
+../Core/Src/MPU6050.c:231:83: warning: format '%f' expects argument of type 'double', but argument 5 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                                                ~~~^
+      |                                                                                   |
+      |                                                                                   double
+      |                                                                                %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                      |
+      |                                                                                      int
+../Core/Src/MPU6050.c:231:102: warning: format '%f' expects argument of type 'double', but argument 6 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                                                                   ~~~^
+      |                                                                                                      |
+      |                                                                                                      double
+      |                                                                                                   %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                                        ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                              |
+      |                                                                                                              int
+../Core/Src/MPU6050.c:231:125: warning: format '%f' expects argument of type 'double', but argument 7 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                                                                                          ~~~^
+      |                                                                                                                             |
+      |                                                                                                                             double
+      |                                                                                                                          %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                                                               ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                     |
+      |                                                                                                                                     int
+../Core/Src/MPU6050.c:231:148: warning: format '%f' expects argument of type 'double', but argument 8 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
+      |                                                                                                                                                 ~~~^
+      |                                                                                                                                                    |
+      |                                                                                                                                                    double
+      |                                                                                                                                                 %.2d
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                                                                                       ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                                             |
+      |                                                                                                                                                             int
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58776	    632	   7800	  67208	  10688	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:13:57 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+../Core/Src/MPU6050.c: In function 'MPU6050_Calibrate':
+../Core/Src/MPU6050.c:214:60: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %d g, Ay_sum: %d g, Az_sum: %d g, Gx_sum: %d Deg/s, Gy_sum: %d Deg/s, Gz_sum: %d Deg/s\n",
+      |                                                           ~^
+      |                                                            |
+      |                                                            int
+      |                                                           %ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                 ~~~~~~                      
+      |                                 |
+      |                                 uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:74: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %d g, Ay_sum: %d g, Az_sum: %d g, Gx_sum: %d Deg/s, Gy_sum: %d Deg/s, Gz_sum: %d Deg/s\n",
+      |                                                                         ~^
+      |                                                                          |
+      |                                                                          int
+      |                                                                         %ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                          ~~~~~~                           
+      |                                          |
+      |                                          uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:88: warning: format '%d' expects argument of type 'int', but argument 5 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %d g, Ay_sum: %d g, Az_sum: %d g, Gx_sum: %d Deg/s, Gy_sum: %d Deg/s, Gz_sum: %d Deg/s\n",
+      |                                                                                       ~^
+      |                                                                                        |
+      |                                                                                        int
+      |                                                                                       %ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                  ~~~~~~                                 
+      |                                                  |
+      |                                                  uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:102: warning: format '%d' expects argument of type 'int', but argument 6 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %d g, Ay_sum: %d g, Az_sum: %d g, Gx_sum: %d Deg/s, Gy_sum: %d Deg/s, Gz_sum: %d Deg/s\n",
+      |                                                                                                     ~^
+      |                                                                                                      |
+      |                                                                                                      int
+      |                                                                                                     %ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                           ~~~~~~                                      
+      |                                                           |
+      |                                                           uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:120: warning: format '%d' expects argument of type 'int', but argument 7 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %d g, Ay_sum: %d g, Az_sum: %d g, Gx_sum: %d Deg/s, Gy_sum: %d Deg/s, Gz_sum: %d Deg/s\n",
+      |                                                                                                                       ~^
+      |                                                                                                                        |
+      |                                                                                                                        int
+      |                                                                                                                       %ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                                   ~~~~~~                                                
+      |                                                                   |
+      |                                                                   uint32_t {aka long unsigned int}
+../Core/Src/MPU6050.c:214:138: warning: format '%d' expects argument of type 'int', but argument 8 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %d g, Ay_sum: %d g, Az_sum: %d g, Gx_sum: %d Deg/s, Gy_sum: %d Deg/s, Gz_sum: %d Deg/s\n",
+      |                                                                                                                                         ~^
+      |                                                                                                                                          |
+      |                                                                                                                                          int
+      |                                                                                                                                         %ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                                            ~~~~~~                                                         
+      |                                                                            |
+      |                                                                            uint32_t {aka long unsigned int}
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58752	    632	   7800	  67184	  10670	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:19:35 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+../Core/Src/MPU6050.c: In function 'MPU6050_Calibrate':
+../Core/Src/MPU6050.c:231:44: warning: format '%lu' expects argument of type 'long unsigned int', but argument 3 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %lu g, Ay_Offset: %lu g, Az_Offset: %lu g, Gx_Offset: %lu Deg/s, Gy_Offset: %lu Deg/s, Gz_Offset: %lu Deg/s\n",
+      |                                          ~~^
+      |                                            |
+      |                                            long unsigned int
+      |                                          %u
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~
+      |                                       |
+      |                                       int
+../Core/Src/MPU6050.c:231:62: warning: format '%lu' expects argument of type 'long unsigned int', but argument 4 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %lu g, Ay_Offset: %lu g, Az_Offset: %lu g, Gx_Offset: %lu Deg/s, Gy_Offset: %lu Deg/s, Gz_Offset: %lu Deg/s\n",
+      |                                                            ~~^
+      |                                                              |
+      |                                                              long unsigned int
+      |                                                            %u
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                         ~~~~~~~~~~~~~~~~~~~~~
+      |                                                               |
+      |                                                               int
+../Core/Src/MPU6050.c:231:80: warning: format '%lu' expects argument of type 'long unsigned int', but argument 5 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %lu g, Ay_Offset: %lu g, Az_Offset: %lu g, Gx_Offset: %lu Deg/s, Gy_Offset: %lu Deg/s, Gz_Offset: %lu Deg/s\n",
+      |                                                                              ~~^
+      |                                                                                |
+      |                                                                                long unsigned int
+      |                                                                              %u
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                      |
+      |                                                                                      int
+../Core/Src/MPU6050.c:231:98: warning: format '%lu' expects argument of type 'long unsigned int', but argument 6 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %lu g, Ay_Offset: %lu g, Az_Offset: %lu g, Gx_Offset: %lu Deg/s, Gy_Offset: %lu Deg/s, Gz_Offset: %lu Deg/s\n",
+      |                                                                                                ~~^
+      |                                                                                                  |
+      |                                                                                                  long unsigned int
+      |                                                                                                %u
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                                        ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                              |
+      |                                                                                                              int
+../Core/Src/MPU6050.c:231:120: warning: format '%lu' expects argument of type 'long unsigned int', but argument 7 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %lu g, Ay_Offset: %lu g, Az_Offset: %lu g, Gx_Offset: %lu Deg/s, Gy_Offset: %lu Deg/s, Gz_Offset: %lu Deg/s\n",
+      |                                                                                                                      ~~^
+      |                                                                                                                        |
+      |                                                                                                                        long unsigned int
+      |                                                                                                                      %u
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                                                               ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                     |
+      |                                                                                                                                     int
+../Core/Src/MPU6050.c:231:142: warning: format '%lu' expects argument of type 'long unsigned int', but argument 8 has type 'int' [-Wformat=]
+  231 |     sprintf(buffer, "MPU6050: Ax_Offset: %lu g, Ay_Offset: %lu g, Az_Offset: %lu g, Gx_Offset: %lu Deg/s, Gy_Offset: %lu Deg/s, Gz_Offset: %lu Deg/s\n",
+      |                                                                                                                                            ~~^
+      |                                                                                                                                              |
+      |                                                                                                                                              long unsigned int
+      |                                                                                                                                            %u
+  232 |                                 result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+      |                                                                                                                                                       ~~~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                                             |
+      |                                                                                                                                                             int
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58768	    632	   7800	  67200	  10680	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:21:42 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+../Core/Src/MPU6050.c: In function 'MPU6050_Calibrate':
+../Core/Src/MPU6050.c:214:60: warning: format '%d' expects argument of type 'int', but argument 3 has type 'int32_t' {aka 'long int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %d g, Ay_sum: %d g, Az_sum: %d g, Gx_sum: %d Deg/s, Gy_sum: %d Deg/s, Gz_sum: %d Deg/s\n",
+      |                                                           ~^
+      |                                                            |
+      |                                                            int
+      |                                                           %ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                 ~~~~~~                      
+      |                                 |
+      |                                 int32_t {aka long int}
+../Core/Src/MPU6050.c:214:74: warning: format '%d' expects argument of type 'int', but argument 4 has type 'int32_t' {aka 'long int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %d g, Ay_sum: %d g, Az_sum: %d g, Gx_sum: %d Deg/s, Gy_sum: %d Deg/s, Gz_sum: %d Deg/s\n",
+      |                                                                         ~^
+      |                                                                          |
+      |                                                                          int
+      |                                                                         %ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                          ~~~~~~                           
+      |                                          |
+      |                                          int32_t {aka long int}
+../Core/Src/MPU6050.c:214:88: warning: format '%d' expects argument of type 'int', but argument 5 has type 'int32_t' {aka 'long int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %d g, Ay_sum: %d g, Az_sum: %d g, Gx_sum: %d Deg/s, Gy_sum: %d Deg/s, Gz_sum: %d Deg/s\n",
+      |                                                                                       ~^
+      |                                                                                        |
+      |                                                                                        int
+      |                                                                                       %ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                  ~~~~~~                                 
+      |                                                  |
+      |                                                  int32_t {aka long int}
+../Core/Src/MPU6050.c:214:102: warning: format '%d' expects argument of type 'int', but argument 6 has type 'int32_t' {aka 'long int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %d g, Ay_sum: %d g, Az_sum: %d g, Gx_sum: %d Deg/s, Gy_sum: %d Deg/s, Gz_sum: %d Deg/s\n",
+      |                                                                                                     ~^
+      |                                                                                                      |
+      |                                                                                                      int
+      |                                                                                                     %ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                           ~~~~~~                                      
+      |                                                           |
+      |                                                           int32_t {aka long int}
+../Core/Src/MPU6050.c:214:120: warning: format '%d' expects argument of type 'int', but argument 7 has type 'int32_t' {aka 'long int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %d g, Ay_sum: %d g, Az_sum: %d g, Gx_sum: %d Deg/s, Gy_sum: %d Deg/s, Gz_sum: %d Deg/s\n",
+      |                                                                                                                       ~^
+      |                                                                                                                        |
+      |                                                                                                                        int
+      |                                                                                                                       %ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                                   ~~~~~~                                                
+      |                                                                   |
+      |                                                                   int32_t {aka long int}
+../Core/Src/MPU6050.c:214:138: warning: format '%d' expects argument of type 'int', but argument 8 has type 'int32_t' {aka 'long int'} [-Wformat=]
+  214 |                         sprintf(buffer, "MPU6050: Ax_sum: %d g, Ay_sum: %d g, Az_sum: %d g, Gx_sum: %d Deg/s, Gy_sum: %d Deg/s, Gz_sum: %d Deg/s\n",
+      |                                                                                                                                         ~^
+      |                                                                                                                                          |
+      |                                                                                                                                          int
+      |                                                                                                                                         %ld
+  215 |                                 Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+      |                                                                            ~~~~~~                                                         
+      |                                                                            |
+      |                                                                            int32_t {aka long int}
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58752	    632	   7800	  67184	  10670	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:24:47 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58760	    632	   7800	  67192	  10678	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:29:55 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58784	    632	   7800	  67216	  10690	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:35:10 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58632	    632	   7800	  67064	  105f8	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:40:03 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58632	    632	   7800	  67064	  105f8	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:42:59 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58584	    632	   7800	  67016	  105c8	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:46:48 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58584	    632	   7800	  67016	  105c8	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:51:10 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58584	    632	   7800	  67016	  105c8	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:54:42 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58480	    632	   7800	  66912	  10560	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+21:56:58 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58584	    632	   7800	  67016	  105c8	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+22:18:04 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+../Core/Src/MPU6050.c: In function 'Kalman_Init':
+../Core/Src/MPU6050.c:335:5: error: 'Kalman' undeclared (first use in this function); did you mean 'KalmanY'?
+  335 |     Kalman->angle = 0.0f;
+      |     ^~~~~~
+      |     KalmanY
+../Core/Src/MPU6050.c:335:5: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:64: Core/Src/MPU6050.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+22:18:27 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58584	    632	   7800	  67016	  105c8	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+22:29:13 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58496	    640	   7800	  66936	  10578	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+22:52:13 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/MPU6050.c: In function 'MPU6050_Read_All':
+../Core/Src/MPU6050.c:270:31: error: assignment to 'char *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  270 |                 result->state = -1;
+      |                               ^
+../Core/Src/MPU6050.c:366:17: error: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  366 |                 abs(result->Gx) > 80 &&
+      |                 ^~~
+../Core/Src/MPU6050.c:5:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+    4 | #include "math.h"
+  +++ |+#include <stdlib.h>
+    5 | 
+../Core/Src/MPU6050.c:366:27: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  366 |                 abs(result->Gx) > 80 &&
+      |                     ~~~~~~^~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:367:27: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  367 |                 abs(result->Gy) > 80 &&
+      |                     ~~~~~~^~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:368:27: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  368 |                 abs(result->Gz) > 80
+      |                     ~~~~~~^~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:381:27: warning: 'abs' argument 1 type is 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  381 |                 abs(result->KalmanAngleX) > 20 ||
+      |                     ~~~~~~^~~~~~~~~~~~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:382:27: warning: 'abs' argument 1 type is 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  382 |                 abs(result->KalmanAngleY) > 20
+      |                     ~~~~~~^~~~~~~~~~~~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:388:27: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  388 |                 abs(result->Gx) < 5 &&
+      |                     ~~~~~~^~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:389:27: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  389 |                 abs(result->Gy) < 5 &&
+      |                     ~~~~~~^~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:390:27: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  390 |                 abs(result->Gz) < 5 &&
+      |                     ~~~~~~^~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:391:27: warning: 'abs' argument 1 type is 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  391 |                 abs(result->KalmanAngleX) < 10 &&
+      |                     ~~~~~~^~~~~~~~~~~~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:392:27: warning: 'abs' argument 1 type is 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  392 |                 abs(result->KalmanAngleY) < 10
+      |                     ~~~~~~^~~~~~~~~~~~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:360:13: warning: variable 'isStable' set but not used [-Wunused-but-set-variable]
+  360 |         int isStable = 0;
+      |             ^~~~~~~~
+../Core/Src/MPU6050.c:305:16: warning: unused variable 'dt' [-Wunused-variable]
+  305 |         double dt = (double)(HAL_GetTick() - tr) / 1000;
+      |                ^~
+make: *** [Core/Src/subdir.mk:64: Core/Src/MPU6050.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+22:53:18 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+../Core/Src/MPU6050.c: In function 'MPU6050_Read_All':
+../Core/Src/MPU6050.c:366:17: error: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+  366 |                 abs(result->Gx) > 80 &&
+      |                 ^~~
+../Core/Src/MPU6050.c:5:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+    4 | #include "math.h"
+  +++ |+#include <stdlib.h>
+    5 | 
+../Core/Src/MPU6050.c:366:27: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  366 |                 abs(result->Gx) > 80 &&
+      |                     ~~~~~~^~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:367:27: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  367 |                 abs(result->Gy) > 80 &&
+      |                     ~~~~~~^~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:368:27: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  368 |                 abs(result->Gz) > 80
+      |                     ~~~~~~^~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:381:27: warning: 'abs' argument 1 type is 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  381 |                 abs(result->KalmanAngleX) > 20 ||
+      |                     ~~~~~~^~~~~~~~~~~~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:382:27: warning: 'abs' argument 1 type is 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  382 |                 abs(result->KalmanAngleY) > 20
+      |                     ~~~~~~^~~~~~~~~~~~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:388:27: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  388 |                 abs(result->Gx) < 5 &&
+      |                     ~~~~~~^~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:389:27: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  389 |                 abs(result->Gy) < 5 &&
+      |                     ~~~~~~^~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:390:27: warning: 'abs' argument 1 promotes to 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  390 |                 abs(result->Gz) < 5 &&
+      |                     ~~~~~~^~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:391:27: warning: 'abs' argument 1 type is 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  391 |                 abs(result->KalmanAngleX) < 10 &&
+      |                     ~~~~~~^~~~~~~~~~~~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:392:27: warning: 'abs' argument 1 type is 'double' where 'int' is expected in a call to built-in function declared without prototype [-Wbuiltin-declaration-mismatch]
+  392 |                 abs(result->KalmanAngleY) < 10
+      |                     ~~~~~~^~~~~~~~~~~~~~
+<built-in>: note: built-in 'abs' declared here
+../Core/Src/MPU6050.c:360:13: warning: variable 'isStable' set but not used [-Wunused-but-set-variable]
+  360 |         int isStable = 0;
+      |             ^~~~~~~~
+../Core/Src/MPU6050.c:305:16: warning: unused variable 'dt' [-Wunused-variable]
+  305 |         double dt = (double)(HAL_GetTick() - tr) / 1000;
+      |                ^~
+make: *** [Core/Src/subdir.mk:64: Core/Src/MPU6050.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+22:54:16 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+../Core/Src/MPU6050.c: In function 'MPU6050_Read_All':
+../Core/Src/MPU6050.c:361:13: warning: variable 'isStable' set but not used [-Wunused-but-set-variable]
+  361 |         int isStable = 0;
+      |             ^~~~~~~~
+../Core/Src/MPU6050.c:306:16: warning: unused variable 'dt' [-Wunused-variable]
+  306 |         double dt = (double)(HAL_GetTick() - tr) / 1000;
+      |                ^~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58320	    492	   7808	  66620	  1043c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+22:57:05 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  58320	    492	   7808	  66620	  1043c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+22:58:12 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  58320	    492	   7808	  66620	  1043c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+23:00:00 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/MPU6050.c: In function 'MPU6050_Read_All':
+../Core/Src/MPU6050.c:361:13: warning: variable 'isStable' set but not used [-Wunused-but-set-variable]
+  361 |         int isStable = 0;
+      |             ^~~~~~~~
+../Core/Src/MPU6050.c:306:16: warning: unused variable 'dt' [-Wunused-variable]
+  306 |         double dt = (double)(HAL_GetTick() - tr) / 1000;
+      |                ^~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58320	    492	   7856	  66668	  1046c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+23:06:54 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+../Core/Src/MPU6050.c: In function 'MPU6050_Read_All':
+../Core/Src/MPU6050.c:356:13: error: 'KalmanAngleX' undeclared (first use in this function)
+  356 |         if (KalmanAngleX > 90) {
+      |             ^~~~~~~~~~~~
+../Core/Src/MPU6050.c:356:13: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/MPU6050.c:362:13: error: 'KalmanAngleY' undeclared (first use in this function)
+  362 |         if (KalmanAngleY > 90) {
+      |             ^~~~~~~~~~~~
+../Core/Src/MPU6050.c:372:13: warning: variable 'isStable' set but not used [-Wunused-but-set-variable]
+  372 |         int isStable = 0;
+      |             ^~~~~~~~
+../Core/Src/MPU6050.c:306:16: warning: unused variable 'dt' [-Wunused-variable]
+  306 |         double dt = (double)(HAL_GetTick() - tr) / 1000;
+      |                ^~
+make: *** [Core/Src/subdir.mk:64: Core/Src/MPU6050.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+23:07:22 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/MPU6050.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/MPU6050.d" -MT"Core/Src/MPU6050.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/MPU6050.o"
+../Core/Src/MPU6050.c: In function 'MPU6050_Read_All':
+../Core/Src/MPU6050.c:372:13: warning: variable 'isStable' set but not used [-Wunused-but-set-variable]
+  372 |         int isStable = 0;
+      |             ^~~~~~~~
+../Core/Src/MPU6050.c:306:16: warning: unused variable 'dt' [-Wunused-variable]
+  306 |         double dt = (double)(HAL_GetTick() - tr) / 1000;
+      |                ^~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  58528	    492	   7856	  66876	  1053c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 

@@ -29,6 +29,16 @@
 |I2C BME280 SDA |    PB9/SDA    |
 |I2C BME280 CSB |       -       |
 |I2C BME280 SDO |      GND      |
+|               |               |
+|I2C MPU6050 VCC |      3V3      |
+|I2C MPU6050 GND |      GND      |
+|I2C MPU6050 SCL |    PB8/SCL    |
+|I2C MPU6050 SDA |    PB9/SDA    |
+|I2C MPU6050 XDA |       -       |
+|I2C MPU6050 XCL |       -       |
+|I2C MPU6050 ADO |      GND      |
+|I2C MPU6050 INT |       -       |
+
 
 
 ## UART Settings

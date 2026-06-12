@@ -3520,3 +3520,152 @@ COM5
 
 !ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-09 22:56:44.370
 !MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY org.eclipse.core.jobs 4 2 2026-06-09 23:03:59.534
+!MESSAGE An internal error occurred during: "Execute Debug Command".
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: assertion failed: The application has not been initialized.
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:119)
+	at org.eclipse.core.internal.runtime.InternalPlatform.assertInitialized(InternalPlatform.java:185)
+	at org.eclipse.core.internal.runtime.InternalPlatform.getAdapterManager(InternalPlatform.java:206)
+	at org.eclipse.core.runtime.Platform.getAdapterManager(Platform.java:661)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunch.getAdapter(GdbLaunch.java:454)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunch.disconnect(GdbLaunch.java:338)
+	at org.eclipse.debug.internal.core.commands.DisconnectCommand.execute(DisconnectCommand.java:35)
+	at org.eclipse.debug.internal.core.commands.ForEachCommand.doExecute(ForEachCommand.java:36)
+	at org.eclipse.debug.core.commands.AbstractDebugCommand$1.run(AbstractDebugCommand.java:215)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 2 2 2026-06-09 23:03:59.853
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob RUNNING
+	 at java.base/java.lang.Object.wait0(Native Method)
+	 at java.base/java.lang.Object.wait(Object.java:366)
+	 at java.base/java.lang.Object.wait(Object.java:339)
+	 at org.eclipse.ui.console.IOConsoleInputStream.waitForData(IOConsoleInputStream.java:140)
+	 at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:91)
+	 at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:113)
+	 at org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob.run(GdbBasicCliConsole.java:248)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2026-06-11 20:56:09.445 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-06-11 20:56:58.705
+!MESSAGE Log4j2 initialized with config file C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-06-11 20:57:14.892
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-11 20:57:15.844
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-11 20:57:15.845
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-11 21:05:34.696
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM5
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-11 21:05:34.699
+!MESSAGE port: COM5
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-11 21:05:37.520
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-11 21:05:37.521
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-11 21:06:45.401
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM5
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-11 21:06:45.402
+!MESSAGE port: COM5
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:07:32.711
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-11 21:08:10.473
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-11 21:08:10.474
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-11 21:08:17.397
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM5
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-11 21:08:17.399
+!MESSAGE port: COM5
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:08:33.680
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:10:56.892
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:14:06.760
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:19:51.931
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:21:52.005
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:24:56.650
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:30:06.262
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:35:20.160
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:40:12.540
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:43:08.713
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:46:57.660
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:51:19.920
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:54:51.591
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 21:57:09.001
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 22:18:38.127
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 22:29:22.504
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 22:54:27.084
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 22:57:13.095
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 22:58:20.458
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 23:00:09.780
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-11 23:07:32.713
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 100000000; div: 50

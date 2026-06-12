@@ -1,11 +1,14 @@
 #include <MPU6050.h>
 #include "stdio.h"
 #include "string.h"
+#include "stdlib.h"
 #include "math.h"
 
 int enable_MPU6050 = 1;
 
 uint32_t tr;
+
+int finitKalman = 1;
 
 Kalman_t KalmanX = {
     .Q_angle = 0.001f,
@@ -37,6 +40,7 @@ int MPU6050_init(void)
 	}
 
 	//force reset
+	/*
 	Data = 0x80;
 	status = HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
 	if (status != HAL_OK) {
@@ -44,7 +48,7 @@ int MPU6050_init(void)
 		return -1;
 	}
 	HAL_Delay(100);
-
+*/
 	// power management register 0X6B we should write all 0's to wake the sensor up
 	Data = 0;
 	status = HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
@@ -61,7 +65,7 @@ int MPU6050_init(void)
 		printf("Error SMPLRT_DIV_REG fail: %d\n", status);
 		return -1;
 	}
-
+/*
 	//set DLPF_CFG = 0
 	Data = 0x00;
 	status = HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, CONFIG_REG, 1, &Data, 1, 1000);
@@ -69,7 +73,7 @@ int MPU6050_init(void)
 		printf("Error CONFIG_REG fail: %d\n", status);
 		return -1;
 	}
-
+*/
 
 	// Set accelerometer configuration in ACCEL_CONFIG Register
 	Data = 0x00;  // XA_ST=0,YA_ST=0,ZA_ST=0, FS_SEL=0 -> <strong>±</strong> 2g
@@ -87,6 +91,8 @@ int MPU6050_init(void)
 		printf("Error GYRO_CONFIG_REG fail: %d\n", status);
 		return -1;
 	}
+
+	finitKalman = 1;
 
 	printf("MPU6050 Initialization process is done!\n");
 
@@ -183,15 +189,15 @@ int MPU6050_Calibrate (MPU6050_Data_t *result)
 
 	uint8_t Size = 14;
 	uint8_t Rec_Data[Size];
-	int Sample_size = 1000;
+	int Sample_size = 10;
 
-	uint32_t Ax_sum = 0;
-	uint32_t Ay_sum = 0;
-	uint32_t Az_sum = 0;
-	uint32_t Gx_sum = 0;
-	uint32_t Gy_sum = 0;
-	uint32_t Gz_sum = 0;
-
+	int32_t Ax_sum = 0;
+	int32_t Ay_sum = 0;
+	int32_t Az_sum = 0;
+	int32_t Gx_sum = 0;
+	int32_t Gy_sum = 0;
+	int32_t Gz_sum = 0;
+	char buffer[1000];
 
 	for (int i = 0; i < Sample_size; i++) {
 		// Read 14 BYTES of data starting from ACCEL_XOUT_H (0x3B) register
@@ -209,6 +215,13 @@ int MPU6050_Calibrate (MPU6050_Data_t *result)
 		Gy_sum += (int16_t)(Rec_Data[10] << 8 | Rec_Data [11]);
 		Gz_sum += (int16_t)(Rec_Data[12] << 8 | Rec_Data [13]);
 
+		if (i < 10) {
+
+			sprintf(buffer, "MPU6050: Ax_sum: %ld g, Ay_sum: %ld g, Az_sum: %ld g, Gx_sum: %ld Deg/s, Gy_sum: %ld Deg/s, Gz_sum: %ld Deg/s\n",
+			    	Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
+			printf(buffer);
+		}
+
 		HAL_Delay(10);
 	}
 
@@ -219,13 +232,13 @@ int MPU6050_Calibrate (MPU6050_Data_t *result)
 	result->Gy_RAW_Offset = Gy_sum / Sample_size;
 	result->Gz_RAW_Offset = Gz_sum / Sample_size;
 
-	char buffer[1000];
-/*
-    sprintf(buffer, "MPU6050: Ax_Offset: %.2f g, Ay_Offset: %.2f g, Az_Offset: %.2f g, Gx_Offset: %.2f Deg/s, Gy_Offset: %.2f Deg/s, Gz_Offset: %.2f Deg/s\n",
-    				result->Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz);
 
 
-*/
+
+    sprintf(buffer, "MPU6050: Ax_Offset: %d g, Ay_Offset: %d g, Az_Offset: %d g, Gx_Offset: %d Deg/s, Gy_Offset: %d Deg/s, Gz_Offset: %d Deg/s\n",
+    				result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
+    printf(buffer);
+
 	printf("MPU6050 Calibration Finish\n");
 	return 0;
 }
@@ -254,6 +267,8 @@ int MPU6050_Read_All (MPU6050_Data_t *result)
 
 		result->KalmanAngleY = -999;
 		result->KalmanAngleX = -999;
+
+		sprintf(result->state, "Unknown");
 
 		return 0;
 	}
@@ -305,6 +320,25 @@ int MPU6050_Read_All (MPU6050_Data_t *result)
 	result->roll = roll;
 	result->pitch = pitch;
 
+	//Kalman currently incorrect
+	result->KalmanAngleX = roll;
+	result->KalmanAngleY = pitch;
+	/*
+	if (finitKalman)
+	{
+		KalmanX.angle = roll;
+		result->KalmanAngleX = roll;
+		KalmanY.angle = pitch;
+		result->KalmanAngleY = pitch;
+		finitKalman = 0;
+
+	}
+	else {
+		result->KalmanAngleY = Kalman_getAngle(&KalmanY, pitch, result->Gy, dt);
+		result->KalmanAngleX = Kalman_getAngle(&KalmanX, roll, result->Gx, dt);
+
+	}
+
 	if ((pitch < -90 && result->KalmanAngleY > 90) || (pitch > 90 && result->KalmanAngleY < -90))
 	{
 		KalmanY.angle = pitch;
@@ -312,13 +346,95 @@ int MPU6050_Read_All (MPU6050_Data_t *result)
 	}
 	else
 	{
+
 		result->KalmanAngleY = Kalman_getAngle(&KalmanY, pitch, result->Gy, dt);
 	}
 	if (fabs(result->KalmanAngleY) > 90)
 		result->Gx = -result->Gx;
 	result->KalmanAngleX = Kalman_getAngle(&KalmanX, roll, result->Gx, dt);
+	*/
+	if (result->KalmanAngleX > 90) {
+		result->KalmanAngleX -= 180;
+	}
+	else if (result->KalmanAngleX < -90) {
+		result->KalmanAngleX += 180;
+	}
+	if (result->KalmanAngleY > 90) {
+		result->KalmanAngleY -= 180;
+	}
+	else if (result->KalmanAngleY < -90) {
+		result->KalmanAngleY += 180;
+	}
+
+	int isShaking = 0;
+	int isMoving = 0;
+	int isTilted = 0;
+	int isStable = 0;
+
+	double mov_sqrt = sqrt(
+			result->Ax * result->Ax + result->Az * result->Az + result->Ay * result->Ay);
+
+	if (
+		abs(result->Gx) > 80 &&
+		abs(result->Gy) > 80 &&
+		abs(result->Gz) > 80
+	) {
+		isShaking = 1;
+	}
+
+	if (
+		mov_sqrt < 0.85 ||
+		mov_sqrt > 1.15
+	) {
+		isMoving = 1;
+	}
+
+	if (
+		abs(result->KalmanAngleX) > 20 ||
+		abs(result->KalmanAngleY) > 20
+	) {
+		isTilted = 1;
+	}
+
+	if (
+		abs(result->Gx) < 5 &&
+		abs(result->Gy) < 5 &&
+		abs(result->Gz) < 5 &&
+		abs(result->KalmanAngleX) < 10 &&
+		abs(result->KalmanAngleY) < 10
+	) {
+		isStable = 1;
+	}
+
+
+	if (isShaking) {
+		sprintf(result->state, "SHAKING");
+	}
+	else if (isMoving) {
+		sprintf(result->state, "MOVING");
+	}
+	else if (isTilted) {
+		sprintf(result->state, "TILTED");
+	}
+	else {
+		sprintf(result->state, "STABLE");
+	}
 
 	return 0;
+}
+
+void Kalman_Init(Kalman_t *Kalman) {
+    Kalman->angle = 0.0f;
+    Kalman->bias = 0.0f;
+
+    Kalman->P[0][0] = 0.0f;
+    Kalman->P[0][1] = 0.0f;
+    Kalman->P[1][0] = 0.0f;
+    Kalman->P[1][1] = 0.0f;
+
+    Kalman->Q_angle = 0.001f;
+    Kalman->Q_bias = 0.003f;
+    Kalman->R_measure = 0.03f;
 }
 
 double Kalman_getAngle(Kalman_t *Kalman, double newAngle, double newRate, double dt)
