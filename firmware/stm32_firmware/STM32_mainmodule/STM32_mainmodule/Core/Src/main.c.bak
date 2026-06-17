@@ -18,12 +18,22 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
+#include "fatfs.h"
+#include "i2c.h"
+#include "spi.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"
+#include "string.h"
+#include "LED.h"
+#include "UARTCom.h"
+#include "OLED.h"
+#include "MPU6050.h"
+#include "BME280.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -33,7 +43,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define MAXLEN 4096
+#define MAXTEMPLEN 256
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -44,17 +55,73 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+uint8_t count = 0;
+extern uint16_t timer;
+extern int enable_timer;
+
+BME280_Data_t BME280;
+MPU6050_Data_t MPU6050;
+int start_y = 20;
+int end_y = 0;
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+void I2C_ClearBus(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+void logging(char *msg) {
+  FILE *fptr;
+  fptr = fopen("D:\\error_log.txt", "a+");
+  if (fptr == NULL) {
+    printf("ERROR: Could not open file.\n");
+    return;
+  }
+
+  fprintf(fptr, "ERROR %s\n", msg);
+  fclose(fptr);
+
+}
+
+int _write(int file, char *ptr, int len) {
+	int i=0;
+	for (i = 0; i < len; i++) {
+		ITM_SendChar((*ptr++));
+	}
+	return len;
+}
+
+
+void I2C_Scanner(void) {
+    HAL_StatusTypeDef result;
+    uint8_t devices_found = 0;
+
+    printf("\r\n--- Starting I2C Bus Scan ---\r\n");
+
+    for (uint16_t i = 1; i < 128; i++) {
+        /* * HAL_I2C_IsDeviceReady expects the left-shifted 8-bit address.
+         * It tries to communicate with the device 3 times with a 5ms timeout.
+         */
+        result = HAL_I2C_IsDeviceReady(&hi2c1, (i << 1), 3, 5);
+
+        if (result == HAL_OK) {
+            printf("Device found at 7-bit address: 0x%02X (8-bit Addr: 0x%02X)\r\n", i, (i << 1));
+            devices_found++;
+        }
+    }
+
+    if (devices_found == 0) {
+        printf("No I2C devices found. Check wiring, power, and pull-up resistors.\r\n");
+    } else {
+        printf("Scan complete. Found %d device(s).\r\n", devices_found);
+    }
+    printf("-----------------------------\r\n\r\n");
+}
 
 /* USER CODE END 0 */
 
@@ -66,7 +133,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+	char buffer[1000];
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -87,19 +154,147 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART2_UART_Init();
+  MX_I2C1_Init();
+  MX_SPI2_Init();
+  MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
+  I2C_ClearBus();
+  I2C_Scanner();
 
+  LED_init();
+  UARTCom_init();
+  BME280_init();
+  MPU6050_init();
+  MPU6050_Calibrate(&MPU6050);
+  OLED_init();
+  
+  printf("\n");
+
+
+  //RECEIVING VALUES
+  //UARTCom_rx();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
+
+    /* USER CODE BEGIN 3 */
+
+	  //make sure all transmitted values have \r\n endings
+	  sprintf(buffer, "Hello World count = %d, Timer = %d\r\n", count, timer);
+	  printf(buffer);
+
+	  //SENDING VALUES
+	  //UARTCom_tx((uint8_t*)buffer);
+
+	  //Timer for UART receive timeout
+	  if (timer >= 1000) {
+		  //entire data has been received
+		  timer = 0;
+		  enable_timer = 0;
+	  }
+
+	LED_blink();
+    count++;
+
+    BME280_calculation(&BME280);
+    sprintf(buffer, "BME280: Temp: %.2f C, Pres: %.2f hPa, Humi: %.2f RH, Alti: %.2f m\n",
+    				BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP);
+    printf(buffer);
+    start_y = 20;
+    end_y = 0;
+    sprintf(buffer, "Temp: %.2f C\nPres: %.2f hPa\nHumi: %.2f RH\nAlti: %.2f m\n",
+    				BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP);
+    OLED_update(buffer, start_y, &end_y, 1);
+    start_y = end_y;
+
+    HAL_Delay(1000);
+
+    MPU6050_Read_All(&MPU6050);
+    sprintf(buffer, "MPU6050: Ax: %.2f g, Ay: %.2f g, Az: %.2f g, Gx: %.2f Deg/s, Gy: %.2f Deg/s, Gz: %.2f Deg/s\n",
+    				MPU6050.Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz);
+    printf(buffer);
+    sprintf(buffer, "MPU6050: Roll: %.2f Deg, Pitch: %.2f Deg, KalmanX: %.2f Deg, KalmanY: %.2f Deg, State:%s\n",
+    				MPU6050.roll , MPU6050.pitch, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
+	printf(buffer);
+	start_y = 20;
+	end_y = 0;
+    sprintf(buffer, "Roll: %.2f Deg\nPitch: %.2f Deg\nState: %s\n",
+    				MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
+	OLED_update(buffer, start_y, &end_y, 1);
+	start_y = end_y;
+
+	printf("\n");
+    HAL_Delay(1000); //500ms delay minimum for current transmit value
+
+  }
+  LED_close();
+  BME280_close();
+  MPU6050_close();
+  OLED_close();
+  /* USER CODE END 3 */
+}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+	  //make sure all transmitted values have \r\n endings
+	  sprintf(buffer, "Hello World count = %d, Timer = %d\r\n", count, timer);
+	  printf(buffer);
+
+	  //SENDING VALUES
+	  //UARTCom_tx((uint8_t*)buffer);
+
+	  //Timer for UART receive timeout
+	  if (timer >= 1000) {
+		  //entire data has been received
+		  timer = 0;
+		  enable_timer = 0;
+	  }
+
+	LED_blink();
+    count++;
+
+    BME280_calculation(&BME280);
+    sprintf(buffer, "BME280: Temp: %.2f C, Pres: %.2f hPa, Humi: %.2f RH, Alti: %.2f m\n",
+    				BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP);
+    printf(buffer);
+    start_y = 20;
+    end_y = 0;
+    sprintf(buffer, "Temp: %.2f C\nPres: %.2f hPa\nHumi: %.2f RH\nAlti: %.2f m\n",
+    				BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP);
+    OLED_update(buffer, start_y, &end_y, 1);
+    start_y = end_y;
+
+    HAL_Delay(1000);
+
+    MPU6050_Read_All(&MPU6050);
+    sprintf(buffer, "MPU6050: Ax: %.2f g, Ay: %.2f g, Az: %.2f g, Gx: %.2f Deg/s, Gy: %.2f Deg/s, Gz: %.2f Deg/s\n",
+    				MPU6050.Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz);
+    printf(buffer);
+    sprintf(buffer, "MPU6050: Roll: %.2f Deg, Pitch: %.2f Deg, KalmanX: %.2f Deg, KalmanY: %.2f Deg, State:%s\n",
+    				MPU6050.roll , MPU6050.pitch, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
+	printf(buffer);
+	start_y = 20;
+	end_y = 0;
+    sprintf(buffer, "Roll: %.2f Deg\nPitch: %.2f Deg\nState: %s\n",
+    				MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
+	OLED_update(buffer, start_y, &end_y, 1);
+	start_y = end_y;
+
+	printf("\n");
+    HAL_Delay(1000); //500ms delay minimum for current transmit value
+
   }
+  LED_close();
+  BME280_close();
+  MPU6050_close();
+  OLED_close();
   /* USER CODE END 3 */
 }
 
@@ -149,6 +344,21 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void I2C_ClearBus(void) {
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_SET);  // SDA
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET);  // SCL
+    for(uint8_t i = 0; i < 9; i++) {
+        HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_8);
+        HAL_Delay(1);
+    }
+    //STOP
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET);
+    HAL_Delay(1);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET);
+}
+
 
 /* USER CODE END 4 */
 

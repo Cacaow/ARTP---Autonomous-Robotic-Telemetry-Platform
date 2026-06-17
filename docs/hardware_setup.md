@@ -11,35 +11,41 @@
 
 
 ## Wiring
-|   Component   |   STM32 Pin   |
-|---------------|---------------|
-|   LED GPIO    |      PA5      |
-|               |               |
-|    UART TX    |      PA2      |
-|    UART RX    |      PA3      |
-|               |               |
-| I2C OLED VCC  |      3V3      |
-| I2C OLED GND  |      GND      |
-| I2C OLED SCL  |    PB8/SCL    |
-| I2C OLED SDA  |    PB9/SDA    |
-|               |               |
-|I2C BME280 VCC |      3V3      |
-|I2C BME280 GND |      GND      |
-|I2C BME280 SCL |    PB8/SCL    |
-|I2C BME280 SDA |    PB9/SDA    |
-|I2C BME280 CSB |       -       |
-|I2C BME280 SDO |      GND      |
-|               |               |
-|I2C MPU6050 VCC |      3V3      |
-|I2C MPU6050 GND |      GND      |
-|I2C MPU6050 SCL |    PB8/SCL    |
-|I2C MPU6050 SDA |    PB9/SDA    |
-|I2C MPU6050 XDA |       -       |
-|I2C MPU6050 XCL |       -       |
-|I2C MPU6050 ADO |      GND      |
-|I2C MPU6050 INT |       -       |
-
-
+|    Component    |   STM32 Pin   |
+|-----------------|---------------|
+|    LED GPIO     |      PA5      |
+|                 |               |
+|     UART TX     |      PA2      |
+|     UART RX     |      PA3      |
+|                 |               |
+|  I2C OLED VCC   |      3V3      |
+|  I2C OLED GND   |      GND      |
+|  I2C OLED SCL   |    PB8/SCL    |
+|  I2C OLED SDA   |    PB9/SDA    |
+|                 |               |
+| I2C BME280 VCC  |      3V3      |
+| I2C BME280 GND  |      GND      |
+| I2C BME280 SCL  |    PB8/SCL    |
+| I2C BME280 SDA  |    PB9/SDA    |
+| I2C BME280 CSB  |       -       |
+| I2C BME280 SDO  |      GND      |
+|                 |               |
+| I2C MPU6050 VCC |      3V3      |
+| I2C MPU6050 GND |      GND      |
+| I2C MPU6050 SCL |    PB8/SCL    |
+| I2C MPU6050 SDA |    PB9/SDA    |
+| I2C MPU6050 XDA |       -       |
+| I2C MPU6050 XCL |       -       |
+| I2C MPU6050 ADO |      GND      |
+| I2C MPU6050 INT |       -       |
+|                 |               |
+| SPI SDCard GND  |      GND      |
+| SPI SDCard VCC  |      5V       |
+| SPI SDCard SCK  |   PB13/D13    |
+| SPI SDCard MISO |   PB14/D12    |
+| SPI SDCard MOSI |   PB15/D11    |
+|  SPI SDCard CS  |PB12/D10 (GPIO)|
+|                 |               |
 
 ## UART Settings
 |   Baud Rate   |    115200     |

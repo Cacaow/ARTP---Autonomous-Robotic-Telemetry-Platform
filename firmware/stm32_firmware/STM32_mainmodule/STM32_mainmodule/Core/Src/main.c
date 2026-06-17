@@ -17,10 +17,11 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include <BME280.h>
 #include "main.h"
 #include "dma.h"
+#include "fatfs.h"
 #include "i2c.h"
+#include "spi.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -32,6 +33,7 @@
 #include "UARTCom.h"
 #include "OLED.h"
 #include "MPU6050.h"
+#include "BME280.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -155,8 +157,10 @@ int main(void)
   MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_I2C1_Init();
-  I2C_ClearBus();
+  MX_SPI2_Init();
+  MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
+  I2C_ClearBus();
   I2C_Scanner();
 
   LED_init();

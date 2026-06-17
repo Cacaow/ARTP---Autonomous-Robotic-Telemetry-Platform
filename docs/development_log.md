@@ -77,3 +77,7 @@
 - Debugged MPU6050 values
 - Implemented motion status for MPU6050
 - Disabled Kalman
+
+## 2026-06-16
+- Added SPI interface Micro SD Card with FATFS
+- Reference: https://youtube.com/watch?v=EUuVaaE8sWA

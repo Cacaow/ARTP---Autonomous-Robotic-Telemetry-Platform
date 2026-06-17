@@ -66,3 +66,5 @@ Building a real-time embedded system with STM32 + ESP32 + Python dashboard.
 - Day 17: Implement MPU6050 Calibration and error handling 
 
 - Day 18: Debugged MPU6050 values and implemented motion status for MPU6050
+
+- Day 19: Added SPI interface for Micro SD Card

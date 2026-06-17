@@ -62,3 +62,7 @@
 # Issue: Incorrect MPU6050 calculated values
 - Cause: Incorrect type defined for calculated values
 - Fix: Use int instead of uint for all values
+
+# Issue: Unable to use SPI1 config
+- Cause: PA5 pin is already occupied by GPIO LED
+- Fix: Use SPI2 and use different pin numbers
