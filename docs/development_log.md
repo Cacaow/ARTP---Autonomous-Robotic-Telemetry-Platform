@@ -81,3 +81,7 @@
 ## 2026-06-16
 - Added SPI interface Micro SD Card with FATFS
 - Reference: https://youtube.com/watch?v=EUuVaaE8sWA
+
+## 2026-06-30
+- Added SD-Card Testing
+- Debugging fmount error

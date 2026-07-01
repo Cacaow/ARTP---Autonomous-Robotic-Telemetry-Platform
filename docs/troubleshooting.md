@@ -66,3 +66,19 @@
 # Issue: Unable to use SPI1 config
 - Cause: PA5 pin is already occupied by GPIO LED
 - Fix: Use SPI2 and use different pin numbers
+
+# Issue: No voltage in SD-card CS pin
+- Cause: pin12 physical wiring is incorrect 
+- Fix: Correct physical wiring (adjusted SD-card CS pin from pin12 to pin6)
+
+# Issue: fmount error on start-up
+- Cause: Incorrect SD-card physical wiring on STM32
+- Fix: Correct physical wiring on STM32
+
+# Issue: Main code duplicated when generating code from STM32CubeMX
+- Cause: Incorrect placement of END WHILE statement in main code
+- Fix: Adjusted position of END WHILE statement 
+
+# Issue: Timer1 and Timer2 deadlock in while loop
+- Cause: Timer1 and Timer2 values never incremented
+- Fix: Increment Timer1 and Timer2

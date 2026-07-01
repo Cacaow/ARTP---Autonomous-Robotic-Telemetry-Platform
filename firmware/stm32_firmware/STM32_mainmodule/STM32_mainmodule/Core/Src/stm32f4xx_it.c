@@ -53,6 +53,7 @@
 /* USER CODE BEGIN 0 */
 extern uint16_t timer;
 extern int enable_timer;
+extern uint16_t Timer1, Timer2;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -192,6 +193,12 @@ void SysTick_Handler(void)
   /* USER CODE BEGIN SysTick_IRQn 1 */
   if (enable_timer == 1) {
 		  timer++;
+  }
+  if (Timer1 > 0){
+	  Timer1--;
+  }
+  if (Timer2 > 0){
+	  Timer2--;
   }
   /* USER CODE END SysTick_IRQn 1 */
 }

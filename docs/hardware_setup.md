@@ -41,10 +41,10 @@
 |                 |               |
 | SPI SDCard GND  |      GND      |
 | SPI SDCard VCC  |      5V       |
-| SPI SDCard SCK  |   PB13/D13    |
-| SPI SDCard MISO |   PB14/D12    |
-| SPI SDCard MOSI |   PB15/D11    |
-|  SPI SDCard CS  |PB12/D10 (GPIO)|
+| SPI SDCard SCK  |PB13/CN10_Pin30|
+| SPI SDCard MISO |PB14/CN10_Pin28|
+| SPI SDCard MOSI |PB15/CN10_Pin26|
+|  SPI SDCard CS  | PB6/D10 (GPIO)|
 |                 |               |
 
 ## UART Settings
@@ -59,6 +59,12 @@
 | OLED Address  |       3C      |
 |BME280 Address |       76      |
 
+## SPI2 Settings
+| Mode               |    Full-Duplex Master    |
+|Hardware NSS Signal |     Disable     |
+|PB13/PB14/PB15/PB6  |    GPIO-Pull-up    |
+| Prescaler          |     256     |
+|       FATFS        |    User-defined    |
 
 ## Notes
 - Pull-up resistors required for I2C SCL and SDA channels (10K pull-up resistors)
