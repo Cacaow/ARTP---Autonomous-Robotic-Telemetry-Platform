@@ -85,3 +85,6 @@
 ## 2026-06-30
 - Added SD-Card Testing
 - Debugging fmount error
+
+## 2026-07-07
+- Migrated SD-Card API functions out of main code

@@ -60,11 +60,11 @@
 |BME280 Address |       76      |
 
 ## SPI2 Settings
-| Mode               |    Full-Duplex Master    |
-|Hardware NSS Signal |     Disable     |
-|PB13/PB14/PB15/PB6  |    GPIO-Pull-up    |
-| Prescaler          |     256     |
-|       FATFS        |    User-defined    |
+|        Mode        |    Full-Duplex Master    |
+|Hardware NSS Signal |        Disable           |
+| PB13/PB14/PB15/PB6 |      GPIO-Pull-up        |
+|    Prescaler       |           256            |
+|       FATFS        |       User-defined       |
 
 ## Notes
 - Pull-up resistors required for I2C SCL and SDA channels (10K pull-up resistors)
