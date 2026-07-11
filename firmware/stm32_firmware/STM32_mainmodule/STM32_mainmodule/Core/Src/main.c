@@ -21,6 +21,7 @@
 #include "dma.h"
 #include "fatfs.h"
 #include "i2c.h"
+#include "rtc.h"
 #include "spi.h"
 #include "usart.h"
 #include "gpio.h"
@@ -96,6 +97,7 @@ int _write(int file, char *ptr, int len) {
 	for (i = 0; i < len; i++) {
 		ITM_SendChar((*ptr++));
 	}
+	SDCard_write_log(ptr);
 	return len;
 }
 
@@ -162,6 +164,7 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI2_Init();
   MX_FATFS_Init();
+  MX_RTC_Init();
   /* USER CODE BEGIN 2 */
   I2C_ClearBus();
   I2C_Scanner();
@@ -176,11 +179,14 @@ int main(void)
   SDCard_init();
   SDCard_write();
   SDCard_read();
+
+
+  int val = SDCard_write_log("test start");
+  if (val != 0) {
+	  printf("SDCard_write_log ERROR\n");
+  }
   SDCard_close();
-  
   printf("\n");
-
-
   //RECEIVING VALUES
   //UARTCom_rx();
   /* USER CODE END 2 */
@@ -265,8 +271,9 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 4;

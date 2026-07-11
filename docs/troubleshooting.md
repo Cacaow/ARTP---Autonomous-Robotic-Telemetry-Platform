@@ -82,3 +82,11 @@
 # Issue: Timer1 and Timer2 deadlock in while loop
 - Cause: Timer1 and Timer2 values never incremented
 - Fix: Increment Timer1 and Timer2
+
+# Issue: RTC time death error
+- Cause: RTC not enabled in ioc
+- Fix: Enable RTC in ioc
+
+# Issue: printf deadlock with SD-card LOG function
+- Cause: Infinite loop when printf inside LOG function
+- Fix: Remove printf in LOG function and complete check at start-up instead

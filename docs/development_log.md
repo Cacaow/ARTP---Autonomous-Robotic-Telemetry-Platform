@@ -88,3 +88,7 @@
 
 ## 2026-07-07
 - Migrated SD-Card API functions out of main code
+
+## 2026-07-10
+- Implemented LOG file for SD-card
+- Generated in daily
