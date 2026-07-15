@@ -92,3 +92,7 @@
 ## 2026-07-10
 - Implemented LOG file for SD-card
 - Generated in daily
+
+## 2026-07-14
+- Implemented time-stamped log file to store error and debug messages
+- Implemented CSV file to store sensor data

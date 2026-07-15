@@ -97,6 +97,7 @@ int _write(int file, char *ptr, int len) {
 	for (i = 0; i < len; i++) {
 		ITM_SendChar((*ptr++));
 	}
+	ptr[len] = 0;
 	SDCard_write_log(ptr);
 	return len;
 }
@@ -185,7 +186,6 @@ int main(void)
   if (val != 0) {
 	  printf("SDCard_write_log ERROR\n");
   }
-  SDCard_close();
   printf("\n");
   //RECEIVING VALUES
   //UARTCom_rx();
@@ -244,13 +244,24 @@ int main(void)
 	start_y = end_y;
 
 	printf("\n");
-    HAL_Delay(1000); //500ms delay minimum for current transmit value
+
+	char CSVbuffer[1024];
+	//Temperature, Pressure, Humidity, Alititude, Ax, Ay, Az, Gx, Gy, Gz, roll, pitch, KalmanX, KalmanY, state
+	sprintf(CSVbuffer, "%.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %s",
+			BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP,
+			MPU6050.Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz,
+			MPU6050.roll , MPU6050.pitch, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
+
+	SDCard_write_csv(CSVbuffer);
+
+	HAL_Delay(1000); //500ms delay minimum for current transmit value
 
   }
   LED_close();
   BME280_close();
   MPU6050_close();
   OLED_close();
+  SDCard_close();
   /* USER CODE END 3 */
 }
 
@@ -271,9 +282,9 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
+  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 4;

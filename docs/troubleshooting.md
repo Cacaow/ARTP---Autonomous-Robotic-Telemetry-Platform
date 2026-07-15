@@ -90,3 +90,8 @@
 # Issue: printf deadlock with SD-card LOG function
 - Cause: Infinite loop when printf inside LOG function
 - Fix: Remove printf in LOG function and complete check at start-up instead
+
+# Issue: GetTime returns the same date
+- Cause: Date and time re-initialize on start-up
+- Fix: TBD using ESP32 or other methods
+

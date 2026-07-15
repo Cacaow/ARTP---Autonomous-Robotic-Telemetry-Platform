@@ -170,7 +170,13 @@ int SDCard_write_log(char *text)
 	//printf("[SD] File opened: STM_FILE.txt\r\n");
 
 	// Prepare data to be written into the SD card file
-	strcpy(RW_Buffer, text);
+	char *result = strstr(text, "ERROR");
+	if (result == NULL) {
+		sprintf(RW_Buffer, "%04d-%02d-%02d %02d:%02d:%02d [DEBUG] %s\n", year, month, day, hours, minutes, seconds, text);
+	} else {
+		sprintf(RW_Buffer, "%04d-%02d-%02d %02d:%02d:%02d [ERROR] %s\n", year, month, day, hours, minutes, seconds, text);
+	}
+	//strcpy(RW_Buffer, text);
 
 	// Write data to the file
 	FR_Status = f_write(&Fil, RW_Buffer, strlen(RW_Buffer), &WWC);
@@ -185,6 +191,101 @@ int SDCard_write_log(char *text)
 	// Print number of bytes written
 	//printf("[INFO] Written string to SD card: %s\r\n", RW_Buffer);
 	//printf("[INFO] Written %d bytes to SD card\r\n", WWC);
+
+	// Close the file after writing
+	f_close(&Fil);
+
+	return 0;
+}
+
+int SDCard_write_csv(char *text)
+{
+	if (enable_SDCard == 0) {
+			return 0;
+	}
+
+	FIL Fil;            // File object (used to open/read/write files)
+	FRESULT FR_Status;  // Stores return status of FatFs functions
+	UINT WWC;      // RWC = Read byte count, WWC = Written byte count
+	char RW_Buffer[200]; // Buffer used for both read and write operations
+	RTC_TimeTypeDef sTime = {0};
+	RTC_DateTypeDef sDate = {0};
+	extern RTC_HandleTypeDef hrtc;
+
+	// 1. Get the current time first (Locks the shadow registers)
+	HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+
+	// 2. Get the current date next (Unlocks the shadow registers)
+	HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+
+	uint8_t hours   = sTime.Hours;
+	uint8_t minutes = sTime.Minutes;
+	uint8_t seconds = sTime.Seconds;
+
+	uint8_t day     = sDate.Date;
+	uint8_t month   = sDate.Month;
+	uint16_t year   = 2000 + sDate.Year; // RTC stores year as a 2-digit offset from 2000
+
+	char Filename[256];
+	Filename[0] = 0;
+	sprintf(Filename, "ARTP_SENSOR_DATA_%04d-%02d-%02d.csv", year, month, day);
+
+	int writeHeader = 0;
+	FILINFO fno;
+	FRESULT res = f_stat(Filename, &fno);
+
+	if (res == FR_OK) {
+		printf("File exists.\n");
+	} else {
+		printf("File does not exist.\n");
+		writeHeader = 1;
+	}
+
+	//------------------[ STEP 3: Create File and Write Data ]--------------------
+	// Create a new file or overwrite if it already exists
+	FR_Status = f_open(&Fil,
+					   Filename,
+					   FA_WRITE | FA_OPEN_APPEND);
+
+	if (FR_Status != FR_OK)
+	{
+		// File creation/open failed
+		printf("[ERROR] File create/open failed! Code = %d\r\n", FR_Status);
+		return -1;
+	}
+
+	// File created successfully
+	printf("[SD] CSV File opened: STM_FILE.csv\r\n");
+
+	if (writeHeader) {
+		sprintf(RW_Buffer, "DATE, TIME, Temperature, Pressure, Humidity, Alititude, Ax, Ay, Az, Gx, Gy, Gz, roll, pitch, KalmanX, KalmanY, state\n");
+		FR_Status = f_write(&Fil, RW_Buffer, strlen(RW_Buffer), &WWC);
+		if (FR_Status != FR_OK || WWC == 0)
+		{
+			// Writing failed
+			printf("[ERROR] SD file write failed\r\n");
+			f_close(&Fil);
+			return -1;
+		}
+	}
+
+	// Prepare data to be written into the SD card file
+	sprintf(RW_Buffer, "%04d-%02d-%02d, %02d:%02d:%02d, %s\n", year, month, day, hours, minutes, seconds, text);
+
+	//strcpy(RW_Buffer, text);
+
+	// Write data to the file
+	FR_Status = f_write(&Fil, RW_Buffer, strlen(RW_Buffer), &WWC);
+	if (FR_Status != FR_OK || WWC == 0)
+	{
+		// Writing failed
+		printf("[ERROR] SD file write failed\r\n");
+		f_close(&Fil);
+		return -1;
+	}
+	// Print number of bytes written
+	printf("[INFO] Written string to SD card: %s\r\n", RW_Buffer);
+	printf("[INFO] Written %d bytes to SD card\r\n", WWC);
 
 	// Close the file after writing
 	f_close(&Fil);
