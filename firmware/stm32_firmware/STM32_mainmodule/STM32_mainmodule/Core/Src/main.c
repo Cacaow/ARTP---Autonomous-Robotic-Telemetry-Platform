@@ -37,6 +37,7 @@
 #include "MPU6050.h"
 #include "BME280.h"
 #include "SDCard.h"
+#include "util.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -68,6 +69,8 @@ BME280_Data_t BME280;
 MPU6050_Data_t MPU6050;
 int start_y = 20;
 int end_y = 0;
+static char line_buffer[512];
+static uint16_t line_idx = 0;
 
 /* USER CODE END PV */
 
@@ -83,7 +86,7 @@ void logging(char *msg) {
   FILE *fptr;
   fptr = fopen("D:\\error_log.txt", "a+");
   if (fptr == NULL) {
-    printf("ERROR: Could not open file.\n");
+    my_printf("ERROR: Could not open file.\n");
     return;
   }
 
@@ -93,12 +96,16 @@ void logging(char *msg) {
 }
 
 int _write(int file, char *ptr, int len) {
+	if (ptr == NULL || len <= 0) {
+		return 0;
+	}
+	if (file != 1 && file != 2)
+		return len;
+
 	int i=0;
 	for (i = 0; i < len; i++) {
 		ITM_SendChar((*ptr++));
 	}
-	ptr[len] = 0;
-	SDCard_write_log(ptr);
 	return len;
 }
 
@@ -106,8 +113,9 @@ int _write(int file, char *ptr, int len) {
 void I2C_Scanner(void) {
     HAL_StatusTypeDef result;
     uint8_t devices_found = 0;
+    char temp_buffer[512];
 
-    printf("\r\n--- Starting I2C Bus Scan ---\r\n");
+    my_printf("\r\n--- Starting I2C Bus Scan ---\r\n");
 
     for (uint16_t i = 1; i < 128; i++) {
         /* * HAL_I2C_IsDeviceReady expects the left-shifted 8-bit address.
@@ -116,17 +124,19 @@ void I2C_Scanner(void) {
         result = HAL_I2C_IsDeviceReady(&hi2c1, (i << 1), 3, 5);
 
         if (result == HAL_OK) {
-            printf("Device found at 7-bit address: 0x%02X (8-bit Addr: 0x%02X)\r\n", i, (i << 1));
+            sprintf(temp_buffer, "Device found at 7-bit address: 0x%02X (8-bit Addr: 0x%02X)\r\n", i, (i << 1));
+            my_printf(temp_buffer);
             devices_found++;
         }
     }
 
     if (devices_found == 0) {
-        printf("No I2C devices found. Check wiring, power, and pull-up resistors.\r\n");
+        my_printf("No I2C devices found. Check wiring, power, and pull-up resistors.\r\n");
     } else {
-        printf("Scan complete. Found %d device(s).\r\n", devices_found);
+        sprintf(temp_buffer, "Scan complete. Found %d device(s).\r\n", devices_found);
+        my_printf(temp_buffer);
     }
-    printf("-----------------------------\r\n\r\n");
+    my_printf("-----------------------------\r\n\r\n");
 }
 
 /* USER CODE END 0 */
@@ -167,6 +177,10 @@ int main(void)
   MX_FATFS_Init();
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
+  SDCard_init();
+  SDCard_open_log();
+  SDCard_open_csv();
+
   I2C_ClearBus();
   I2C_Scanner();
 	
@@ -177,16 +191,17 @@ int main(void)
   MPU6050_init();
   MPU6050_Calibrate(&MPU6050);
   OLED_init();
-  SDCard_init();
+
+  /*
   SDCard_write();
   SDCard_read();
 
-
-  int val = SDCard_write_log("test start");
+  int val = SDCard_write_log("test start\n");
   if (val != 0) {
-	  printf("SDCard_write_log ERROR\n");
+	  my_printf("SDCard_write_log ERROR\n");
   }
-  printf("\n");
+  my_printf("\n");
+  */
   //RECEIVING VALUES
   //UARTCom_rx();
   /* USER CODE END 2 */
@@ -201,7 +216,7 @@ int main(void)
 
 	  //make sure all transmitted values have \r\n endings
 	  sprintf(buffer, "Hello World count = %d, Timer = %d\r\n", count, timer);
-	  printf(buffer);
+	  my_printf(buffer);
 
 	  //SENDING VALUES
 	  //UARTCom_tx((uint8_t*)buffer);
@@ -219,7 +234,7 @@ int main(void)
     BME280_calculation(&BME280);
     sprintf(buffer, "BME280: Temp: %.2f C, Pres: %.2f hPa, Humi: %.2f RH, Alti: %.2f m\n",
     				BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP);
-    printf(buffer);
+    my_printf(buffer);
     start_y = 20;
     end_y = 0;
     sprintf(buffer, "Temp: %.2f C\nPres: %.2f hPa\nHumi: %.2f RH\nAlti: %.2f m\n",
@@ -232,10 +247,10 @@ int main(void)
     MPU6050_Read_All(&MPU6050);
     sprintf(buffer, "MPU6050: Ax: %.2f g, Ay: %.2f g, Az: %.2f g, Gx: %.2f Deg/s, Gy: %.2f Deg/s, Gz: %.2f Deg/s\n",
     				MPU6050.Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz);
-    printf(buffer);
+    my_printf(buffer);
     sprintf(buffer, "MPU6050: Roll: %.2f Deg, Pitch: %.2f Deg, KalmanX: %.2f Deg, KalmanY: %.2f Deg, State:%s\n",
     				MPU6050.roll , MPU6050.pitch, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
-	printf(buffer);
+	my_printf(buffer);
 	start_y = 20;
 	end_y = 0;
     sprintf(buffer, "Roll: %.2f Deg\nPitch: %.2f Deg\nState: %s\n",
@@ -243,7 +258,7 @@ int main(void)
 	OLED_update(buffer, start_y, &end_y, 1);
 	start_y = end_y;
 
-	printf("\n");
+	my_printf("\n");
 
 	char CSVbuffer[1024];
 	//Temperature, Pressure, Humidity, Alititude, Ax, Ay, Az, Gx, Gy, Gz, roll, pitch, KalmanX, KalmanY, state
@@ -252,7 +267,13 @@ int main(void)
 			MPU6050.Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz,
 			MPU6050.roll , MPU6050.pitch, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
 
-	SDCard_write_csv(CSVbuffer);
+	SDCard_append_csv(CSVbuffer);
+
+	//for testing
+	if (count > 1) {
+		SDCard_close_log();
+		SDCard_close_csv();
+	}
 
 	HAL_Delay(1000); //500ms delay minimum for current transmit value
 
@@ -261,6 +282,7 @@ int main(void)
   BME280_close();
   MPU6050_close();
   OLED_close();
+  SDCard_close_log();
   SDCard_close();
   /* USER CODE END 3 */
 }

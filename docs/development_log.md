@@ -96,3 +96,8 @@
 ## 2026-07-14
 - Implemented time-stamped log file to store error and debug messages
 - Implemented CSV file to store sensor data
+
+## 2026-07-16
+- Seperated SD-card file open and close for logging to only open and close once during program
+- Implemented custom printf function (including standard printf and SD-Card logging)
+- Replace standard printf with custom printf function

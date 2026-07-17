@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
 #include "string.h"
+#include "util.h"
 
 #include "ssd1306.h"
 #include "ssd1306_fonts.h"
@@ -73,7 +74,7 @@ int OLED_init(void)
 	ssd1306_SetCursor(0, 0);
 	int WriteString = ssd1306_WriteString("ARTP Data", Font_11x18, White);
 	if (WriteString != 0) {
-		printf("ERROR: OLED_init-String could not be written \n");
+		my_printf("ERROR: OLED_init-String could not be written \n");
 		//return -1;
 	}
 
@@ -106,14 +107,14 @@ int OLED_update(char *txt, int start_y, int *end_y, int clear) {
 		int WriteString = ssd1306_WriteString(token, Font_6x8, White);
 		//can also be written as if (WriteString == '\0')
 		if (WriteString == -1) {
-			printf("ERROR: OLED invalid string\n");
+			my_printf("ERROR: OLED invalid string\n");
 			//return -1;
 		}
 		else if (WriteString == -2) {
-			printf("ERROR: OLED string out of screen\n");
+			my_printf("ERROR: OLED string out of screen\n");
 		}
 		else if (WriteString != 0) {
-			printf("ERROR: Unknown error\n");
+			my_printf("ERROR: Unknown error\n");
 		}
 		y_val += 10;
 		token = strtok(NULL, delimiter);

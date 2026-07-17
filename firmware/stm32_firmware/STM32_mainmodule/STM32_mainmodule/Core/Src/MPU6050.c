@@ -3,6 +3,7 @@
 #include "string.h"
 #include "stdlib.h"
 #include "math.h"
+#include "util.h"
 
 int enable_MPU6050 = 1;
 
@@ -30,12 +31,14 @@ int MPU6050_init(void)
 	uint8_t check;
 	uint8_t Data;
 	HAL_StatusTypeDef status;
+	char temp_buffer[512];
 
 	//WHO_AM_I check device ID
 	status = HAL_I2C_Mem_Read (&MPU6050_I2C_PORT, MPU6050_ADDR, WHO_AM_I_REG, 1, &check, 1, 1000);  // read WHO_AM_I
 	if (check != 0x68 && check != 0x72 )  // if device is not present, return error code
 	{
-		printf("Error WHO_AM_I fail: %d\n", status);
+		sprintf(temp_buffer, "Error WHO_AM_I fail: %d\n", status);
+		my_printf(temp_buffer);
 		return -1;
 	}
 
@@ -53,7 +56,8 @@ int MPU6050_init(void)
 	Data = 0;
 	status = HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
 	if (status != HAL_OK) {
-		printf("Error PWR_MGMT_1_REG fail: %d\n", status);
+		sprintf(temp_buffer, "Error PWR_MGMT_1_REG fail: %d\n", status);
+		my_printf(temp_buffer);
 		return -1;
 	}
 	HAL_Delay(10);
@@ -62,7 +66,8 @@ int MPU6050_init(void)
 	Data = 0x07;
 	status = HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, SMPLRT_DIV_REG, 1, &Data, 1, 1000);
 	if (status != HAL_OK) {
-		printf("Error SMPLRT_DIV_REG fail: %d\n", status);
+		sprintf(temp_buffer, "Error SMPLRT_DIV_REG fail: %d\n", status);
+		my_printf(temp_buffer);
 		return -1;
 	}
 /*
@@ -79,7 +84,8 @@ int MPU6050_init(void)
 	Data = 0x00;  // XA_ST=0,YA_ST=0,ZA_ST=0, FS_SEL=0 -> <strong>±</strong> 2g
 	status = HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, ACCEL_CONFIG_REG, 1, &Data, 1, 1000);
 	if (status != HAL_OK) {
-		printf("Error ACCEL_CONFIG_REG fail: %d\n", status);
+		sprintf(temp_buffer, "Error ACCEL_CONFIG_REG fail: %d\n", status);
+		my_printf(temp_buffer);
 		return -1;
 	}
 
@@ -88,13 +94,14 @@ int MPU6050_init(void)
 	Data = 0x00;  // XG_ST=0,YG_ST=0,ZG_ST=0, FS_SEL=0 -> <strong>±</strong> 250 ̐/s
 	status = HAL_I2C_Mem_Write(&MPU6050_I2C_PORT, MPU6050_ADDR, GYRO_CONFIG_REG, 1, &Data, 1, 1000);
 	if (status != HAL_OK) {
-		printf("Error GYRO_CONFIG_REG fail: %d\n", status);
+		sprintf(temp_buffer, "Error GYRO_CONFIG_REG fail: %d\n", status);
+		my_printf(temp_buffer);
 		return -1;
 	}
 
 	finitKalman = 1;
 
-	printf("MPU6050 Initialization process is done!\n");
+	my_printf("MPU6050 Initialization process is done!\n");
 
 	return 0;
 }
@@ -122,12 +129,14 @@ int MPU6050_Read_Accel (MPU6050_Data_t *result)
 	}
 
 	uint8_t Rec_Data[6];
+	char temp_buffer[512];
 
 	// Read 6 BYTES of data starting from ACCEL_XOUT_H (0x3B) register
 	HAL_StatusTypeDef read_status;
 	read_status = HAL_I2C_Mem_Read (&MPU6050_I2C_PORT, MPU6050_ADDR, ACCEL_XOUT_H_REG, 1, Rec_Data, 6, 1000);
 	if (read_status != HAL_OK) {
-		printf("Error: Data reading error %d\n", read_status);
+		sprintf(temp_buffer, "Error: Data reading error %d\n", read_status);
+		my_printf(temp_buffer);
 	}
 
 
@@ -178,7 +187,7 @@ int MPU6050_Calibrate (MPU6050_Data_t *result)
 		return 0;
 	}
 
-	printf("MPU6050 Calibration Start\n");
+	my_printf("MPU6050 Calibration Start\n");
 
 	result->Ax_RAW_Offset = 0;
 	result->Ay_RAW_Offset = 0;
@@ -204,7 +213,8 @@ int MPU6050_Calibrate (MPU6050_Data_t *result)
 		HAL_StatusTypeDef read_status;
 		read_status = HAL_I2C_Mem_Read (&MPU6050_I2C_PORT, MPU6050_ADDR, ACCEL_XOUT_H_REG, 1, Rec_Data, Size, 1000);
 		if (read_status != HAL_OK) {
-			printf("Error: MPU6050 data reading error %d\n", read_status);
+			sprintf(buffer, "Error: MPU6050 data reading error %d\n", read_status);
+			my_printf(buffer);
 			return -1;
 		}
 
@@ -219,7 +229,7 @@ int MPU6050_Calibrate (MPU6050_Data_t *result)
 
 			sprintf(buffer, "MPU6050: Ax_sum: %ld g, Ay_sum: %ld g, Az_sum: %ld g, Gx_sum: %ld Deg/s, Gy_sum: %ld Deg/s, Gz_sum: %ld Deg/s\n",
 			    	Ax_sum , Ay_sum, Az_sum , Gx_sum, Gy_sum , Gz_sum);
-			printf(buffer);
+			my_printf(buffer);
 		}
 
 		HAL_Delay(10);
@@ -237,9 +247,9 @@ int MPU6050_Calibrate (MPU6050_Data_t *result)
 
     sprintf(buffer, "MPU6050: Ax_Offset: %d g, Ay_Offset: %d g, Az_Offset: %d g, Gx_Offset: %d Deg/s, Gy_Offset: %d Deg/s, Gz_Offset: %d Deg/s\n",
     				result->Ax_RAW_Offset , result->Ay_RAW_Offset, result->Az_RAW_Offset , result->Gx_RAW_Offset, result->Gy_RAW_Offset , result->Gz_RAW_Offset);
-    printf(buffer);
+    my_printf(buffer);
 
-	printf("MPU6050 Calibration Finish\n");
+	my_printf("MPU6050 Calibration Finish\n");
 	return 0;
 }
 
@@ -275,12 +285,14 @@ int MPU6050_Read_All (MPU6050_Data_t *result)
 
 	uint8_t Size = 14;
 	uint8_t Rec_Data[Size];
+	char temp_buffer[512];
 
 	// Read 14 BYTES of data starting from ACCEL_XOUT_H (0x3B) register
 	HAL_StatusTypeDef read_status;
 	read_status = HAL_I2C_Mem_Read (&MPU6050_I2C_PORT, MPU6050_ADDR, ACCEL_XOUT_H_REG, 1, Rec_Data, Size, 1000);
 	if (read_status != HAL_OK) {
-		printf("Error: MPU6050 data reading error %d\n", read_status);
+		sprintf(temp_buffer, "Error: MPU6050 data reading error %d\n", read_status);
+		my_printf(temp_buffer);
 		return -1;
 	}
 

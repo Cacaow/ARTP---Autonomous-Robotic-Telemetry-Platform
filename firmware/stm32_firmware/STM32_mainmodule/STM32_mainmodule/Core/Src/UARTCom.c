@@ -28,6 +28,7 @@
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
 #include "string.h"
+#include "util.h"
 /* USER CODE END Includes */
 
 /* USER CODE BEGIN PD */
@@ -77,14 +78,17 @@ uint16_t rx_index = 0;
 //DMA Idle Receive Normal Mode
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
 	HAL_StatusTypeDef status = HAL_OK;
-	printf("Received buffer value = %s, Size of message=%d, Receive_count index=%d, Temporary Count Index=%d\n", rx_temp, Size, receive_count, temp_index);
+	char temp_buffer[512];
+	sprintf(temp_buffer, "Received buffer value = %s, Size of message=%d, Receive_count index=%d, Temporary Count Index=%d\n", rx_temp, Size, receive_count, temp_index);
+	my_printf(temp_buffer);
 	if (rx_temp[0] != 0) {
 
 		for (int i = 0; i < Size; i++) {
 			if (rx_temp[i] == '\n' || rx_temp[i] == '\r') {
 				rx_val[rx_index] = 0;
 				if (rx_val[0] != 0) {
-					printf("Buffer reset, Received Value: %s\n", rx_val);
+					sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val);
+					my_printf(temp_buffer);
 					/*add processed data*/
 					rx_index = 0;
 					rx_val[0] = 0;
@@ -100,7 +104,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
 		//printf("Received value = %s, Total message size = %d, Temporary Count Index=%d\n", rx_val, receive_count, temp_index);
 	}
 	else {
-		printf("ERROR - rx_temp[0] != 0\n");
+		my_printf("ERROR - rx_temp[0] != 0\n");
 	}
 	enable_timer = 1;
 	timer = 0;
@@ -108,7 +112,8 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
 	//call the function again
 	status = HAL_UARTEx_ReceiveToIdle_DMA(&huart2, rx_temp, MAXTEMPLEN);
 	  if (status != HAL_OK) {
-			printf("HAL_UARTEx_ReceiveToIdle_DMA Error - %d \n", status);
+			sprintf(temp_buffer, "HAL_UARTEx_ReceiveToIdle_DMA Error - %d \n", status);
+			my_printf(temp_buffer);
 	  }
 	  //Important to prevent splicing in the middle of a message (can lead to busy error code)
 	  __HAL_DMA_DISABLE_IT(huart2.hdmarx, DMA_IT_HT);
@@ -119,7 +124,9 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
   isSent = 1;
   sent_count++;
-  printf("sent %d\n", sent_count);
+  char temp_buffer[512];
+  sprintf(temp_buffer, "sent %d\n", sent_count);
+  my_printf(temp_buffer);
   if (sent_count > 10) {
 	  //HAL_UART_DMAStop(&huart2);
   }
@@ -149,6 +156,7 @@ int UARTCom_init() {
   //UART TRANSMITTING VALUES
 int UARTCom_tx(uint8_t* tx_val) {
 	  HAL_StatusTypeDef status = HAL_OK;
+	  char temp_buffer[512];
 	  /*
 	  uint8_t tx_val[MAXLEN];
 
@@ -160,7 +168,8 @@ int UARTCom_tx(uint8_t* tx_val) {
 	  if (isSent == 1) {
 	    	status = HAL_UART_Transmit_DMA(&huart2, tx_val, strlen((const char*)tx_val));
 	    	if (status != HAL_OK) {
-	    			printf("HAL_UART_Transmit_DMA Error - %d", status);
+	    			sprintf(temp_buffer, "HAL_UART_Transmit_DMA Error - %d", status);
+	    			my_printf(temp_buffer);
 	    			return status;
 	    	}
 	    	isSent = 0;
@@ -172,9 +181,11 @@ int UARTCom_tx(uint8_t* tx_val) {
   //RECEIVING VALUES
 int UARTCom_rx() {
   HAL_StatusTypeDef status = HAL_OK;
+  char temp_buffer[512];
   status = HAL_UARTEx_ReceiveToIdle_DMA(&huart2, rx_temp, MAXTEMPLEN);
   if (status != HAL_OK) {
-		printf("HAL_UARTEx_ReceiveToIdle_DMA Error - %d", status);
+		sprintf(temp_buffer, "HAL_UARTEx_ReceiveToIdle_DMA Error - %d", status);
+		my_printf(temp_buffer);
 		return status;
   }
   __HAL_DMA_DISABLE_IT(huart2.hdmarx, DMA_IT_HT);

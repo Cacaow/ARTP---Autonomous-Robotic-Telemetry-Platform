@@ -95,3 +95,10 @@
 - Cause: Date and time re-initialize on start-up
 - Fix: TBD using ESP32 or other methods
 
+# Issue: Garbage values on SD-Card LOG file
+- Cause: _write function not compatible with SD-Card Log function
+- Fix: Create custom printf function (includes standard printf and SD-Card logging)
+
+# Issue: No log messages written onto SD-Card LOG file
+- Cause: File handle not opened before calling log
+- Fix: Initialize SD-Card and open file as first step of main program
