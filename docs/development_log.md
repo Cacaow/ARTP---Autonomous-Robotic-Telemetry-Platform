@@ -101,3 +101,8 @@
 - Seperated SD-card file open and close for logging to only open and close once during program
 - Implemented custom printf function (including standard printf and SD-Card logging)
 - Replace standard printf with custom printf function
+
+## 2026-07-23
+- Implemented Blue Push Button (B1) with state machine to start, stop, and restart test system  
+- start (B1) -> initialize devices -> running -> stop (B1) -> close devices -> restart (B1)
+- https://microcontrollerslab.com/gpio-external-interrupts-stm32-nucleo-stm32cubeide/

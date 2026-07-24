@@ -72,6 +72,15 @@ int end_y = 0;
 static char line_buffer[512];
 static uint16_t line_idx = 0;
 
+typedef enum {
+    STATE_STOPPED,
+    STATE_START_REQUESTED,
+    STATE_RUNNING,
+    STATE_STOP_REQUESTED
+} SystemState;
+
+volatile SystemState state = STATE_STOPPED;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -109,7 +118,6 @@ int _write(int file, char *ptr, int len) {
 	return len;
 }
 
-
 void I2C_Scanner(void) {
     HAL_StatusTypeDef result;
     uint8_t devices_found = 0;
@@ -139,6 +147,20 @@ void I2C_Scanner(void) {
     my_printf("-----------------------------\r\n\r\n");
 }
 
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if (GPIO_Pin == GPIO_PIN_13)
+    {
+        if (state == STATE_STOPPED)
+        {
+            state = STATE_START_REQUESTED;
+        }
+        else if (state == STATE_RUNNING)
+        {
+            state = STATE_STOP_REQUESTED;
+        }
+    }
+}
 /* USER CODE END 0 */
 
 /**
@@ -177,20 +199,6 @@ int main(void)
   MX_FATFS_Init();
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
-  SDCard_init();
-  SDCard_open_log();
-  SDCard_open_csv();
-
-  I2C_ClearBus();
-  I2C_Scanner();
-	
-  //SD_Card_Test();
-  LED_init();
-  UARTCom_init();
-  BME280_init();
-  MPU6050_init();
-  MPU6050_Calibrate(&MPU6050);
-  OLED_init();
 
   /*
   SDCard_write();
@@ -213,77 +221,107 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	switch (state)
+	{
+	  case STATE_STOPPED:
+		  // wait for push button
+		  break;
 
-	  //make sure all transmitted values have \r\n endings
-	  sprintf(buffer, "Hello World count = %d, Timer = %d\r\n", count, timer);
-	  my_printf(buffer);
+	  case STATE_START_REQUESTED:
+		  // Mount SD
+		  // Open file
+		  //SD_Card_Test();
+		  SDCard_init();
+		  SDCard_open_log();
+		  SDCard_open_csv();
 
-	  //SENDING VALUES
-	  //UARTCom_tx((uint8_t*)buffer);
+		  I2C_ClearBus();
+		  I2C_Scanner();
 
-	  //Timer for UART receive timeout
-	  if (timer >= 1000) {
+		  OLED_init();
+
+		  LED_init();
+		  UARTCom_init();
+		  BME280_init();
+		  MPU6050_init();
+		  MPU6050_Calibrate(&MPU6050);
+
+		  state = STATE_RUNNING;
+		  break;
+
+	  case STATE_RUNNING:
+		//make sure all transmitted values have \r\n endings
+		sprintf(buffer, "Hello World count = %d, Timer = %d\r\n", count, timer);
+		my_printf(buffer);
+
+		//SENDING VALUES
+		//UARTCom_tx((uint8_t*)buffer);
+
+		//Timer for UART receive timeout
+		if (timer >= 1000) {
 		  //entire data has been received
 		  timer = 0;
 		  enable_timer = 0;
-	  }
+		}
 
-	LED_blink();
-    count++;
+		LED_blink();
+		 count++;
 
-    BME280_calculation(&BME280);
-    sprintf(buffer, "BME280: Temp: %.2f C, Pres: %.2f hPa, Humi: %.2f RH, Alti: %.2f m\n",
-    				BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP);
-    my_printf(buffer);
-    start_y = 20;
-    end_y = 0;
-    sprintf(buffer, "Temp: %.2f C\nPres: %.2f hPa\nHumi: %.2f RH\nAlti: %.2f m\n",
-    				BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP);
-    OLED_update(buffer, start_y, &end_y, 1);
-    start_y = end_y;
+		 BME280_calculation(&BME280);
+		 sprintf(buffer, "BME280: Temp: %.2f C, Pres: %.2f hPa, Humi: %.2f RH, Alti: %.2f m\n",
+						BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP);
+		 my_printf(buffer);
+		 start_y = 20;
+		 end_y = 0;
+		 sprintf(buffer, "Temp: %.2f C\nPres: %.2f hPa\nHumi: %.2f RH\nAlti: %.2f m\n",
+						BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP);
+		 OLED_update(buffer, start_y, &end_y, 1);
+		 start_y = end_y;
 
-    HAL_Delay(1000);
+		 HAL_Delay(1000);
 
-    MPU6050_Read_All(&MPU6050);
-    sprintf(buffer, "MPU6050: Ax: %.2f g, Ay: %.2f g, Az: %.2f g, Gx: %.2f Deg/s, Gy: %.2f Deg/s, Gz: %.2f Deg/s\n",
-    				MPU6050.Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz);
-    my_printf(buffer);
-    sprintf(buffer, "MPU6050: Roll: %.2f Deg, Pitch: %.2f Deg, KalmanX: %.2f Deg, KalmanY: %.2f Deg, State:%s\n",
-    				MPU6050.roll , MPU6050.pitch, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
-	my_printf(buffer);
-	start_y = 20;
-	end_y = 0;
-    sprintf(buffer, "Roll: %.2f Deg\nPitch: %.2f Deg\nState: %s\n",
-    				MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
-	OLED_update(buffer, start_y, &end_y, 1);
-	start_y = end_y;
+		 MPU6050_Read_All(&MPU6050);
+		 sprintf(buffer, "MPU6050: Ax: %.2f g, Ay: %.2f g, Az: %.2f g, Gx: %.2f Deg/s, Gy: %.2f Deg/s, Gz: %.2f Deg/s\n",
+						MPU6050.Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz);
+		 my_printf(buffer);
+		 sprintf(buffer, "MPU6050: Roll: %.2f Deg, Pitch: %.2f Deg, KalmanX: %.2f Deg, KalmanY: %.2f Deg, State:%s\n",
+						MPU6050.roll , MPU6050.pitch, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
+		my_printf(buffer);
+		start_y = 20;
+		end_y = 0;
+		 sprintf(buffer, "Roll: %.2f Deg\nPitch: %.2f Deg\nState: %s\n",
+						MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
+		OLED_update(buffer, start_y, &end_y, 1);
+		start_y = end_y;
 
-	my_printf("\n");
+		my_printf("\n");
 
-	char CSVbuffer[1024];
-	//Temperature, Pressure, Humidity, Alititude, Ax, Ay, Az, Gx, Gy, Gz, roll, pitch, KalmanX, KalmanY, state
-	sprintf(CSVbuffer, "%.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %s",
-			BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP,
-			MPU6050.Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz,
-			MPU6050.roll , MPU6050.pitch, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
+		char CSVbuffer[1024];
+		//Temperature, Pressure, Humidity, Alititude, Ax, Ay, Az, Gx, Gy, Gz, roll, pitch, KalmanX, KalmanY, state
+		sprintf(CSVbuffer, "%.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %s",
+				BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP,
+				MPU6050.Ax , MPU6050.Ay, MPU6050.Az , MPU6050.Gx, MPU6050.Gy , MPU6050.Gz,
+				MPU6050.roll , MPU6050.pitch, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
 
-	SDCard_append_csv(CSVbuffer);
+		SDCard_append_csv(CSVbuffer);
 
-	//for testing
-	if (count > 1) {
-		SDCard_close_log();
-		SDCard_close_csv();
+		HAL_Delay(1000); //500ms delay minimum for current transmit value
+		break;
+
+	  case STATE_STOP_REQUESTED:
+		  // Close file
+		  // Unmount SD
+		  //for testing
+		  LED_close();
+		  BME280_close();
+		  MPU6050_close();
+		  OLED_close();
+		  SDCard_close_log();
+		  SDCard_close_csv();
+		  state = STATE_STOPPED;
+		  break;
 	}
-
-	HAL_Delay(1000); //500ms delay minimum for current transmit value
-
   }
-  LED_close();
-  BME280_close();
-  MPU6050_close();
-  OLED_close();
-  SDCard_close_log();
-  SDCard_close();
   /* USER CODE END 3 */
 }
 

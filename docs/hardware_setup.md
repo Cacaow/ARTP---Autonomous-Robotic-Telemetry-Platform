@@ -46,6 +46,8 @@
 | SPI SDCard MOSI |PB15/CN10_Pin26|
 |  SPI SDCard CS  | PB6/D10 (GPIO)|
 |                 |               |
+|Blue Push Button |PC13/GPIO_EXTIT|
+|                 |               |
 
 ## UART Settings
 |   Baud Rate   |    115200     |
@@ -63,7 +65,7 @@
 |        Mode        |    Full-Duplex Master    |
 |Hardware NSS Signal |        Disable           |
 | PB13/PB14/PB15/PB6 |      GPIO-Pull-up        |
-|    Prescaler       |           256            |
+|    Prescaler       |            4             |
 |       FATFS        |       User-defined       |
 
 ## Notes

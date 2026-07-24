@@ -72,7 +72,9 @@ int OLED_init(void)
 	ssd1306_Init();
 	//ssd1306_Fill(White);
 	ssd1306_SetCursor(0, 0);
-	int WriteString = ssd1306_WriteString("ARTP Data", Font_11x18, White);
+	int WriteString = ssd1306_WriteString("ARTP", Font_11x18, White);
+	ssd1306_SetCursor(64, 8);
+	WriteString = ssd1306_WriteString("INIT", Font_6x8, White);
 	if (WriteString != 0) {
 		my_printf("ERROR: OLED_init-String could not be written \n");
 		//return -1;
@@ -94,8 +96,15 @@ int OLED_update(char *txt, int start_y, int *end_y, int clear) {
 		return 0;
 	}
 	if (clear) {
-		ssd1306_FillRectangle(0, 20, 128, 64, Black);
+		ssd1306_FillRectangle(0, 0, 128, 64, Black);
 	}
+
+	ssd1306_SetCursor(0, 0);
+	int WriteString = ssd1306_WriteString("ARTP", Font_11x18, White);
+	ssd1306_SetCursor(64, 8);
+	WriteString = ssd1306_WriteString("RUNNING", Font_6x8, White);
+
+
 	//ssd1306_Fill(White);
 	char *delimiter = "\n";
 
@@ -104,7 +113,7 @@ int OLED_update(char *txt, int start_y, int *end_y, int clear) {
 
 	while (token != NULL) {
 		ssd1306_SetCursor(0, y_val);
-		int WriteString = ssd1306_WriteString(token, Font_6x8, White);
+		WriteString = ssd1306_WriteString(token, Font_6x8, White);
 		//can also be written as if (WriteString == '\0')
 		if (WriteString == -1) {
 			my_printf("ERROR: OLED invalid string\n");
@@ -133,8 +142,10 @@ int OLED_close(void) {
 	if (enable_OLED == 0) {
 		return 0;
 	}
-	ssd1306_SetCursor(10, 10);
-	ssd1306_WriteString("", Font_11x18, White);
+	ssd1306_SetCursor(0, 0);
+	ssd1306_WriteString("ARTP", Font_11x18, White);
+	ssd1306_SetCursor(64, 8);
+	ssd1306_WriteString("STOPPED", Font_6x8, White);
 	ssd1306_UpdateScreen();
 	ssd1306_stop_scroll();
 
