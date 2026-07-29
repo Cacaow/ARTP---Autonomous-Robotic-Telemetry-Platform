@@ -1,0 +1,808 @@
+2026-07-10 00:00:59 [DEBUG] File does not exist.
+2026-07-10 00:00:59 [DEBUG] [SD] CSV File opened: STM_FILE.csv
+2026-07-10 00:00:59 [DEBUG] 
+--- Starting I2C Bus Scan ---
+2026-07-10 00:00:59 [DEBUG] Device found at 7-bit address: 0x3C (8-bit Addr: 0x78)
+2026-07-10 00:00:59 [DEBUG] Device found at 7-bit address: 0x68 (8-bit Addr: 0xD0)
+2026-07-10 00:00:59 [DEBUG] Device found at 7-bit address: 0x76 (8-bit Addr: 0xEC)
+2026-07-10 00:00:59 [DEBUG] Scan complete. Found 3 device(s).
+2026-07-10 00:00:59 [DEBUG] -----------------------------
+
+2026-07-10 00:01:00 [DEBUG] BME280 was put into sleep mode so that the config register could be set.!
+2026-07-10 00:01:00 [DEBUG] BME280 Initialization process is done!
+2026-07-10 00:01:00 [DEBUG] MPU6050 Initialization process is done!
+2026-07-10 00:01:00 [DEBUG] MPU6050 Calibration Start
+2026-07-10 00:01:00 [DEBUG] MPU6050: Ax_sum: 348 g, Ay_sum: 312 g, Az_sum: -15492 g, Gx_sum: 0 Deg/s, Gy_sum: 0 Deg/s, Gz_sum: 0 Deg/s
+2026-07-10 00:01:00 [DEBUG] MPU6050: Ax_sum: 640 g, Ay_sum: 656 g, Az_sum: -30948 g, Gx_sum: 0 Deg/s, Gy_sum: 0 Deg/s, Gz_sum: 0 Deg/s
+2026-07-10 00:01:00 [DEBUG] MPU6050: Ax_sum: 904 g, Ay_sum: 988 g, Az_sum: -46496 g, Gx_sum: 303 Deg/s, Gy_sum: 714 Deg/s, Gz_sum: -252 Deg/s
+2026-07-10 00:01:00 [DEBUG] MPU6050: Ax_sum: 1260 g, Ay_sum: 1280 g, Az_sum: -61960 g, Gx_sum: 618 Deg/s, Gy_sum: 1407 Deg/s, Gz_sum: -520 Deg/s
+2026-07-10 00:01:00 [DEBUG] MPU6050: Ax_sum: 1568 g, Ay_sum: 1648 g, Az_sum: -77492 g, Gx_sum: 944 Deg/s, Gy_sum: 2126 Deg/s, Gz_sum: -759 Deg/s
+2026-07-10 00:01:00 [DEBUG] MPU6050: Ax_sum: 1868 g, Ay_sum: 1972 g, Az_sum: -92984 g, Gx_sum: 1267 Deg/s, Gy_sum: 2822 Deg/s, Gz_sum: -1011 Deg/s
+2026-07-10 00:01:00 [DEBUG] MPU6050: Ax_sum: 2260 g, Ay_sum: 2320 g, Az_sum: -108536 g, Gx_sum: 1593 Deg/s, Gy_sum: 3525 Deg/s, Gz_sum: -1246 Deg/s
+2026-07-10 00:01:00 [DEBUG] MPU6050: Ax_sum: 2596 g, Ay_sum: 2668 g, Az_sum: -124056 g, Gx_sum: 1914 Deg/s, Gy_sum: 4251 Deg/s, Gz_sum: -1482 Deg/s
+2026-07-10 00:01:00 [DEBUG] MPU6050: Ax_sum: 2912 g, Ay_sum: 3072 g, Az_sum: -139572 g, Gx_sum: 2210 Deg/s, Gy_sum: 4929 Deg/s, Gz_sum: -1725 Deg/s
+2026-07-10 00:01:00 [DEBUG] MPU6050: Ax_sum: 3208 g, Ay_sum: 3464 g, Az_sum: -155116 g, Gx_sum: 2546 Deg/s, Gy_sum: 5643 Deg/s, Gz_sum: -2006 Deg/s
+2026-07-10 00:01:00 [DEBUG] MPU6050: Ax_Offset: 320 g, Ay_Offset: 346 g, Az_Offset: 873 g, Gx_Offset: 254 Deg/s, Gy_Offset: 564 Deg/s, Gz_Offset: -200 Deg/s
+2026-07-10 00:01:00 [DEBUG] MPU6050 Calibration Finish
+2026-07-10 00:01:00 [DEBUG] Hello World count = 0, Timer = 0
+2026-07-10 00:01:00 [DEBUG] BME280: Temp: 22.25 C, Pres: 990.90 hPa, Humi: 46.37 RH, Alti: 187.76 m
+2026-07-10 00:01:02 [DEBUG] MPU6050: Ax: -0.00 g, Ay: 0.00 g, Az: -1.00 g, Gx: 0.57 Deg/s, Gy: 0.99 Deg/s, Gz: -0.41 Deg/s
+2026-07-10 00:01:02 [DEBUG] MPU6050: Roll: 0.08 Deg, Pitch: 179.94 Deg, KalmanX: 0.08 Deg, KalmanY: -0.06 Deg, State:STABLE
+2026-07-10 00:01:02 [DEBUG] 
+2026-07-10 00:01:02 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:02, 22.25, 990.90, 46.37, 187.76, -0.00, 0.00, -1.00, 0.57, 0.99, -0.41, 0.08, 179.94, 0.08, -0.06, STABLE
+
+2026-07-10 00:01:02 [DEBUG] [INFO] Written 125 bytes to SD card
+2026-07-10 00:01:03 [DEBUG] Hello World count = 1, Timer = 0
+2026-07-10 00:01:03 [DEBUG] BME280: Temp: 22.27 C, Pres: 990.89 hPa, Humi: 45.74 RH, Alti: 187.84 m
+2026-07-10 00:01:04 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.01 g, Az: -0.99 g, Gx: 0.40 Deg/s, Gy: 0.92 Deg/s, Gz: -0.43 Deg/s
+2026-07-10 00:01:04 [DEBUG] MPU6050: Roll: -0.36 Deg, Pitch: -179.86 Deg, KalmanX: -0.36 Deg, KalmanY: 0.14 Deg, State:STABLE
+2026-07-10 00:01:04 [DEBUG] 
+2026-07-10 00:01:04 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:04, 22.27, 990.89, 45.74, 187.84, 0.00, -0.01, -0.99, 0.40, 0.92, -0.43, -0.36, -179.86, -0.36, 0.14, STABLE
+
+2026-07-10 00:01:04 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:01:05 [DEBUG] Hello World count = 2, Timer = 0
+2026-07-10 00:01:05 [DEBUG] BME280: Temp: 22.28 C, Pres: 990.87 hPa, Humi: 45.29 RH, Alti: 188.03 m
+2026-07-10 00:01:06 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.39 Deg/s, Gy: 0.96 Deg/s, Gz: -0.58 Deg/s
+2026-07-10 00:01:06 [DEBUG] MPU6050: Roll: -0.19 Deg, Pitch: -179.87 Deg, KalmanX: -0.19 Deg, KalmanY: 0.13 Deg, State:STABLE
+2026-07-10 00:01:06 [DEBUG] 
+2026-07-10 00:01:06 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:06, 22.28, 990.87, 45.29, 188.03, 0.00, -0.00, -1.00, 0.39, 0.96, -0.58, -0.19, -179.87, -0.19, 0.13, STABLE
+
+2026-07-10 00:01:06 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:01:07 [DEBUG] Hello World count = 3, Timer = 0
+2026-07-10 00:01:07 [DEBUG] BME280: Temp: 22.28 C, Pres: 990.85 hPa, Humi: 45.13 RH, Alti: 188.15 m
+2026-07-10 00:01:08 [DEBUG] MPU6050: Ax: -0.14 g, Ay: 0.09 g, Az: -1.32 g, Gx: -0.58 Deg/s, Gy: 3.30 Deg/s, Gz: 110.16 Deg/s
+2026-07-10 00:01:08 [DEBUG] MPU6050: Roll: 4.10 Deg, Pitch: 174.06 Deg, KalmanX: 4.10 Deg, KalmanY: -5.94 Deg, State:MOVING
+2026-07-10 00:01:08 [DEBUG] 
+2026-07-10 00:01:08 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:08, 22.28, 990.85, 45.13, 188.15, -0.14, 0.09, -1.32, -0.58, 3.30, 110.16, 4.10, 174.06, 4.10, -5.94, MOVING
+
+2026-07-10 00:01:08 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:01:09 [DEBUG] Hello World count = 4, Timer = 0
+2026-07-10 00:01:09 [DEBUG] BME280: Temp: 22.29 C, Pres: 990.85 hPa, Humi: 44.97 RH, Alti: 188.21 m
+2026-07-10 00:01:11 [DEBUG] MPU6050: Ax: 0.02 g, Ay: 0.03 g, Az: -1.04 g, Gx: 0.53 Deg/s, Gy: 0.69 Deg/s, Gz: -0.34 Deg/s
+2026-07-10 00:01:11 [DEBUG] MPU6050: Roll: 1.83 Deg, Pitch: -178.74 Deg, KalmanX: 1.83 Deg, KalmanY: 1.26 Deg, State:STABLE
+2026-07-10 00:01:11 [DEBUG] 
+2026-07-10 00:01:11 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:11, 22.29, 990.85, 44.97, 188.21, 0.02, 0.03, -1.04, 0.53, 0.69, -0.34, 1.83, -178.74, 1.83, 1.26, STABLE
+
+2026-07-10 00:01:11 [DEBUG] [INFO] Written 124 bytes to SD card
+2026-07-10 00:01:14 [DEBUG] File exists.
+2026-07-10 00:01:14 [DEBUG] [SD] CSV File opened: STM_FILE.csv
+2026-07-10 00:01:14 [DEBUG] 
+--- Starting I2C Bus Scan ---
+2026-07-10 00:01:14 [DEBUG] Device found at 7-bit address: 0x3C (8-bit Addr: 0x78)
+2026-07-10 00:01:14 [DEBUG] Device found at 7-bit address: 0x68 (8-bit Addr: 0xD0)
+2026-07-10 00:01:14 [DEBUG] Device found at 7-bit address: 0x76 (8-bit Addr: 0xEC)
+2026-07-10 00:01:14 [DEBUG] Scan complete. Found 3 device(s).
+2026-07-10 00:01:14 [DEBUG] -----------------------------
+
+2026-07-10 00:01:15 [DEBUG] BME280 was put into sleep mode so that the config register could be set.!
+2026-07-10 00:01:15 [DEBUG] BME280 Initialization process is done!
+2026-07-10 00:01:15 [DEBUG] MPU6050 Initialization process is done!
+2026-07-10 00:01:15 [DEBUG] MPU6050 Calibration Start
+2026-07-10 00:01:15 [DEBUG] MPU6050: Ax_sum: 692 g, Ay_sum: 812 g, Az_sum: -15536 g, Gx_sum: 298 Deg/s, Gy_sum: 695 Deg/s, Gz_sum: -262 Deg/s
+2026-07-10 00:01:15 [DEBUG] MPU6050: Ax_sum: 1348 g, Ay_sum: 1504 g, Az_sum: -30992 g, Gx_sum: 639 Deg/s, Gy_sum: 1369 Deg/s, Gz_sum: -527 Deg/s
+2026-07-10 00:01:15 [DEBUG] MPU6050: Ax_sum: 2116 g, Ay_sum: 2240 g, Az_sum: -46400 g, Gx_sum: 950 Deg/s, Gy_sum: 2069 Deg/s, Gz_sum: -781 Deg/s
+2026-07-10 00:01:15 [DEBUG] MPU6050: Ax_sum: 2856 g, Ay_sum: 2960 g, Az_sum: -61832 g, Gx_sum: 1247 Deg/s, Gy_sum: 2789 Deg/s, Gz_sum: -1050 Deg/s
+2026-07-10 00:01:15 [DEBUG] MPU6050: Ax_sum: 3564 g, Ay_sum: 3668 g, Az_sum: -77288 g, Gx_sum: 1553 Deg/s, Gy_sum: 3477 Deg/s, Gz_sum: -1306 Deg/s
+2026-07-10 00:01:15 [DEBUG] MPU6050: Ax_sum: 4288 g, Ay_sum: 4360 g, Az_sum: -92760 g, Gx_sum: 1852 Deg/s, Gy_sum: 4154 Deg/s, Gz_sum: -1582 Deg/s
+2026-07-10 00:01:15 [DEBUG] MPU6050: Ax_sum: 5036 g, Ay_sum: 5132 g, Az_sum: -108152 g, Gx_sum: 2179 Deg/s, Gy_sum: 4864 Deg/s, Gz_sum: -1838 Deg/s
+2026-07-10 00:01:15 [DEBUG] MPU6050: Ax_sum: 5788 g, Ay_sum: 5820 g, Az_sum: -123548 g, Gx_sum: 2497 Deg/s, Gy_sum: 5548 Deg/s, Gz_sum: -2113 Deg/s
+2026-07-10 00:01:15 [DEBUG] MPU6050: Ax_sum: 6516 g, Ay_sum: 6488 g, Az_sum: -139072 g, Gx_sum: 2804 Deg/s, Gy_sum: 6246 Deg/s, Gz_sum: -2381 Deg/s
+2026-07-10 00:01:15 [DEBUG] MPU6050: Ax_sum: 7268 g, Ay_sum: 7260 g, Az_sum: -154580 g, Gx_sum: 3123 Deg/s, Gy_sum: 6933 Deg/s, Gz_sum: -2629 Deg/s
+2026-07-10 00:01:15 [DEBUG] MPU6050: Ax_Offset: 726 g, Ay_Offset: 726 g, Az_Offset: 926 g, Gx_Offset: 312 Deg/s, Gy_Offset: 693 Deg/s, Gz_Offset: -262 Deg/s
+2026-07-10 00:01:15 [DEBUG] MPU6050 Calibration Finish
+2026-07-10 00:01:15 [DEBUG] Hello World count = 5, Timer = 0
+2026-07-10 00:01:15 [DEBUG] BME280: Temp: 22.24 C, Pres: 990.86 hPa, Humi: 45.25 RH, Alti: 188.08 m
+2026-07-10 00:01:16 [DEBUG] MPU6050: Ax: -0.02 g, Ay: -0.04 g, Az: -0.98 g, Gx: 0.22 Deg/s, Gy: 0.73 Deg/s, Gz: 0.20 Deg/s
+2026-07-10 00:01:16 [DEBUG] MPU6050: Roll: -2.50 Deg, Pitch: 178.89 Deg, KalmanX: -2.50 Deg, KalmanY: -1.11 Deg, State:STABLE
+2026-07-10 00:01:17 [DEBUG] 
+2026-07-10 00:01:17 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:17, 22.24, 990.86, 45.25, 188.08, -0.02, -0.04, -0.98, 0.22, 0.73, 0.20, -2.50, 178.89, -2.50, -1.11, STABLE
+
+2026-07-10 00:01:17 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:08:51 [DEBUG] File exists.
+2026-07-10 00:08:51 [DEBUG] [SD] CSV File opened: STM_FILE.csv
+2026-07-10 00:08:51 [DEBUG] 
+--- Starting I2C Bus Scan ---
+2026-07-10 00:08:51 [DEBUG] Device found at 7-bit address: 0x3C (8-bit Addr: 0x78)
+2026-07-10 00:08:51 [DEBUG] Device found at 7-bit address: 0x68 (8-bit Addr: 0xD0)
+2026-07-10 00:08:51 [DEBUG] Device found at 7-bit address: 0x76 (8-bit Addr: 0xEC)
+2026-07-10 00:08:51 [DEBUG] Scan complete. Found 3 device(s).
+2026-07-10 00:08:51 [DEBUG] -----------------------------
+
+2026-07-10 00:08:52 [DEBUG] BME280 was put into sleep mode so that the config register could be set.!
+2026-07-10 00:08:53 [DEBUG] BME280 Initialization process is done!
+2026-07-10 00:08:53 [DEBUG] MPU6050 Initialization process is done!
+2026-07-10 00:08:53 [DEBUG] MPU6050 Calibration Start
+2026-07-10 00:08:53 [DEBUG] MPU6050: Ax_sum: 736 g, Ay_sum: 676 g, Az_sum: -15436 g, Gx_sum: 0 Deg/s, Gy_sum: 0 Deg/s, Gz_sum: 0 Deg/s
+2026-07-10 00:08:53 [DEBUG] MPU6050: Ax_sum: 1428 g, Ay_sum: 1348 g, Az_sum: -30912 g, Gx_sum: 0 Deg/s, Gy_sum: 0 Deg/s, Gz_sum: 0 Deg/s
+2026-07-10 00:08:53 [DEBUG] MPU6050: Ax_sum: 2156 g, Ay_sum: 1940 g, Az_sum: -46540 g, Gx_sum: 303 Deg/s, Gy_sum: 745 Deg/s, Gz_sum: -285 Deg/s
+2026-07-10 00:08:53 [DEBUG] MPU6050: Ax_sum: 2908 g, Ay_sum: 2496 g, Az_sum: -62040 g, Gx_sum: 609 Deg/s, Gy_sum: 1451 Deg/s, Gz_sum: -554 Deg/s
+2026-07-10 00:08:53 [DEBUG] MPU6050: Ax_sum: 3596 g, Ay_sum: 3152 g, Az_sum: -77544 g, Gx_sum: 949 Deg/s, Gy_sum: 2159 Deg/s, Gz_sum: -821 Deg/s
+2026-07-10 00:08:53 [DEBUG] MPU6050: Ax_sum: 4296 g, Ay_sum: 3772 g, Az_sum: -93052 g, Gx_sum: 1259 Deg/s, Gy_sum: 2858 Deg/s, Gz_sum: -1071 Deg/s
+2026-07-10 00:08:53 [DEBUG] MPU6050: Ax_sum: 5000 g, Ay_sum: 4388 g, Az_sum: -108580 g, Gx_sum: 1533 Deg/s, Gy_sum: 3543 Deg/s, Gz_sum: -1306 Deg/s
+2026-07-10 00:08:53 [DEBUG] MPU6050: Ax_sum: 5692 g, Ay_sum: 5004 g, Az_sum: -124084 g, Gx_sum: 1843 Deg/s, Gy_sum: 4240 Deg/s, Gz_sum: -1546 Deg/s
+2026-07-10 00:08:53 [DEBUG] MPU6050: Ax_sum: 6384 g, Ay_sum: 5640 g, Az_sum: -139532 g, Gx_sum: 2159 Deg/s, Gy_sum: 4918 Deg/s, Gz_sum: -1805 Deg/s
+2026-07-10 00:08:53 [DEBUG] MPU6050: Ax_sum: 7136 g, Ay_sum: 6248 g, Az_sum: -155036 g, Gx_sum: 2453 Deg/s, Gy_sum: 5625 Deg/s, Gz_sum: -2061 Deg/s
+2026-07-10 00:08:53 [DEBUG] MPU6050: Ax_Offset: 713 g, Ay_Offset: 624 g, Az_Offset: 881 g, Gx_Offset: 245 Deg/s, Gy_Offset: 562 Deg/s, Gz_Offset: -206 Deg/s
+2026-07-10 00:08:53 [DEBUG] MPU6050 Calibration Finish
+2026-07-10 00:08:53 [DEBUG] Hello World count = 0, Timer = 0
+2026-07-10 00:08:53 [DEBUG] BME280: Temp: 22.43 C, Pres: 990.84 hPa, Humi: 45.95 RH, Alti: 188.28 m
+2026-07-10 00:08:54 [DEBUG] MPU6050: Ax: 0.00 g, Ay: 0.00 g, Az: -1.00 g, Gx: 0.51 Deg/s, Gy: 0.95 Deg/s, Gz: -0.34 Deg/s
+2026-07-10 00:08:54 [DEBUG] MPU6050: Roll: 0.01 Deg, Pitch: -179.99 Deg, KalmanX: 0.01 Deg, KalmanY: 0.01 Deg, State:STABLE
+2026-07-10 00:08:54 [DEBUG] 
+2026-07-10 00:08:54 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:08:54, 22.43, 990.84, 45.95, 188.28, 0.00, 0.00, -1.00, 0.51, 0.95, -0.34, 0.01, -179.99, 0.01, 0.01, STABLE
+
+2026-07-10 00:08:54 [DEBUG] [INFO] Written 124 bytes to SD card
+2026-07-10 00:08:55 [DEBUG] Hello World count = 1, Timer = 0
+2026-07-10 00:08:55 [DEBUG] BME280: Temp: 22.46 C, Pres: 990.85 hPa, Humi: 45.87 RH, Alti: 188.17 m
+2026-07-10 00:08:56 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.53 Deg/s, Gy: 0.88 Deg/s, Gz: -0.37 Deg/s
+2026-07-10 00:08:56 [DEBUG] MPU6050: Roll: -0.11 Deg, Pitch: 179.87 Deg, KalmanX: -0.11 Deg, KalmanY: -0.13 Deg, State:STABLE
+2026-07-10 00:08:56 [DEBUG] 
+2026-07-10 00:08:56 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:08:56, 22.46, 990.85, 45.87, 188.17, -0.00, -0.00, -1.00, 0.53, 0.88, -0.37, -0.11, 179.87, -0.11, -0.13, STABLE
+
+2026-07-10 00:08:56 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:08:57 [DEBUG] Hello World count = 2, Timer = 0
+2026-07-10 00:08:57 [DEBUG] BME280: Temp: 22.48 C, Pres: 990.85 hPa, Humi: 45.78 RH, Alti: 188.14 m
+2026-07-10 00:08:58 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.53 Deg/s, Gy: 0.92 Deg/s, Gz: -0.27 Deg/s
+2026-07-10 00:08:58 [DEBUG] MPU6050: Roll: -0.06 Deg, Pitch: 179.94 Deg, KalmanX: -0.06 Deg, KalmanY: -0.06 Deg, State:STABLE
+2026-07-10 00:08:58 [DEBUG] 
+2026-07-10 00:08:58 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:08:58, 22.48, 990.85, 45.78, 188.14, -0.00, -0.00, -1.00, 0.53, 0.92, -0.27, -0.06, 179.94, -0.06, -0.06, STABLE
+
+2026-07-10 00:08:58 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:08:59 [DEBUG] Hello World count = 3, Timer = 0
+2026-07-10 00:08:59 [DEBUG] BME280: Temp: 22.49 C, Pres: 990.86 hPa, Humi: 45.73 RH, Alti: 188.14 m
+2026-07-10 00:09:01 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.01 g, Az: -1.00 g, Gx: 0.33 Deg/s, Gy: 0.86 Deg/s, Gz: -0.27 Deg/s
+2026-07-10 00:09:01 [DEBUG] MPU6050: Roll: -0.29 Deg, Pitch: 179.91 Deg, KalmanX: -0.29 Deg, KalmanY: -0.09 Deg, State:STABLE
+2026-07-10 00:09:01 [DEBUG] 
+2026-07-10 00:09:01 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:01, 22.49, 990.86, 45.73, 188.14, -0.00, -0.01, -1.00, 0.33, 0.86, -0.27, -0.29, 179.91, -0.29, -0.09, STABLE
+
+2026-07-10 00:09:01 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:09:02 [DEBUG] Hello World count = 4, Timer = 0
+2026-07-10 00:09:02 [DEBUG] BME280: Temp: 22.50 C, Pres: 990.86 hPa, Humi: 45.72 RH, Alti: 188.12 m
+2026-07-10 00:09:03 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.01 g, Az: -1.00 g, Gx: 0.37 Deg/s, Gy: 1.12 Deg/s, Gz: -0.50 Deg/s
+2026-07-10 00:09:03 [DEBUG] MPU6050: Roll: -0.36 Deg, Pitch: 179.84 Deg, KalmanX: -0.36 Deg, KalmanY: -0.16 Deg, State:STABLE
+2026-07-10 00:09:03 [DEBUG] 
+2026-07-10 00:09:03 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:03, 22.50, 990.86, 45.72, 188.12, -0.00, -0.01, -1.00, 0.37, 1.12, -0.50, -0.36, 179.84, -0.36, -0.16, STABLE
+
+2026-07-10 00:09:03 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:09:04 [DEBUG] Hello World count = 5, Timer = 0
+2026-07-10 00:09:04 [DEBUG] BME280: Temp: 22.50 C, Pres: 990.86 hPa, Humi: 45.73 RH, Alti: 188.12 m
+2026-07-10 00:09:05 [DEBUG] MPU6050: Ax: 0.01 g, Ay: -0.06 g, Az: -0.85 g, Gx: -0.14 Deg/s, Gy: 2.15 Deg/s, Gz: -0.07 Deg/s
+2026-07-10 00:09:05 [DEBUG] MPU6050: Roll: -4.23 Deg, Pitch: -179.30 Deg, KalmanX: -4.23 Deg, KalmanY: 0.70 Deg, State:STABLE
+2026-07-10 00:09:05 [DEBUG] 
+2026-07-10 00:09:05 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:05, 22.50, 990.86, 45.73, 188.12, 0.01, -0.06, -0.85, -0.14, 2.15, -0.07, -4.23, -179.30, -4.23, 0.70, STABLE
+
+2026-07-10 00:09:05 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:09:06 [DEBUG] Hello World count = 6, Timer = 0
+2026-07-10 00:09:06 [DEBUG] BME280: Temp: 22.51 C, Pres: 990.87 hPa, Humi: 45.82 RH, Alti: 188.04 m
+2026-07-10 00:09:07 [DEBUG] MPU6050: Ax: -0.01 g, Ay: -0.00 g, Az: -1.00 g, Gx: -0.59 Deg/s, Gy: 2.31 Deg/s, Gz: -0.40 Deg/s
+2026-07-10 00:09:07 [DEBUG] MPU6050: Roll: -0.13 Deg, Pitch: 179.63 Deg, KalmanX: -0.13 Deg, KalmanY: -0.37 Deg, State:STABLE
+2026-07-10 00:09:07 [DEBUG] 
+2026-07-10 00:09:07 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:07, 22.51, 990.87, 45.82, 188.04, -0.01, -0.00, -1.00, -0.59, 2.31, -0.40, -0.13, 179.63, -0.13, -0.37, STABLE
+
+2026-07-10 00:09:07 [DEBUG] [INFO] Written 129 bytes to SD card
+2026-07-10 00:09:13 [DEBUG] File exists.
+2026-07-10 00:09:13 [DEBUG] [SD] CSV File opened: STM_FILE.csv
+2026-07-10 00:09:13 [DEBUG] 
+--- Starting I2C Bus Scan ---
+2026-07-10 00:09:13 [DEBUG] Device found at 7-bit address: 0x3C (8-bit Addr: 0x78)
+2026-07-10 00:09:13 [DEBUG] Device found at 7-bit address: 0x68 (8-bit Addr: 0xD0)
+2026-07-10 00:09:13 [DEBUG] Device found at 7-bit address: 0x76 (8-bit Addr: 0xEC)
+2026-07-10 00:09:13 [DEBUG] Scan complete. Found 3 device(s).
+2026-07-10 00:09:13 [DEBUG] -----------------------------
+
+2026-07-10 00:09:14 [DEBUG] BME280 was put into sleep mode so that the config register could be set.!
+2026-07-10 00:09:14 [DEBUG] BME280 Initialization process is done!
+2026-07-10 00:09:14 [DEBUG] MPU6050 Initialization process is done!
+2026-07-10 00:09:14 [DEBUG] MPU6050 Calibration Start
+2026-07-10 00:09:14 [DEBUG] MPU6050: Ax_sum: 700 g, Ay_sum: 624 g, Az_sum: -15496 g, Gx_sum: 331 Deg/s, Gy_sum: 688 Deg/s, Gz_sum: -260 Deg/s
+2026-07-10 00:09:14 [DEBUG] MPU6050: Ax_sum: 1472 g, Ay_sum: 1264 g, Az_sum: -31004 g, Gx_sum: 648 Deg/s, Gy_sum: 1361 Deg/s, Gz_sum: -506 Deg/s
+2026-07-10 00:09:14 [DEBUG] MPU6050: Ax_sum: 2148 g, Ay_sum: 1816 g, Az_sum: -46524 g, Gx_sum: 949 Deg/s, Gy_sum: 2055 Deg/s, Gz_sum: -757 Deg/s
+2026-07-10 00:09:14 [DEBUG] MPU6050: Ax_sum: 2816 g, Ay_sum: 2460 g, Az_sum: -61876 g, Gx_sum: 1224 Deg/s, Gy_sum: 2742 Deg/s, Gz_sum: -1032 Deg/s
+2026-07-10 00:09:14 [DEBUG] MPU6050: Ax_sum: 3560 g, Ay_sum: 3108 g, Az_sum: -77436 g, Gx_sum: 1514 Deg/s, Gy_sum: 3437 Deg/s, Gz_sum: -1327 Deg/s
+2026-07-10 00:09:14 [DEBUG] MPU6050: Ax_sum: 4284 g, Ay_sum: 3688 g, Az_sum: -92940 g, Gx_sum: 1825 Deg/s, Gy_sum: 4151 Deg/s, Gz_sum: -1602 Deg/s
+2026-07-10 00:09:14 [DEBUG] MPU6050: Ax_sum: 5028 g, Ay_sum: 4320 g, Az_sum: -108380 g, Gx_sum: 2097 Deg/s, Gy_sum: 4842 Deg/s, Gz_sum: -1866 Deg/s
+2026-07-10 00:09:14 [DEBUG] MPU6050: Ax_sum: 5704 g, Ay_sum: 4936 g, Az_sum: -123864 g, Gx_sum: 2378 Deg/s, Gy_sum: 5544 Deg/s, Gz_sum: -2125 Deg/s
+2026-07-10 00:09:14 [DEBUG] MPU6050: Ax_sum: 6392 g, Ay_sum: 5608 g, Az_sum: -139336 g, Gx_sum: 2634 Deg/s, Gy_sum: 6222 Deg/s, Gz_sum: -2389 Deg/s
+2026-07-10 00:09:14 [DEBUG] MPU6050: Ax_sum: 7076 g, Ay_sum: 6248 g, Az_sum: -154820 g, Gx_sum: 2911 Deg/s, Gy_sum: 6929 Deg/s, Gz_sum: -2682 Deg/s
+2026-07-10 00:09:14 [DEBUG] MPU6050: Ax_Offset: 707 g, Ay_Offset: 624 g, Az_Offset: 902 g, Gx_Offset: 291 Deg/s, Gy_Offset: 692 Deg/s, Gz_Offset: -268 Deg/s
+2026-07-10 00:09:14 [DEBUG] MPU6050 Calibration Finish
+2026-07-10 00:09:14 [DEBUG] Hello World count = 7, Timer = 0
+2026-07-10 00:09:15 [DEBUG] BME280: Temp: 22.46 C, Pres: 990.88 hPa, Humi: 46.31 RH, Alti: 187.96 m
+2026-07-10 00:09:16 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.01 g, Az: -0.99 g, Gx: -0.03 Deg/s, Gy: 0.00 Deg/s, Gz: 0.12 Deg/s
+2026-07-10 00:09:16 [DEBUG] MPU6050: Roll: -0.30 Deg, Pitch: -180.00 Deg, KalmanX: -0.30 Deg, KalmanY: 0.00 Deg, State:STABLE
+2026-07-10 00:09:16 [DEBUG] 
+2026-07-10 00:09:16 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:16, 22.46, 990.88, 46.31, 187.96, 0.00, -0.01, -0.99, -0.03, 0.00, 0.12, -0.30, -180.00, -0.30, 0.00, STABLE
+
+2026-07-10 00:09:16 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:09:17 [DEBUG] Hello World count = 8, Timer = 0
+2026-07-10 00:09:17 [DEBUG] BME280: Temp: 22.49 C, Pres: 990.87 hPa, Humi: 46.46 RH, Alti: 188.00 m
+2026-07-10 00:09:18 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.01 g, Az: -1.00 g, Gx: 0.04 Deg/s, Gy: 0.00 Deg/s, Gz: 0.01 Deg/s
+2026-07-10 00:09:18 [DEBUG] MPU6050: Roll: -0.34 Deg, Pitch: -179.86 Deg, KalmanX: -0.34 Deg, KalmanY: 0.14 Deg, State:STABLE
+2026-07-10 00:09:18 [DEBUG] 
+2026-07-10 00:09:18 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:18, 22.49, 990.87, 46.46, 188.00, 0.00, -0.01, -1.00, 0.04, 0.00, 0.01, -0.34, -179.86, -0.34, 0.14, STABLE
+
+2026-07-10 00:09:18 [DEBUG] [INFO] Written 126 bytes to SD card
+2026-07-10 00:09:19 [DEBUG] Hello World count = 9, Timer = 0
+2026-07-10 00:09:19 [DEBUG] BME280: Temp: 22.51 C, Pres: 990.87 hPa, Humi: 46.60 RH, Alti: 188.00 m
+2026-07-10 00:09:20 [DEBUG] MPU6050: Ax: -0.00 g, Ay: 0.00 g, Az: -1.00 g, Gx: 0.21 Deg/s, Gy: 0.11 Deg/s, Gz: 0.03 Deg/s
+2026-07-10 00:09:20 [DEBUG] MPU6050: Roll: 0.11 Deg, Pitch: 179.79 Deg, KalmanX: 0.11 Deg, KalmanY: -0.21 Deg, State:STABLE
+2026-07-10 00:09:20 [DEBUG] 
+2026-07-10 00:09:20 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:20, 22.51, 990.87, 46.60, 188.00, -0.00, 0.00, -1.00, 0.21, 0.11, 0.03, 0.11, 179.79, 0.11, -0.21, STABLE
+
+2026-07-10 00:09:20 [DEBUG] [INFO] Written 124 bytes to SD card
+2026-07-10 00:09:21 [DEBUG] Hello World count = 10, Timer = 0
+2026-07-10 00:09:21 [DEBUG] BME280: Temp: 22.52 C, Pres: 990.87 hPa, Humi: 46.54 RH, Alti: 188.03 m
+2026-07-10 00:09:22 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.01 g, Az: -1.00 g, Gx: 0.27 Deg/s, Gy: -0.25 Deg/s, Gz: 0.12 Deg/s
+2026-07-10 00:09:22 [DEBUG] MPU6050: Roll: -0.31 Deg, Pitch: -179.82 Deg, KalmanX: -0.31 Deg, KalmanY: 0.18 Deg, State:STABLE
+2026-07-10 00:09:22 [DEBUG] 
+2026-07-10 00:09:22 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:22, 22.52, 990.87, 46.54, 188.03, 0.00, -0.01, -1.00, 0.27, -0.25, 0.12, -0.31, -179.82, -0.31, 0.18, STABLE
+
+2026-07-10 00:09:23 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:09:24 [DEBUG] Hello World count = 11, Timer = 0
+2026-07-10 00:09:24 [DEBUG] BME280: Temp: 22.52 C, Pres: 990.87 hPa, Humi: 46.57 RH, Alti: 188.00 m
+2026-07-10 00:09:25 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.05 Deg/s, Gy: -0.02 Deg/s, Gz: 0.17 Deg/s
+2026-07-10 00:09:25 [DEBUG] MPU6050: Roll: -0.06 Deg, Pitch: -179.97 Deg, KalmanX: -0.06 Deg, KalmanY: 0.03 Deg, State:STABLE
+2026-07-10 00:09:25 [DEBUG] 
+2026-07-10 00:09:25 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:25, 22.52, 990.87, 46.57, 188.00, 0.00, -0.00, -1.00, 0.05, -0.02, 0.17, -0.06, -179.97, -0.06, 0.03, STABLE
+
+2026-07-10 00:09:25 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:09:26 [DEBUG] Hello World count = 12, Timer = 0
+2026-07-10 00:09:26 [DEBUG] BME280: Temp: 22.52 C, Pres: 990.87 hPa, Humi: 46.60 RH, Alti: 187.99 m
+2026-07-10 00:09:27 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: -0.02 Deg/s, Gy: -0.15 Deg/s, Gz: 0.07 Deg/s
+2026-07-10 00:09:27 [DEBUG] MPU6050: Roll: -0.15 Deg, Pitch: -179.98 Deg, KalmanX: -0.15 Deg, KalmanY: 0.02 Deg, State:STABLE
+2026-07-10 00:09:27 [DEBUG] 
+2026-07-10 00:09:27 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:27, 22.52, 990.87, 46.60, 187.99, 0.00, -0.00, -1.00, -0.02, -0.15, 0.07, -0.15, -179.98, -0.15, 0.02, STABLE
+
+2026-07-10 00:09:27 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:09:28 [DEBUG] Hello World count = 13, Timer = 0
+2026-07-10 00:09:28 [DEBUG] BME280: Temp: 22.53 C, Pres: 990.87 hPa, Humi: 46.41 RH, Alti: 188.00 m
+2026-07-10 00:09:29 [DEBUG] MPU6050: Ax: 0.00 g, Ay: 0.00 g, Az: -1.00 g, Gx: -0.02 Deg/s, Gy: 0.15 Deg/s, Gz: 0.33 Deg/s
+2026-07-10 00:09:29 [DEBUG] MPU6050: Roll: 0.14 Deg, Pitch: -179.98 Deg, KalmanX: 0.14 Deg, KalmanY: 0.02 Deg, State:STABLE
+2026-07-10 00:09:29 [DEBUG] 
+2026-07-10 00:09:29 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:29, 22.53, 990.87, 46.41, 188.00, 0.00, 0.00, -1.00, -0.02, 0.15, 0.33, 0.14, -179.98, 0.14, 0.02, STABLE
+
+2026-07-10 00:09:29 [DEBUG] [INFO] Written 124 bytes to SD card
+2026-07-10 00:09:30 [DEBUG] Hello World count = 14, Timer = 0
+2026-07-10 00:09:30 [DEBUG] BME280: Temp: 22.53 C, Pres: 990.88 hPa, Humi: 46.11 RH, Alti: 187.92 m
+2026-07-10 00:09:31 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.11 Deg/s, Gy: 0.08 Deg/s, Gz: 0.02 Deg/s
+2026-07-10 00:09:31 [DEBUG] MPU6050: Roll: -0.01 Deg, Pitch: -179.93 Deg, KalmanX: -0.01 Deg, KalmanY: 0.07 Deg, State:STABLE
+2026-07-10 00:09:32 [DEBUG] 
+2026-07-10 00:09:32 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:32, 22.53, 990.88, 46.11, 187.92, 0.00, -0.00, -1.00, 0.11, 0.08, 0.02, -0.01, -179.93, -0.01, 0.07, STABLE
+
+2026-07-10 00:09:32 [DEBUG] [INFO] Written 126 bytes to SD card
+2026-07-10 00:09:33 [DEBUG] Hello World count = 15, Timer = 0
+2026-07-10 00:09:33 [DEBUG] BME280: Temp: 22.53 C, Pres: 990.88 hPa, Humi: 45.72 RH, Alti: 187.89 m
+2026-07-10 00:09:34 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.00 g, Az: -1.01 g, Gx: 0.09 Deg/s, Gy: -0.28 Deg/s, Gz: -0.02 Deg/s
+2026-07-10 00:09:34 [DEBUG] MPU6050: Roll: -0.10 Deg, Pitch: 179.93 Deg, KalmanX: -0.10 Deg, KalmanY: -0.07 Deg, State:STABLE
+2026-07-10 00:09:34 [DEBUG] 
+2026-07-10 00:09:34 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:34, 22.53, 990.88, 45.72, 187.89, -0.00, -0.00, -1.01, 0.09, -0.28, -0.02, -0.10, 179.93, -0.10, -0.07, STABLE
+
+2026-07-10 00:09:34 [DEBUG] [INFO] Written 129 bytes to SD card
+2026-07-10 00:09:35 [DEBUG] Hello World count = 16, Timer = 0
+2026-07-10 00:09:35 [DEBUG] BME280: Temp: 22.53 C, Pres: 990.89 hPa, Humi: 45.42 RH, Alti: 187.81 m
+2026-07-10 00:09:36 [DEBUG] MPU6050: Ax: -0.00 g, Ay: 0.00 g, Az: -0.99 g, Gx: 0.26 Deg/s, Gy: 0.02 Deg/s, Gz: -0.02 Deg/s
+2026-07-10 00:09:36 [DEBUG] MPU6050: Roll: 0.18 Deg, Pitch: 179.78 Deg, KalmanX: 0.18 Deg, KalmanY: -0.22 Deg, State:STABLE
+2026-07-10 00:09:36 [DEBUG] 
+2026-07-10 00:09:36 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:36, 22.53, 990.89, 45.42, 187.81, -0.00, 0.00, -0.99, 0.26, 0.02, -0.02, 0.18, 179.78, 0.18, -0.22, STABLE
+
+2026-07-10 00:09:36 [DEBUG] [INFO] Written 125 bytes to SD card
+2026-07-10 00:09:37 [DEBUG] Hello World count = 17, Timer = 0
+2026-07-10 00:09:37 [DEBUG] BME280: Temp: 22.54 C, Pres: 990.89 hPa, Humi: 45.27 RH, Alti: 187.82 m
+2026-07-10 00:09:38 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.01 g, Gx: 0.44 Deg/s, Gy: 0.11 Deg/s, Gz: -0.06 Deg/s
+2026-07-10 00:09:38 [DEBUG] MPU6050: Roll: -0.13 Deg, Pitch: -179.94 Deg, KalmanX: -0.13 Deg, KalmanY: 0.06 Deg, State:STABLE
+2026-07-10 00:09:38 [DEBUG] 
+2026-07-10 00:09:38 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:38, 22.54, 990.89, 45.27, 187.82, 0.00, -0.00, -1.01, 0.44, 0.11, -0.06, -0.13, -179.94, -0.13, 0.06, STABLE
+
+2026-07-10 00:09:38 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:09:39 [DEBUG] Hello World count = 18, Timer = 0
+2026-07-10 00:09:39 [DEBUG] BME280: Temp: 22.54 C, Pres: 990.89 hPa, Humi: 45.22 RH, Alti: 187.87 m
+2026-07-10 00:09:40 [DEBUG] MPU6050: Ax: -0.00 g, Ay: 0.00 g, Az: -1.00 g, Gx: -0.05 Deg/s, Gy: -0.15 Deg/s, Gz: 0.03 Deg/s
+2026-07-10 00:09:40 [DEBUG] MPU6050: Roll: 0.00 Deg, Pitch: 179.85 Deg, KalmanX: 0.00 Deg, KalmanY: -0.15 Deg, State:STABLE
+2026-07-10 00:09:41 [DEBUG] 
+2026-07-10 00:09:41 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:41, 22.54, 990.89, 45.22, 187.87, -0.00, 0.00, -1.00, -0.05, -0.15, 0.03, 0.00, 179.85, 0.00, -0.15, STABLE
+
+2026-07-10 00:09:41 [DEBUG] [INFO] Written 126 bytes to SD card
+2026-07-10 00:09:42 [DEBUG] Hello World count = 19, Timer = 0
+2026-07-10 00:09:42 [DEBUG] BME280: Temp: 22.54 C, Pres: 990.89 hPa, Humi: 45.17 RH, Alti: 187.85 m
+2026-07-10 00:09:43 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: -0.04 Deg/s, Gy: 0.02 Deg/s, Gz: 0.25 Deg/s
+2026-07-10 00:09:43 [DEBUG] MPU6050: Roll: -0.11 Deg, Pitch: -179.98 Deg, KalmanX: -0.11 Deg, KalmanY: 0.02 Deg, State:STABLE
+2026-07-10 00:09:43 [DEBUG] 
+2026-07-10 00:09:43 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:43, 22.54, 990.89, 45.17, 187.85, 0.00, -0.00, -1.00, -0.04, 0.02, 0.25, -0.11, -179.98, -0.11, 0.02, STABLE
+
+2026-07-10 00:09:43 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:09:44 [DEBUG] Hello World count = 20, Timer = 0
+2026-07-10 00:09:44 [DEBUG] BME280: Temp: 22.54 C, Pres: 990.89 hPa, Humi: 45.11 RH, Alti: 187.84 m
+2026-07-10 00:09:45 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.02 Deg/s, Gy: -0.06 Deg/s, Gz: 0.19 Deg/s
+2026-07-10 00:09:45 [DEBUG] MPU6050: Roll: -0.17 Deg, Pitch: 179.99 Deg, KalmanX: -0.17 Deg, KalmanY: -0.01 Deg, State:STABLE
+2026-07-10 00:09:45 [DEBUG] 
+2026-07-10 00:09:45 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:45, 22.54, 990.89, 45.11, 187.84, -0.00, -0.00, -1.00, 0.02, -0.06, 0.19, -0.17, 179.99, -0.17, -0.01, STABLE
+
+2026-07-10 00:09:45 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:09:46 [DEBUG] Hello World count = 21, Timer = 0
+2026-07-10 00:09:46 [DEBUG] BME280: Temp: 22.55 C, Pres: 990.89 hPa, Humi: 45.23 RH, Alti: 187.82 m
+2026-07-10 00:09:47 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.08 Deg/s, Gy: -0.03 Deg/s, Gz: 0.02 Deg/s
+2026-07-10 00:09:47 [DEBUG] MPU6050: Roll: -0.15 Deg, Pitch: -179.97 Deg, KalmanX: -0.15 Deg, KalmanY: 0.03 Deg, State:STABLE
+2026-07-10 00:09:47 [DEBUG] 
+2026-07-10 00:09:47 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:47, 22.55, 990.89, 45.23, 187.82, 0.00, -0.00, -1.00, 0.08, -0.03, 0.02, -0.15, -179.97, -0.15, 0.03, STABLE
+
+2026-07-10 00:09:47 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:09:48 [DEBUG] Hello World count = 22, Timer = 0
+2026-07-10 00:09:48 [DEBUG] BME280: Temp: 22.55 C, Pres: 990.88 hPa, Humi: 44.88 RH, Alti: 187.92 m
+2026-07-10 00:09:49 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: -0.05 Deg/s, Gy: -0.11 Deg/s, Gz: -0.07 Deg/s
+2026-07-10 00:09:49 [DEBUG] MPU6050: Roll: -0.01 Deg, Pitch: -179.93 Deg, KalmanX: -0.01 Deg, KalmanY: 0.07 Deg, State:STABLE
+2026-07-10 00:09:50 [DEBUG] 
+2026-07-10 00:09:50 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:09:50, 22.55, 990.88, 44.88, 187.92, 0.00, -0.00, -1.00, -0.05, -0.11, -0.07, -0.01, -179.93, -0.01, 0.07, STABLE
+
+2026-07-10 00:09:50 [DEBUG] [INFO] Written 129 bytes to SD card
+2026-07-10 00:00:10 [DEBUG] File exists.
+2026-07-10 00:00:10 [DEBUG] [SD] CSV File opened: STM_FILE.csv
+2026-07-10 00:00:10 [DEBUG] 
+--- Starting I2C Bus Scan ---
+2026-07-10 00:00:10 [DEBUG] Device found at 7-bit address: 0x3C (8-bit Addr: 0x78)
+2026-07-10 00:00:10 [DEBUG] Device found at 7-bit address: 0x68 (8-bit Addr: 0xD0)
+2026-07-10 00:00:10 [DEBUG] Device found at 7-bit address: 0x76 (8-bit Addr: 0xEC)
+2026-07-10 00:00:10 [DEBUG] Scan complete. Found 3 device(s).
+2026-07-10 00:00:10 [DEBUG] -----------------------------
+
+2026-07-10 00:00:11 [DEBUG] BME280 was put into sleep mode so that the config register could be set.!
+2026-07-10 00:00:12 [DEBUG] BME280 Initialization process is done!
+2026-07-10 00:00:12 [DEBUG] MPU6050 Initialization process is done!
+2026-07-10 00:00:12 [DEBUG] MPU6050 Calibration Start
+2026-07-10 00:00:12 [DEBUG] MPU6050: Ax_sum: 668 g, Ay_sum: 564 g, Az_sum: -15532 g, Gx_sum: 0 Deg/s, Gy_sum: 0 Deg/s, Gz_sum: 0 Deg/s
+2026-07-10 00:00:12 [DEBUG] MPU6050: Ax_sum: 1392 g, Ay_sum: 1200 g, Az_sum: -31004 g, Gx_sum: 0 Deg/s, Gy_sum: 0 Deg/s, Gz_sum: 0 Deg/s
+2026-07-10 00:00:12 [DEBUG] MPU6050: Ax_sum: 2104 g, Ay_sum: 1872 g, Az_sum: -46520 g, Gx_sum: 299 Deg/s, Gy_sum: 701 Deg/s, Gz_sum: -291 Deg/s
+2026-07-10 00:00:12 [DEBUG] MPU6050: Ax_sum: 2836 g, Ay_sum: 2540 g, Az_sum: -62072 g, Gx_sum: 612 Deg/s, Gy_sum: 1410 Deg/s, Gz_sum: -540 Deg/s
+2026-07-10 00:00:12 [DEBUG] MPU6050: Ax_sum: 3548 g, Ay_sum: 3220 g, Az_sum: -77556 g, Gx_sum: 952 Deg/s, Gy_sum: 2097 Deg/s, Gz_sum: -793 Deg/s
+2026-07-10 00:00:12 [DEBUG] MPU6050: Ax_sum: 4232 g, Ay_sum: 3896 g, Az_sum: -93140 g, Gx_sum: 1268 Deg/s, Gy_sum: 2792 Deg/s, Gz_sum: -1048 Deg/s
+2026-07-10 00:00:12 [DEBUG] MPU6050: Ax_sum: 4896 g, Ay_sum: 4492 g, Az_sum: -108768 g, Gx_sum: 1588 Deg/s, Gy_sum: 3477 Deg/s, Gz_sum: -1298 Deg/s
+2026-07-10 00:00:12 [DEBUG] MPU6050: Ax_sum: 5600 g, Ay_sum: 5116 g, Az_sum: -124260 g, Gx_sum: 1886 Deg/s, Gy_sum: 4152 Deg/s, Gz_sum: -1583 Deg/s
+2026-07-10 00:00:12 [DEBUG] MPU6050: Ax_sum: 6352 g, Ay_sum: 5728 g, Az_sum: -139800 g, Gx_sum: 2195 Deg/s, Gy_sum: 4854 Deg/s, Gz_sum: -1851 Deg/s
+2026-07-10 00:00:12 [DEBUG] MPU6050: Ax_sum: 7064 g, Ay_sum: 6344 g, Az_sum: -155332 g, Gx_sum: 2497 Deg/s, Gy_sum: 5565 Deg/s, Gz_sum: -2094 Deg/s
+2026-07-10 00:00:12 [DEBUG] MPU6050: Ax_Offset: 706 g, Ay_Offset: 634 g, Az_Offset: 851 g, Gx_Offset: 249 Deg/s, Gy_Offset: 556 Deg/s, Gz_Offset: -209 Deg/s
+2026-07-10 00:00:12 [DEBUG] MPU6050 Calibration Finish
+2026-07-10 00:00:12 [DEBUG] Hello World count = 0, Timer = 0
+2026-07-10 00:00:12 [DEBUG] BME280: Temp: 22.52 C, Pres: 990.88 hPa, Humi: 44.71 RH, Alti: 187.90 m
+2026-07-10 00:00:13 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.59 Deg/s, Gy: 1.22 Deg/s, Gz: -0.48 Deg/s
+2026-07-10 00:00:13 [DEBUG] MPU6050: Roll: -0.05 Deg, Pitch: 179.95 Deg, KalmanX: -0.05 Deg, KalmanY: -0.05 Deg, State:STABLE
+2026-07-10 00:00:13 [DEBUG] 
+2026-07-10 00:00:13 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:00:13, 22.52, 990.88, 44.71, 187.90, -0.00, -0.00, -1.00, 0.59, 1.22, -0.48, -0.05, 179.95, -0.05, -0.05, STABLE
+
+2026-07-10 00:00:13 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:00:14 [DEBUG] Hello World count = 1, Timer = 0
+2026-07-10 00:00:14 [DEBUG] BME280: Temp: 22.55 C, Pres: 990.89 hPa, Humi: 44.77 RH, Alti: 187.88 m
+2026-07-10 00:00:15 [DEBUG] MPU6050: Ax: -0.01 g, Ay: 0.00 g, Az: -1.00 g, Gx: 0.48 Deg/s, Gy: 1.25 Deg/s, Gz: -0.27 Deg/s
+2026-07-10 00:00:15 [DEBUG] MPU6050: Roll: 0.09 Deg, Pitch: 179.66 Deg, KalmanX: 0.09 Deg, KalmanY: -0.34 Deg, State:STABLE
+2026-07-10 00:00:15 [DEBUG] 
+2026-07-10 00:00:15 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:00:15, 22.55, 990.89, 44.77, 187.88, -0.01, 0.00, -1.00, 0.48, 1.25, -0.27, 0.09, 179.66, 0.09, -0.34, STABLE
+
+2026-07-10 00:00:15 [DEBUG] [INFO] Written 125 bytes to SD card
+2026-07-10 00:00:16 [DEBUG] Hello World count = 2, Timer = 0
+2026-07-10 00:00:16 [DEBUG] BME280: Temp: 22.57 C, Pres: 990.89 hPa, Humi: 44.75 RH, Alti: 187.83 m
+2026-07-10 00:00:17 [DEBUG] MPU6050: Ax: 0.00 g, Ay: 0.00 g, Az: -1.00 g, Gx: 0.43 Deg/s, Gy: 1.08 Deg/s, Gz: -0.37 Deg/s
+2026-07-10 00:00:17 [DEBUG] MPU6050: Roll: 0.19 Deg, Pitch: -179.92 Deg, KalmanX: 0.19 Deg, KalmanY: 0.08 Deg, State:STABLE
+2026-07-10 00:00:18 [DEBUG] 
+2026-07-10 00:00:18 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:00:18, 22.57, 990.89, 44.75, 187.83, 0.00, 0.00, -1.00, 0.43, 1.08, -0.37, 0.19, -179.92, 0.19, 0.08, STABLE
+
+2026-07-10 00:00:18 [DEBUG] [INFO] Written 124 bytes to SD card
+2026-07-10 00:00:19 [DEBUG] Hello World count = 3, Timer = 0
+2026-07-10 00:00:19 [DEBUG] BME280: Temp: 22.58 C, Pres: 990.88 hPa, Humi: 44.65 RH, Alti: 187.90 m
+2026-07-10 00:00:20 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.00 g, Az: -0.99 g, Gx: 0.84 Deg/s, Gy: 0.93 Deg/s, Gz: -0.12 Deg/s
+2026-07-10 00:00:20 [DEBUG] MPU6050: Roll: -0.05 Deg, Pitch: 179.91 Deg, KalmanX: -0.05 Deg, KalmanY: -0.09 Deg, State:STABLE
+2026-07-10 00:00:20 [DEBUG] 
+2026-07-10 00:00:20 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:00:20, 22.58, 990.88, 44.65, 187.90, -0.00, -0.00, -0.99, 0.84, 0.93, -0.12, -0.05, 179.91, -0.05, -0.09, STABLE
+
+2026-07-10 00:00:20 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:00:23 [DEBUG] File exists.
+2026-07-10 00:00:23 [DEBUG] [SD] CSV File opened: STM_FILE.csv
+2026-07-10 00:00:23 [DEBUG] 
+--- Starting I2C Bus Scan ---
+2026-07-10 00:00:23 [DEBUG] Device found at 7-bit address: 0x3C (8-bit Addr: 0x78)
+2026-07-10 00:00:23 [DEBUG] Device found at 7-bit address: 0x68 (8-bit Addr: 0xD0)
+2026-07-10 00:00:23 [DEBUG] Device found at 7-bit address: 0x76 (8-bit Addr: 0xEC)
+2026-07-10 00:00:23 [DEBUG] Scan complete. Found 3 device(s).
+2026-07-10 00:00:23 [DEBUG] -----------------------------
+
+2026-07-10 00:00:24 [DEBUG] BME280 was put into sleep mode so that the config register could be set.!
+2026-07-10 00:00:24 [DEBUG] BME280 Initialization process is done!
+2026-07-10 00:00:24 [DEBUG] MPU6050 Initialization process is done!
+2026-07-10 00:00:24 [DEBUG] MPU6050 Calibration Start
+2026-07-10 00:00:24 [DEBUG] MPU6050: Ax_sum: 692 g, Ay_sum: 572 g, Az_sum: -15516 g, Gx_sum: 342 Deg/s, Gy_sum: 665 Deg/s, Gz_sum: -250 Deg/s
+2026-07-10 00:00:24 [DEBUG] MPU6050: Ax_sum: 1396 g, Ay_sum: 1216 g, Az_sum: -31012 g, Gx_sum: 636 Deg/s, Gy_sum: 1355 Deg/s, Gz_sum: -505 Deg/s
+2026-07-10 00:00:24 [DEBUG] MPU6050: Ax_sum: 2076 g, Ay_sum: 1860 g, Az_sum: -46592 g, Gx_sum: 1000 Deg/s, Gy_sum: 2044 Deg/s, Gz_sum: -768 Deg/s
+2026-07-10 00:00:24 [DEBUG] MPU6050: Ax_sum: 2760 g, Ay_sum: 2548 g, Az_sum: -62088 g, Gx_sum: 1265 Deg/s, Gy_sum: 2739 Deg/s, Gz_sum: -1019 Deg/s
+2026-07-10 00:00:24 [DEBUG] MPU6050: Ax_sum: 3424 g, Ay_sum: 3212 g, Az_sum: -77700 g, Gx_sum: 1565 Deg/s, Gy_sum: 3425 Deg/s, Gz_sum: -1292 Deg/s
+2026-07-10 00:00:24 [DEBUG] MPU6050: Ax_sum: 4052 g, Ay_sum: 3820 g, Az_sum: -93212 g, Gx_sum: 1885 Deg/s, Gy_sum: 4127 Deg/s, Gz_sum: -1549 Deg/s
+2026-07-10 00:00:24 [DEBUG] MPU6050: Ax_sum: 4752 g, Ay_sum: 4484 g, Az_sum: -108788 g, Gx_sum: 2186 Deg/s, Gy_sum: 4821 Deg/s, Gz_sum: -1831 Deg/s
+2026-07-10 00:00:24 [DEBUG] MPU6050: Ax_sum: 5432 g, Ay_sum: 5092 g, Az_sum: -124176 g, Gx_sum: 2472 Deg/s, Gy_sum: 5536 Deg/s, Gz_sum: -2104 Deg/s
+2026-07-10 00:00:24 [DEBUG] MPU6050: Ax_sum: 6100 g, Ay_sum: 5728 g, Az_sum: -139628 g, Gx_sum: 2778 Deg/s, Gy_sum: 6239 Deg/s, Gz_sum: -2353 Deg/s
+2026-07-10 00:00:24 [DEBUG] MPU6050: Ax_sum: 6724 g, Ay_sum: 6344 g, Az_sum: -155152 g, Gx_sum: 3039 Deg/s, Gy_sum: 6953 Deg/s, Gz_sum: -2599 Deg/s
+2026-07-10 00:00:24 [DEBUG] MPU6050: Ax_Offset: 672 g, Ay_Offset: 634 g, Az_Offset: 869 g, Gx_Offset: 303 Deg/s, Gy_Offset: 695 Deg/s, Gz_Offset: -259 Deg/s
+2026-07-10 00:00:24 [DEBUG] MPU6050 Calibration Finish
+2026-07-10 00:00:24 [DEBUG] Hello World count = 4, Timer = 0
+2026-07-10 00:00:24 [DEBUG] BME280: Temp: 22.55 C, Pres: 990.89 hPa, Humi: 44.59 RH, Alti: 187.82 m
+2026-07-10 00:00:25 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.08 Deg/s, Gy: -0.05 Deg/s, Gz: 0.21 Deg/s
+2026-07-10 00:00:25 [DEBUG] MPU6050: Roll: -0.12 Deg, Pitch: 179.94 Deg, KalmanX: -0.12 Deg, KalmanY: -0.06 Deg, State:STABLE
+2026-07-10 00:00:25 [DEBUG] 
+2026-07-10 00:00:26 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:00:25, 22.55, 990.89, 44.59, 187.82, -0.00, -0.00, -1.00, 0.08, -0.05, 0.21, -0.12, 179.94, -0.12, -0.06, STABLE
+
+2026-07-10 00:00:26 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:00:27 [DEBUG] Hello World count = 5, Timer = 0
+2026-07-10 00:00:27 [DEBUG] BME280: Temp: 22.58 C, Pres: 990.89 hPa, Humi: 44.54 RH, Alti: 187.80 m
+2026-07-10 00:00:28 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: -0.18 Deg/s, Gy: -0.05 Deg/s, Gz: -0.14 Deg/s
+2026-07-10 00:00:28 [DEBUG] MPU6050: Roll: -0.11 Deg, Pitch: 179.96 Deg, KalmanX: -0.11 Deg, KalmanY: -0.04 Deg, State:STABLE
+2026-07-10 00:00:28 [DEBUG] 
+2026-07-10 00:00:28 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:00:28, 22.58, 990.89, 44.54, 187.80, -0.00, -0.00, -1.00, -0.18, -0.05, -0.14, -0.11, 179.96, -0.11, -0.04, STABLE
+
+2026-07-10 00:00:28 [DEBUG] [INFO] Written 130 bytes to SD card
+2026-07-10 00:00:29 [DEBUG] Hello World count = 6, Timer = 0
+2026-07-10 00:00:29 [DEBUG] BME280: Temp: 22.59 C, Pres: 990.88 hPa, Humi: 44.51 RH, Alti: 187.91 m
+2026-07-10 00:00:30 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: -0.17 Deg/s, Gy: -0.02 Deg/s, Gz: -0.19 Deg/s
+2026-07-10 00:00:30 [DEBUG] MPU6050: Roll: -0.12 Deg, Pitch: -179.93 Deg, KalmanX: -0.12 Deg, KalmanY: 0.07 Deg, State:STABLE
+2026-07-10 00:00:30 [DEBUG] 
+2026-07-10 00:00:30 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:00:30, 22.59, 990.88, 44.51, 187.91, 0.00, -0.00, -1.00, -0.17, -0.02, -0.19, -0.12, -179.93, -0.12, 0.07, STABLE
+
+2026-07-10 00:00:30 [DEBUG] [INFO] Written 129 bytes to SD card
+2026-07-10 00:00:31 [DEBUG] Hello World count = 7, Timer = 0
+2026-07-10 00:00:31 [DEBUG] BME280: Temp: 22.60 C, Pres: 990.88 hPa, Humi: 44.47 RH, Alti: 187.90 m
+2026-07-10 00:00:32 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.00 Deg/s, Gy: -0.01 Deg/s, Gz: 0.42 Deg/s
+2026-07-10 00:00:32 [DEBUG] MPU6050: Roll: -0.06 Deg, Pitch: -179.86 Deg, KalmanX: -0.06 Deg, KalmanY: 0.14 Deg, State:STABLE
+2026-07-10 00:00:32 [DEBUG] 
+2026-07-10 00:00:32 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:00:32, 22.60, 990.88, 44.47, 187.90, 0.00, -0.00, -1.00, 0.00, -0.01, 0.42, -0.06, -179.86, -0.06, 0.14, STABLE
+
+2026-07-10 00:00:32 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:00:33 [DEBUG] Hello World count = 8, Timer = 0
+2026-07-10 00:00:33 [DEBUG] BME280: Temp: 22.61 C, Pres: 990.88 hPa, Humi: 44.41 RH, Alti: 187.89 m
+2026-07-10 00:00:34 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.04 Deg/s, Gy: -0.02 Deg/s, Gz: -0.02 Deg/s
+2026-07-10 00:00:34 [DEBUG] MPU6050: Roll: -0.09 Deg, Pitch: -179.93 Deg, KalmanX: -0.09 Deg, KalmanY: 0.07 Deg, State:STABLE
+2026-07-10 00:00:35 [DEBUG] 
+2026-07-10 00:00:35 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:00:35, 22.61, 990.88, 44.41, 187.89, 0.00, -0.00, -1.00, 0.04, -0.02, -0.02, -0.09, -179.93, -0.09, 0.07, STABLE
+
+2026-07-10 00:00:35 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:00:36 [DEBUG] Hello World count = 9, Timer = 0
+2026-07-10 00:00:36 [DEBUG] BME280: Temp: 22.61 C, Pres: 990.88 hPa, Humi: 44.35 RH, Alti: 187.93 m
+2026-07-10 00:00:37 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: -3.01 Deg/s, Gy: 4.35 Deg/s, Gz: 0.05 Deg/s
+2026-07-10 00:00:37 [DEBUG] MPU6050: Roll: -0.27 Deg, Pitch: 179.86 Deg, KalmanX: -0.27 Deg, KalmanY: -0.14 Deg, State:STABLE
+2026-07-10 00:00:37 [DEBUG] 
+2026-07-10 00:00:37 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:00:37, 22.61, 990.88, 44.35, 187.93, -0.00, -0.00, -1.00, -3.01, 4.35, 0.05, -0.27, 179.86, -0.27, -0.14, STABLE
+
+2026-07-10 00:00:37 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:01:02 [DEBUG] File exists.
+2026-07-10 00:01:02 [DEBUG] [SD] CSV File opened: STM_FILE.csv
+2026-07-10 00:01:02 [DEBUG] 
+--- Starting I2C Bus Scan ---
+2026-07-10 00:01:02 [DEBUG] Device found at 7-bit address: 0x3C (8-bit Addr: 0x78)
+2026-07-10 00:01:02 [DEBUG] Device found at 7-bit address: 0x68 (8-bit Addr: 0xD0)
+2026-07-10 00:01:02 [DEBUG] Device found at 7-bit address: 0x76 (8-bit Addr: 0xEC)
+2026-07-10 00:01:02 [DEBUG] Scan complete. Found 3 device(s).
+2026-07-10 00:01:02 [DEBUG] -----------------------------
+
+2026-07-10 00:01:03 [DEBUG] BME280 was put into sleep mode so that the config register could be set.!
+2026-07-10 00:01:03 [DEBUG] BME280 Initialization process is done!
+2026-07-10 00:01:03 [DEBUG] MPU6050 Initialization process is done!
+2026-07-10 00:01:03 [DEBUG] MPU6050 Calibration Start
+2026-07-10 00:01:03 [DEBUG] MPU6050: Ax_sum: 692 g, Ay_sum: 620 g, Az_sum: -15552 g, Gx_sum: 296 Deg/s, Gy_sum: 711 Deg/s, Gz_sum: -229 Deg/s
+2026-07-10 00:01:03 [DEBUG] MPU6050: Ax_sum: 1352 g, Ay_sum: 1292 g, Az_sum: -30984 g, Gx_sum: 608 Deg/s, Gy_sum: 1390 Deg/s, Gz_sum: -450 Deg/s
+2026-07-10 00:01:03 [DEBUG] MPU6050: Ax_sum: 2040 g, Ay_sum: 1872 g, Az_sum: -46440 g, Gx_sum: 903 Deg/s, Gy_sum: 2061 Deg/s, Gz_sum: -685 Deg/s
+2026-07-10 00:01:03 [DEBUG] MPU6050: Ax_sum: 2712 g, Ay_sum: 2452 g, Az_sum: -61788 g, Gx_sum: 1200 Deg/s, Gy_sum: 2798 Deg/s, Gz_sum: -925 Deg/s
+2026-07-10 00:01:04 [DEBUG] MPU6050: Ax_sum: 3396 g, Ay_sum: 3060 g, Az_sum: -77240 g, Gx_sum: 1522 Deg/s, Gy_sum: 3483 Deg/s, Gz_sum: -1182 Deg/s
+2026-07-10 00:01:04 [DEBUG] MPU6050: Ax_sum: 4048 g, Ay_sum: 3708 g, Az_sum: -92748 g, Gx_sum: 1853 Deg/s, Gy_sum: 4168 Deg/s, Gz_sum: -1443 Deg/s
+2026-07-10 00:01:04 [DEBUG] MPU6050: Ax_sum: 4716 g, Ay_sum: 4364 g, Az_sum: -108148 g, Gx_sum: 2149 Deg/s, Gy_sum: 4866 Deg/s, Gz_sum: -1729 Deg/s
+2026-07-10 00:01:04 [DEBUG] MPU6050: Ax_sum: 5444 g, Ay_sum: 4932 g, Az_sum: -123568 g, Gx_sum: 2443 Deg/s, Gy_sum: 5570 Deg/s, Gz_sum: -1995 Deg/s
+2026-07-10 00:01:04 [DEBUG] MPU6050: Ax_sum: 6192 g, Ay_sum: 5500 g, Az_sum: -139188 g, Gx_sum: 2744 Deg/s, Gy_sum: 6273 Deg/s, Gz_sum: -2239 Deg/s
+2026-07-10 00:01:04 [DEBUG] MPU6050: Ax_sum: 6856 g, Ay_sum: 6124 g, Az_sum: -154628 g, Gx_sum: 3054 Deg/s, Gy_sum: 6950 Deg/s, Gz_sum: -2487 Deg/s
+2026-07-10 00:01:04 [DEBUG] MPU6050: Ax_Offset: 685 g, Ay_Offset: 612 g, Az_Offset: 922 g, Gx_Offset: 305 Deg/s, Gy_Offset: 695 Deg/s, Gz_Offset: -248 Deg/s
+2026-07-10 00:01:04 [DEBUG] MPU6050 Calibration Finish
+2026-07-10 00:01:04 [DEBUG] Hello World count = 10, Timer = 0
+2026-07-10 00:01:04 [DEBUG] BME280: Temp: 22.56 C, Pres: 990.89 hPa, Humi: 45.15 RH, Alti: 187.83 m
+2026-07-10 00:01:05 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.01 g, Gx: -0.14 Deg/s, Gy: -0.19 Deg/s, Gz: 0.00 Deg/s
+2026-07-10 00:01:05 [DEBUG] MPU6050: Roll: -0.01 Deg, Pitch: -179.78 Deg, KalmanX: -0.01 Deg, KalmanY: 0.22 Deg, State:STABLE
+2026-07-10 00:01:05 [DEBUG] 
+2026-07-10 00:01:05 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:05, 22.56, 990.89, 45.15, 187.83, 0.00, -0.00, -1.01, -0.14, -0.19, 0.00, -0.01, -179.78, -0.01, 0.22, STABLE
+
+2026-07-10 00:01:05 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:01:06 [DEBUG] Hello World count = 11, Timer = 0
+2026-07-10 00:01:06 [DEBUG] BME280: Temp: 22.58 C, Pres: 990.90 hPa, Humi: 45.58 RH, Alti: 187.76 m
+2026-07-10 00:01:07 [DEBUG] MPU6050: Ax: -0.00 g, Ay: 0.00 g, Az: -1.01 g, Gx: 0.10 Deg/s, Gy: -0.05 Deg/s, Gz: 0.02 Deg/s
+2026-07-10 00:01:07 [DEBUG] MPU6050: Roll: 0.03 Deg, Pitch: 179.98 Deg, KalmanX: 0.03 Deg, KalmanY: -0.02 Deg, State:STABLE
+2026-07-10 00:01:07 [DEBUG] 
+2026-07-10 00:01:07 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:07, 22.58, 990.90, 45.58, 187.76, -0.00, 0.00, -1.01, 0.10, -0.05, 0.02, 0.03, 179.98, 0.03, -0.02, STABLE
+
+2026-07-10 00:01:07 [DEBUG] [INFO] Written 125 bytes to SD card
+2026-07-10 00:01:08 [DEBUG] Hello World count = 12, Timer = 0
+2026-07-10 00:01:08 [DEBUG] BME280: Temp: 22.60 C, Pres: 990.90 hPa, Humi: 45.98 RH, Alti: 187.78 m
+2026-07-10 00:01:09 [DEBUG] MPU6050: Ax: -0.01 g, Ay: -0.01 g, Az: -1.00 g, Gx: -1.97 Deg/s, Gy: 2.28 Deg/s, Gz: -0.26 Deg/s
+2026-07-10 00:01:09 [DEBUG] MPU6050: Roll: -0.29 Deg, Pitch: 179.42 Deg, KalmanX: -0.29 Deg, KalmanY: -0.58 Deg, State:STABLE
+2026-07-10 00:01:09 [DEBUG] 
+2026-07-10 00:01:09 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:09, 22.60, 990.90, 45.98, 187.78, -0.01, -0.01, -1.00, -1.97, 2.28, -0.26, -0.29, 179.42, -0.29, -0.58, STABLE
+
+2026-07-10 00:01:09 [DEBUG] [INFO] Written 129 bytes to SD card
+2026-07-10 00:01:18 [DEBUG] File exists.
+2026-07-10 00:01:18 [DEBUG] [SD] CSV File opened: STM_FILE.csv
+2026-07-10 00:01:18 [DEBUG] 
+--- Starting I2C Bus Scan ---
+2026-07-10 00:01:18 [DEBUG] Device found at 7-bit address: 0x3C (8-bit Addr: 0x78)
+2026-07-10 00:01:18 [DEBUG] Device found at 7-bit address: 0x68 (8-bit Addr: 0xD0)
+2026-07-10 00:01:18 [DEBUG] Device found at 7-bit address: 0x76 (8-bit Addr: 0xEC)
+2026-07-10 00:01:18 [DEBUG] Scan complete. Found 3 device(s).
+2026-07-10 00:01:18 [DEBUG] -----------------------------
+
+2026-07-10 00:01:19 [DEBUG] BME280 was put into sleep mode so that the config register could be set.!
+2026-07-10 00:01:19 [DEBUG] BME280 Initialization process is done!
+2026-07-10 00:01:19 [DEBUG] MPU6050 Initialization process is done!
+2026-07-10 00:01:19 [DEBUG] MPU6050 Calibration Start
+2026-07-10 00:01:19 [DEBUG] MPU6050: Ax_sum: 636 g, Ay_sum: 524 g, Az_sum: -15480 g, Gx_sum: 297 Deg/s, Gy_sum: 694 Deg/s, Gz_sum: -271 Deg/s
+2026-07-10 00:01:19 [DEBUG] MPU6050: Ax_sum: 1292 g, Ay_sum: 1156 g, Az_sum: -30976 g, Gx_sum: 637 Deg/s, Gy_sum: 1364 Deg/s, Gz_sum: -514 Deg/s
+2026-07-10 00:01:19 [DEBUG] MPU6050: Ax_sum: 1944 g, Ay_sum: 1776 g, Az_sum: -46368 g, Gx_sum: 951 Deg/s, Gy_sum: 2058 Deg/s, Gz_sum: -794 Deg/s
+2026-07-10 00:01:19 [DEBUG] MPU6050: Ax_sum: 2564 g, Ay_sum: 2444 g, Az_sum: -61872 g, Gx_sum: 1221 Deg/s, Gy_sum: 2733 Deg/s, Gz_sum: -1076 Deg/s
+2026-07-10 00:01:19 [DEBUG] MPU6050: Ax_sum: 3176 g, Ay_sum: 3004 g, Az_sum: -77332 g, Gx_sum: 1541 Deg/s, Gy_sum: 3424 Deg/s, Gz_sum: -1361 Deg/s
+2026-07-10 00:01:19 [DEBUG] MPU6050: Ax_sum: 3900 g, Ay_sum: 3616 g, Az_sum: -92944 g, Gx_sum: 1836 Deg/s, Gy_sum: 4105 Deg/s, Gz_sum: -1613 Deg/s
+2026-07-10 00:01:19 [DEBUG] MPU6050: Ax_sum: 4604 g, Ay_sum: 4208 g, Az_sum: -108456 g, Gx_sum: 2133 Deg/s, Gy_sum: 4784 Deg/s, Gz_sum: -1873 Deg/s
+2026-07-10 00:01:19 [DEBUG] MPU6050: Ax_sum: 5296 g, Ay_sum: 4812 g, Az_sum: -123968 g, Gx_sum: 2411 Deg/s, Gy_sum: 5488 Deg/s, Gz_sum: -2139 Deg/s
+2026-07-10 00:01:19 [DEBUG] MPU6050: Ax_sum: 5972 g, Ay_sum: 5392 g, Az_sum: -139432 g, Gx_sum: 2713 Deg/s, Gy_sum: 6198 Deg/s, Gz_sum: -2403 Deg/s
+2026-07-10 00:01:19 [DEBUG] MPU6050: Ax_sum: 6632 g, Ay_sum: 6028 g, Az_sum: -154908 g, Gx_sum: 3048 Deg/s, Gy_sum: 6911 Deg/s, Gz_sum: -2643 Deg/s
+2026-07-10 00:01:19 [DEBUG] MPU6050: Ax_Offset: 663 g, Ay_Offset: 602 g, Az_Offset: 894 g, Gx_Offset: 304 Deg/s, Gy_Offset: 691 Deg/s, Gz_Offset: -264 Deg/s
+2026-07-10 00:01:19 [DEBUG] MPU6050 Calibration Finish
+2026-07-10 00:01:19 [DEBUG] Hello World count = 13, Timer = 0
+2026-07-10 00:01:19 [DEBUG] BME280: Temp: 22.56 C, Pres: 990.94 hPa, Humi: 46.94 RH, Alti: 187.40 m
+2026-07-10 00:01:20 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: -0.09 Deg/s, Gy: -0.21 Deg/s, Gz: 0.10 Deg/s
+2026-07-10 00:01:20 [DEBUG] MPU6050: Roll: -0.06 Deg, Pitch: 179.85 Deg, KalmanX: -0.06 Deg, KalmanY: -0.15 Deg, State:STABLE
+2026-07-10 00:01:20 [DEBUG] 
+2026-07-10 00:01:20 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:20, 22.56, 990.94, 46.94, 187.40, -0.00, -0.00, -1.00, -0.09, -0.21, 0.10, -0.06, 179.85, -0.06, -0.15, STABLE
+
+2026-07-10 00:01:20 [DEBUG] [INFO] Written 129 bytes to SD card
+2026-07-10 00:01:21 [DEBUG] Hello World count = 14, Timer = 0
+2026-07-10 00:01:21 [DEBUG] BME280: Temp: 22.59 C, Pres: 990.93 hPa, Humi: 46.88 RH, Alti: 187.51 m
+2026-07-10 00:01:23 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -0.99 g, Gx: -0.04 Deg/s, Gy: 0.19 Deg/s, Gz: -0.07 Deg/s
+2026-07-10 00:01:23 [DEBUG] MPU6050: Roll: -0.23 Deg, Pitch: -179.88 Deg, KalmanX: -0.23 Deg, KalmanY: 0.12 Deg, State:STABLE
+2026-07-10 00:01:23 [DEBUG] 
+2026-07-10 00:01:23 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:23, 22.59, 990.93, 46.88, 187.51, 0.00, -0.00, -0.99, -0.04, 0.19, -0.07, -0.23, -179.88, -0.23, 0.12, STABLE
+
+2026-07-10 00:01:23 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:01:24 [DEBUG] Hello World count = 15, Timer = 0
+2026-07-10 00:01:24 [DEBUG] BME280: Temp: 22.60 C, Pres: 990.93 hPa, Humi: 46.65 RH, Alti: 187.53 m
+2026-07-10 00:01:25 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: -0.17 Deg/s, Gy: 0.04 Deg/s, Gz: -0.02 Deg/s
+2026-07-10 00:01:25 [DEBUG] MPU6050: Roll: -0.02 Deg, Pitch: -179.86 Deg, KalmanX: -0.02 Deg, KalmanY: 0.14 Deg, State:STABLE
+2026-07-10 00:01:25 [DEBUG] 
+2026-07-10 00:01:25 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:25, 22.60, 990.93, 46.65, 187.53, 0.00, -0.00, -1.00, -0.17, 0.04, -0.02, -0.02, -179.86, -0.02, 0.14, STABLE
+
+2026-07-10 00:01:25 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:01:26 [DEBUG] Hello World count = 16, Timer = 0
+2026-07-10 00:01:26 [DEBUG] BME280: Temp: 22.60 C, Pres: 990.93 hPa, Humi: 46.60 RH, Alti: 187.52 m
+2026-07-10 00:01:27 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.16 Deg/s, Gy: 0.08 Deg/s, Gz: 0.10 Deg/s
+2026-07-10 00:01:27 [DEBUG] MPU6050: Roll: -0.08 Deg, Pitch: -179.91 Deg, KalmanX: -0.08 Deg, KalmanY: 0.09 Deg, State:STABLE
+2026-07-10 00:01:27 [DEBUG] 
+2026-07-10 00:01:27 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:27, 22.60, 990.93, 46.60, 187.52, 0.00, -0.00, -1.00, 0.16, 0.08, 0.10, -0.08, -179.91, -0.08, 0.09, STABLE
+
+2026-07-10 00:01:27 [DEBUG] [INFO] Written 126 bytes to SD card
+2026-07-10 00:01:28 [DEBUG] Hello World count = 17, Timer = 0
+2026-07-10 00:01:28 [DEBUG] BME280: Temp: 22.60 C, Pres: 990.92 hPa, Humi: 46.37 RH, Alti: 187.55 m
+2026-07-10 00:01:29 [DEBUG] MPU6050: Ax: 0.00 g, Ay: 0.00 g, Az: -1.00 g, Gx: 0.19 Deg/s, Gy: 0.03 Deg/s, Gz: 0.21 Deg/s
+2026-07-10 00:01:29 [DEBUG] MPU6050: Roll: 0.01 Deg, Pitch: -179.81 Deg, KalmanX: 0.01 Deg, KalmanY: 0.19 Deg, State:STABLE
+2026-07-10 00:01:29 [DEBUG] 
+2026-07-10 00:01:29 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:29, 22.60, 990.92, 46.37, 187.55, 0.00, 0.00, -1.00, 0.19, 0.03, 0.21, 0.01, -179.81, 0.01, 0.19, STABLE
+
+2026-07-10 00:01:29 [DEBUG] [INFO] Written 123 bytes to SD card
+2026-07-10 00:01:30 [DEBUG] Hello World count = 18, Timer = 0
+2026-07-10 00:01:30 [DEBUG] BME280: Temp: 22.60 C, Pres: 990.92 hPa, Humi: 45.66 RH, Alti: 187.59 m
+2026-07-10 00:01:32 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: -0.11 Deg/s, Gy: 0.14 Deg/s, Gz: 0.02 Deg/s
+2026-07-10 00:01:32 [DEBUG] MPU6050: Roll: -0.04 Deg, Pitch: 179.91 Deg, KalmanX: -0.04 Deg, KalmanY: -0.09 Deg, State:STABLE
+2026-07-10 00:01:32 [DEBUG] 
+2026-07-10 00:01:32 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:32, 22.60, 990.92, 45.66, 187.59, -0.00, -0.00, -1.00, -0.11, 0.14, 0.02, -0.04, 179.91, -0.04, -0.09, STABLE
+
+2026-07-10 00:01:32 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:01:33 [DEBUG] Hello World count = 19, Timer = 0
+2026-07-10 00:01:33 [DEBUG] BME280: Temp: 22.59 C, Pres: 990.91 hPa, Humi: 45.29 RH, Alti: 187.66 m
+2026-07-10 00:01:34 [DEBUG] MPU6050: Ax: 0.00 g, Ay: 0.00 g, Az: -1.00 g, Gx: -0.02 Deg/s, Gy: -0.05 Deg/s, Gz: -0.01 Deg/s
+2026-07-10 00:01:34 [DEBUG] MPU6050: Roll: 0.15 Deg, Pitch: -179.88 Deg, KalmanX: 0.15 Deg, KalmanY: 0.12 Deg, State:STABLE
+2026-07-10 00:01:34 [DEBUG] 
+2026-07-10 00:01:34 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:34, 22.59, 990.91, 45.29, 187.66, 0.00, 0.00, -1.00, -0.02, -0.05, -0.01, 0.15, -179.88, 0.15, 0.12, STABLE
+
+2026-07-10 00:01:34 [DEBUG] [INFO] Written 126 bytes to SD card
+2026-07-10 00:01:35 [DEBUG] Hello World count = 20, Timer = 0
+2026-07-10 00:01:35 [DEBUG] BME280: Temp: 22.59 C, Pres: 990.92 hPa, Humi: 45.27 RH, Alti: 187.62 m
+2026-07-10 00:01:36 [DEBUG] MPU6050: Ax: 0.00 g, Ay: 0.00 g, Az: -1.00 g, Gx: 0.15 Deg/s, Gy: 0.10 Deg/s, Gz: 0.06 Deg/s
+2026-07-10 00:01:36 [DEBUG] MPU6050: Roll: 0.15 Deg, Pitch: -179.82 Deg, KalmanX: 0.15 Deg, KalmanY: 0.18 Deg, State:STABLE
+2026-07-10 00:01:36 [DEBUG] 
+2026-07-10 00:01:36 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:36, 22.59, 990.92, 45.27, 187.62, 0.00, 0.00, -1.00, 0.15, 0.10, 0.06, 0.15, -179.82, 0.15, 0.18, STABLE
+
+2026-07-10 00:01:36 [DEBUG] [INFO] Written 123 bytes to SD card
+2026-07-10 00:01:37 [DEBUG] Hello World count = 21, Timer = 0
+2026-07-10 00:01:37 [DEBUG] BME280: Temp: 22.59 C, Pres: 990.91 hPa, Humi: 45.18 RH, Alti: 187.66 m
+2026-07-10 00:01:38 [DEBUG] MPU6050: Ax: 0.00 g, Ay: 0.00 g, Az: -1.00 g, Gx: -0.05 Deg/s, Gy: 0.16 Deg/s, Gz: 0.16 Deg/s
+2026-07-10 00:01:38 [DEBUG] MPU6050: Roll: 0.26 Deg, Pitch: -179.94 Deg, KalmanX: 0.26 Deg, KalmanY: 0.06 Deg, State:STABLE
+2026-07-10 00:01:38 [DEBUG] 
+2026-07-10 00:01:38 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:38, 22.59, 990.91, 45.18, 187.66, 0.00, 0.00, -1.00, -0.05, 0.16, 0.16, 0.26, -179.94, 0.26, 0.06, STABLE
+
+2026-07-10 00:01:38 [DEBUG] [INFO] Written 124 bytes to SD card
+2026-07-10 00:01:39 [DEBUG] Hello World count = 22, Timer = 0
+2026-07-10 00:01:39 [DEBUG] BME280: Temp: 22.58 C, Pres: 990.91 hPa, Humi: 45.12 RH, Alti: 187.70 m
+2026-07-10 00:01:41 [DEBUG] MPU6050: Ax: 0.01 g, Ay: 0.00 g, Az: -1.00 g, Gx: -0.03 Deg/s, Gy: 0.10 Deg/s, Gz: 0.08 Deg/s
+2026-07-10 00:01:41 [DEBUG] MPU6050: Roll: 0.06 Deg, Pitch: -179.70 Deg, KalmanX: 0.06 Deg, KalmanY: 0.30 Deg, State:STABLE
+2026-07-10 00:01:41 [DEBUG] 
+2026-07-10 00:01:41 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:41, 22.58, 990.91, 45.12, 187.70, 0.01, 0.00, -1.00, -0.03, 0.10, 0.08, 0.06, -179.70, 0.06, 0.30, STABLE
+
+2026-07-10 00:01:41 [DEBUG] [INFO] Written 124 bytes to SD card
+2026-07-10 00:01:42 [DEBUG] Hello World count = 23, Timer = 0
+2026-07-10 00:01:42 [DEBUG] BME280: Temp: 22.58 C, Pres: 990.90 hPa, Humi: 44.93 RH, Alti: 187.75 m
+2026-07-10 00:01:43 [DEBUG] MPU6050: Ax: 0.00 g, Ay: 0.01 g, Az: -1.00 g, Gx: 0.08 Deg/s, Gy: -0.05 Deg/s, Gz: 0.18 Deg/s
+2026-07-10 00:01:43 [DEBUG] MPU6050: Roll: 0.29 Deg, Pitch: -179.80 Deg, KalmanX: 0.29 Deg, KalmanY: 0.20 Deg, State:STABLE
+2026-07-10 00:01:43 [DEBUG] 
+2026-07-10 00:01:43 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:43, 22.58, 990.90, 44.93, 187.75, 0.00, 0.01, -1.00, 0.08, -0.05, 0.18, 0.29, -179.80, 0.29, 0.20, STABLE
+
+2026-07-10 00:01:43 [DEBUG] [INFO] Written 124 bytes to SD card
+2026-07-10 00:01:44 [DEBUG] Hello World count = 24, Timer = 0
+2026-07-10 00:01:44 [DEBUG] BME280: Temp: 22.58 C, Pres: 990.90 hPa, Humi: 44.73 RH, Alti: 187.79 m
+2026-07-10 00:01:45 [DEBUG] MPU6050: Ax: 0.00 g, Ay: 0.00 g, Az: -0.99 g, Gx: -0.05 Deg/s, Gy: 0.24 Deg/s, Gz: 0.02 Deg/s
+2026-07-10 00:01:45 [DEBUG] MPU6050: Roll: 0.15 Deg, Pitch: -179.98 Deg, KalmanX: 0.15 Deg, KalmanY: 0.02 Deg, State:STABLE
+2026-07-10 00:01:45 [DEBUG] 
+2026-07-10 00:01:45 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:45, 22.58, 990.90, 44.73, 187.79, 0.00, 0.00, -0.99, -0.05, 0.24, 0.02, 0.15, -179.98, 0.15, 0.02, STABLE
+
+2026-07-10 00:01:45 [DEBUG] [INFO] Written 124 bytes to SD card
+2026-07-10 00:01:46 [DEBUG] Hello World count = 25, Timer = 0
+2026-07-10 00:01:46 [DEBUG] BME280: Temp: 22.57 C, Pres: 990.90 hPa, Humi: 44.63 RH, Alti: 187.75 m
+2026-07-10 00:01:47 [DEBUG] MPU6050: Ax: 0.00 g, Ay: 0.00 g, Az: -1.00 g, Gx: 0.02 Deg/s, Gy: -0.03 Deg/s, Gz: -0.09 Deg/s
+2026-07-10 00:01:47 [DEBUG] MPU6050: Roll: 0.23 Deg, Pitch: -179.95 Deg, KalmanX: 0.23 Deg, KalmanY: 0.05 Deg, State:STABLE
+2026-07-10 00:01:47 [DEBUG] 
+2026-07-10 00:01:47 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:47, 22.57, 990.90, 44.63, 187.75, 0.00, 0.00, -1.00, 0.02, -0.03, -0.09, 0.23, -179.95, 0.23, 0.05, STABLE
+
+2026-07-10 00:01:47 [DEBUG] [INFO] Written 125 bytes to SD card
+2026-07-10 00:01:48 [DEBUG] Hello World count = 26, Timer = 0
+2026-07-10 00:01:48 [DEBUG] BME280: Temp: 22.57 C, Pres: 990.90 hPa, Humi: 44.71 RH, Alti: 187.74 m
+2026-07-10 00:01:50 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: -0.05 Deg/s, Gy: -0.14 Deg/s, Gz: -0.03 Deg/s
+2026-07-10 00:01:50 [DEBUG] MPU6050: Roll: -0.20 Deg, Pitch: -179.94 Deg, KalmanX: -0.20 Deg, KalmanY: 0.06 Deg, State:STABLE
+2026-07-10 00:01:50 [DEBUG] 
+2026-07-10 00:01:50 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:50, 22.57, 990.90, 44.71, 187.74, 0.00, -0.00, -1.00, -0.05, -0.14, -0.03, -0.20, -179.94, -0.20, 0.06, STABLE
+
+2026-07-10 00:01:50 [DEBUG] [INFO] Written 129 bytes to SD card
+2026-07-10 00:01:51 [DEBUG] Hello World count = 27, Timer = 0
+2026-07-10 00:01:51 [DEBUG] BME280: Temp: 22.57 C, Pres: 990.91 hPa, Humi: 44.91 RH, Alti: 187.68 m
+2026-07-10 00:01:52 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.06 Deg/s, Gy: 0.12 Deg/s, Gz: 0.07 Deg/s
+2026-07-10 00:01:52 [DEBUG] MPU6050: Roll: -0.08 Deg, Pitch: 179.82 Deg, KalmanX: -0.08 Deg, KalmanY: -0.18 Deg, State:STABLE
+2026-07-10 00:01:52 [DEBUG] 
+2026-07-10 00:01:52 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:52, 22.57, 990.91, 44.91, 187.68, -0.00, -0.00, -1.00, 0.06, 0.12, 0.07, -0.08, 179.82, -0.08, -0.18, STABLE
+
+2026-07-10 00:01:52 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:01:53 [DEBUG] Hello World count = 28, Timer = 0
+2026-07-10 00:01:53 [DEBUG] BME280: Temp: 22.57 C, Pres: 990.91 hPa, Humi: 44.95 RH, Alti: 187.65 m
+2026-07-10 00:01:54 [DEBUG] MPU6050: Ax: 0.00 g, Ay: 0.00 g, Az: -1.00 g, Gx: -0.12 Deg/s, Gy: 0.11 Deg/s, Gz: 0.04 Deg/s
+2026-07-10 00:01:54 [DEBUG] MPU6050: Roll: 0.24 Deg, Pitch: -179.84 Deg, KalmanX: 0.24 Deg, KalmanY: 0.16 Deg, State:STABLE
+2026-07-10 00:01:54 [DEBUG] 
+2026-07-10 00:01:54 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:54, 22.57, 990.91, 44.95, 187.65, 0.00, 0.00, -1.00, -0.12, 0.11, 0.04, 0.24, -179.84, 0.24, 0.16, STABLE
+
+2026-07-10 00:01:54 [DEBUG] [INFO] Written 124 bytes to SD card
+2026-07-10 00:01:55 [DEBUG] Hello World count = 29, Timer = 0
+2026-07-10 00:01:55 [DEBUG] BME280: Temp: 22.56 C, Pres: 990.91 hPa, Humi: 45.30 RH, Alti: 187.66 m
+2026-07-10 00:01:56 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.21 Deg/s, Gy: -0.08 Deg/s, Gz: 0.06 Deg/s
+2026-07-10 00:01:56 [DEBUG] MPU6050: Roll: -0.16 Deg, Pitch: -179.80 Deg, KalmanX: -0.16 Deg, KalmanY: 0.20 Deg, State:STABLE
+2026-07-10 00:01:56 [DEBUG] 
+2026-07-10 00:01:56 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:56, 22.56, 990.91, 45.30, 187.66, 0.00, -0.00, -1.00, 0.21, -0.08, 0.06, -0.16, -179.80, -0.16, 0.20, STABLE
+
+2026-07-10 00:01:56 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:01:57 [DEBUG] Hello World count = 30, Timer = 0
+2026-07-10 00:01:57 [DEBUG] BME280: Temp: 22.56 C, Pres: 990.92 hPa, Humi: 45.61 RH, Alti: 187.62 m
+2026-07-10 00:01:59 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.17 Deg/s, Gy: 0.30 Deg/s, Gz: -0.11 Deg/s
+2026-07-10 00:01:59 [DEBUG] MPU6050: Roll: -0.01 Deg, Pitch: -179.80 Deg, KalmanX: -0.01 Deg, KalmanY: 0.20 Deg, State:STABLE
+2026-07-10 00:01:59 [DEBUG] 
+2026-07-10 00:01:59 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:01:59, 22.56, 990.92, 45.61, 187.62, 0.00, -0.00, -1.00, 0.17, 0.30, -0.11, -0.01, -179.80, -0.01, 0.20, STABLE
+
+2026-07-10 00:01:59 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:02:00 [DEBUG] Hello World count = 31, Timer = 0
+2026-07-10 00:02:00 [DEBUG] BME280: Temp: 22.56 C, Pres: 990.92 hPa, Humi: 46.01 RH, Alti: 187.57 m
+2026-07-10 00:02:01 [DEBUG] MPU6050: Ax: -0.00 g, Ay: 0.00 g, Az: -1.01 g, Gx: -0.05 Deg/s, Gy: -0.01 Deg/s, Gz: 0.22 Deg/s
+2026-07-10 00:02:01 [DEBUG] MPU6050: Roll: 0.15 Deg, Pitch: 179.88 Deg, KalmanX: 0.15 Deg, KalmanY: -0.12 Deg, State:STABLE
+2026-07-10 00:02:01 [DEBUG] 
+2026-07-10 00:02:01 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:01, 22.56, 990.92, 46.01, 187.57, -0.00, 0.00, -1.01, -0.05, -0.01, 0.22, 0.15, 179.88, 0.15, -0.12, STABLE
+
+2026-07-10 00:02:01 [DEBUG] [INFO] Written 126 bytes to SD card
+2026-07-10 00:02:02 [DEBUG] Hello World count = 32, Timer = 0
+2026-07-10 00:02:02 [DEBUG] BME280: Temp: 22.56 C, Pres: 990.92 hPa, Humi: 46.25 RH, Alti: 187.58 m
+2026-07-10 00:02:03 [DEBUG] MPU6050: Ax: 0.01 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.15 Deg/s, Gy: 0.01 Deg/s, Gz: 0.21 Deg/s
+2026-07-10 00:02:03 [DEBUG] MPU6050: Roll: -0.15 Deg, Pitch: -179.66 Deg, KalmanX: -0.15 Deg, KalmanY: 0.34 Deg, State:STABLE
+2026-07-10 00:02:03 [DEBUG] 
+2026-07-10 00:02:03 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:03, 22.56, 990.92, 46.25, 187.58, 0.01, -0.00, -1.00, 0.15, 0.01, 0.21, -0.15, -179.66, -0.15, 0.34, STABLE
+
+2026-07-10 00:02:03 [DEBUG] [INFO] Written 126 bytes to SD card
+2026-07-10 00:02:04 [DEBUG] Hello World count = 33, Timer = 0
+2026-07-10 00:02:04 [DEBUG] BME280: Temp: 22.55 C, Pres: 990.92 hPa, Humi: 46.15 RH, Alti: 187.56 m
+2026-07-10 00:02:05 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -1.00 g, Gx: 0.01 Deg/s, Gy: 0.06 Deg/s, Gz: -0.07 Deg/s
+2026-07-10 00:02:05 [DEBUG] MPU6050: Roll: -0.02 Deg, Pitch: -179.87 Deg, KalmanX: -0.02 Deg, KalmanY: 0.13 Deg, State:STABLE
+2026-07-10 00:02:05 [DEBUG] 
+2026-07-10 00:02:05 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:05, 22.55, 990.92, 46.15, 187.56, 0.00, -0.00, -1.00, 0.01, 0.06, -0.07, -0.02, -179.87, -0.02, 0.13, STABLE
+
+2026-07-10 00:02:05 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:02:06 [DEBUG] Hello World count = 34, Timer = 0
+2026-07-10 00:02:06 [DEBUG] BME280: Temp: 22.55 C, Pres: 990.93 hPa, Humi: 45.90 RH, Alti: 187.51 m
+2026-07-10 00:02:08 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.00 g, Az: -0.99 g, Gx: -0.05 Deg/s, Gy: 0.02 Deg/s, Gz: -0.05 Deg/s
+2026-07-10 00:02:08 [DEBUG] MPU6050: Roll: -0.19 Deg, Pitch: 179.99 Deg, KalmanX: -0.19 Deg, KalmanY: -0.01 Deg, State:STABLE
+2026-07-10 00:02:08 [DEBUG] 
+2026-07-10 00:02:08 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:08, 22.55, 990.93, 45.90, 187.51, -0.00, -0.00, -0.99, -0.05, 0.02, -0.05, -0.19, 179.99, -0.19, -0.01, STABLE
+
+2026-07-10 00:02:08 [DEBUG] [INFO] Written 129 bytes to SD card
+2026-07-10 00:02:09 [DEBUG] Hello World count = 35, Timer = 0
+2026-07-10 00:02:09 [DEBUG] BME280: Temp: 22.55 C, Pres: 990.92 hPa, Humi: 45.61 RH, Alti: 187.58 m
+2026-07-10 00:02:10 [DEBUG] MPU6050: Ax: 0.01 g, Ay: 0.00 g, Az: -1.00 g, Gx: -0.11 Deg/s, Gy: -0.06 Deg/s, Gz: 0.32 Deg/s
+2026-07-10 00:02:10 [DEBUG] MPU6050: Roll: 0.26 Deg, Pitch: -179.67 Deg, KalmanX: 0.26 Deg, KalmanY: 0.33 Deg, State:STABLE
+2026-07-10 00:02:10 [DEBUG] 
+2026-07-10 00:02:10 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:10, 22.55, 990.92, 45.61, 187.58, 0.01, 0.00, -1.00, -0.11, -0.06, 0.32, 0.26, -179.67, 0.26, 0.33, STABLE
+
+2026-07-10 00:02:10 [DEBUG] [INFO] Written 125 bytes to SD card
+2026-07-10 00:02:11 [DEBUG] Hello World count = 36, Timer = 0
+2026-07-10 00:02:11 [DEBUG] BME280: Temp: 22.54 C, Pres: 990.91 hPa, Humi: 45.18 RH, Alti: 187.66 m
+2026-07-10 00:02:12 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.00 g, Az: -0.99 g, Gx: 0.02 Deg/s, Gy: 0.04 Deg/s, Gz: 0.11 Deg/s
+2026-07-10 00:02:12 [DEBUG] MPU6050: Roll: -0.23 Deg, Pitch: -179.84 Deg, KalmanX: -0.23 Deg, KalmanY: 0.16 Deg, State:STABLE
+2026-07-10 00:02:12 [DEBUG] 
+2026-07-10 00:02:12 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:12, 22.54, 990.91, 45.18, 187.66, 0.00, -0.00, -0.99, 0.02, 0.04, 0.11, -0.23, -179.84, -0.23, 0.16, STABLE
+
+2026-07-10 00:02:12 [DEBUG] [INFO] Written 126 bytes to SD card
+2026-07-10 00:02:13 [DEBUG] Hello World count = 37, Timer = 0
+2026-07-10 00:02:13 [DEBUG] BME280: Temp: 22.54 C, Pres: 990.91 hPa, Humi: 44.97 RH, Alti: 187.64 m
+2026-07-10 00:02:14 [DEBUG] MPU6050: Ax: -0.00 g, Ay: 0.00 g, Az: -1.00 g, Gx: 0.01 Deg/s, Gy: -0.13 Deg/s, Gz: 0.23 Deg/s
+2026-07-10 00:02:14 [DEBUG] MPU6050: Roll: 0.03 Deg, Pitch: 179.92 Deg, KalmanX: 0.03 Deg, KalmanY: -0.08 Deg, State:STABLE
+2026-07-10 00:02:14 [DEBUG] 
+2026-07-10 00:02:14 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:14, 22.54, 990.91, 44.97, 187.64, -0.00, 0.00, -1.00, 0.01, -0.13, 0.23, 0.03, 179.92, 0.03, -0.08, STABLE
+
+2026-07-10 00:02:14 [DEBUG] [INFO] Written 125 bytes to SD card
+2026-07-10 00:02:15 [DEBUG] Hello World count = 38, Timer = 0
+2026-07-10 00:02:15 [DEBUG] BME280: Temp: 22.54 C, Pres: 990.91 hPa, Humi: 45.02 RH, Alti: 187.65 m
+2026-07-10 00:02:17 [DEBUG] MPU6050: Ax: 0.22 g, Ay: 0.11 g, Az: -1.19 g, Gx: 8.42 Deg/s, Gy: -16.31 Deg/s, Gz: 80.55 Deg/s
+2026-07-10 00:02:17 [DEBUG] MPU6050: Roll: 5.13 Deg, Pitch: -169.52 Deg, KalmanX: 5.13 Deg, KalmanY: 10.48 Deg, State:MOVING
+2026-07-10 00:02:17 [DEBUG] 
+2026-07-10 00:02:17 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:17, 22.54, 990.91, 45.02, 187.65, 0.22, 0.11, -1.19, 8.42, -16.31, 80.55, 5.13, -169.52, 5.13, 10.48, MOVING
+
+2026-07-10 00:02:17 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:02:18 [DEBUG] Hello World count = 39, Timer = 0
+2026-07-10 00:02:18 [DEBUG] BME280: Temp: 22.54 C, Pres: 990.90 hPa, Humi: 45.26 RH, Alti: 187.80 m
+2026-07-10 00:02:19 [DEBUG] MPU6050: Ax: 0.15 g, Ay: -0.00 g, Az: -1.01 g, Gx: -30.94 Deg/s, Gy: 4.67 Deg/s, Gz: 27.51 Deg/s
+2026-07-10 00:02:19 [DEBUG] MPU6050: Roll: -0.03 Deg, Pitch: -171.43 Deg, KalmanX: -0.03 Deg, KalmanY: 8.57 Deg, State:STABLE
+2026-07-10 00:02:19 [DEBUG] 
+2026-07-10 00:02:19 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:19, 22.54, 990.90, 45.26, 187.80, 0.15, -0.00, -1.01, -30.94, 4.67, 27.51, -0.03, -171.43, -0.03, 8.57, STABLE
+
+2026-07-10 00:02:19 [DEBUG] [INFO] Written 129 bytes to SD card
+2026-07-10 00:02:20 [DEBUG] Hello World count = 40, Timer = 0
+2026-07-10 00:02:20 [DEBUG] BME280: Temp: 22.55 C, Pres: 990.85 hPa, Humi: 46.67 RH, Alti: 188.20 m
+2026-07-10 00:02:21 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.01 g, Az: -0.93 g, Gx: -0.42 Deg/s, Gy: 0.47 Deg/s, Gz: -0.28 Deg/s
+2026-07-10 00:02:21 [DEBUG] MPU6050: Roll: -0.35 Deg, Pitch: -179.70 Deg, KalmanX: -0.35 Deg, KalmanY: 0.30 Deg, State:STABLE
+2026-07-10 00:02:21 [DEBUG] 
+2026-07-10 00:02:21 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:21, 22.55, 990.85, 46.67, 188.20, 0.00, -0.01, -0.93, -0.42, 0.47, -0.28, -0.35, -179.70, -0.35, 0.30, STABLE
+
+2026-07-10 00:02:21 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:02:22 [DEBUG] Hello World count = 41, Timer = 0
+2026-07-10 00:02:22 [DEBUG] BME280: Temp: 22.56 C, Pres: 990.84 hPa, Humi: 46.51 RH, Alti: 188.25 m
+2026-07-10 00:02:23 [DEBUG] MPU6050: Ax: -0.01 g, Ay: -0.01 g, Az: -1.00 g, Gx: -0.23 Deg/s, Gy: -0.05 Deg/s, Gz: 0.20 Deg/s
+2026-07-10 00:02:23 [DEBUG] MPU6050: Roll: -0.57 Deg, Pitch: 179.50 Deg, KalmanX: -0.57 Deg, KalmanY: -0.50 Deg, State:STABLE
+2026-07-10 00:02:23 [DEBUG] 
+2026-07-10 00:02:23 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:23, 22.56, 990.84, 46.51, 188.25, -0.01, -0.01, -1.00, -0.23, -0.05, 0.20, -0.57, 179.50, -0.57, -0.50, STABLE
+
+2026-07-10 00:02:23 [DEBUG] [INFO] Written 129 bytes to SD card
+2026-07-10 00:02:24 [DEBUG] Hello World count = 42, Timer = 0
+2026-07-10 00:02:24 [DEBUG] BME280: Temp: 22.56 C, Pres: 990.84 hPa, Humi: 46.39 RH, Alti: 188.24 m
+2026-07-10 00:02:26 [DEBUG] MPU6050: Ax: 0.01 g, Ay: -0.01 g, Az: -1.00 g, Gx: -0.40 Deg/s, Gy: 0.18 Deg/s, Gz: 0.06 Deg/s
+2026-07-10 00:02:26 [DEBUG] MPU6050: Roll: -0.69 Deg, Pitch: -179.66 Deg, KalmanX: -0.69 Deg, KalmanY: 0.34 Deg, State:STABLE
+2026-07-10 00:02:26 [DEBUG] 
+2026-07-10 00:02:26 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:26, 22.56, 990.84, 46.39, 188.24, 0.01, -0.01, -1.00, -0.40, 0.18, 0.06, -0.69, -179.66, -0.69, 0.34, STABLE
+
+2026-07-10 00:02:26 [DEBUG] [INFO] Written 127 bytes to SD card
+2026-07-10 00:02:27 [DEBUG] Hello World count = 43, Timer = 0
+2026-07-10 00:02:27 [DEBUG] BME280: Temp: 22.56 C, Pres: 990.85 hPa, Humi: 46.48 RH, Alti: 188.21 m
+2026-07-10 00:02:28 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.02 g, Az: -1.00 g, Gx: -0.01 Deg/s, Gy: 0.03 Deg/s, Gz: 0.12 Deg/s
+2026-07-10 00:02:28 [DEBUG] MPU6050: Roll: -1.14 Deg, Pitch: 179.88 Deg, KalmanX: -1.14 Deg, KalmanY: -0.12 Deg, State:STABLE
+2026-07-10 00:02:28 [DEBUG] 
+2026-07-10 00:02:28 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:28, 22.56, 990.85, 46.48, 188.21, -0.00, -0.02, -1.00, -0.01, 0.03, 0.12, -1.14, 179.88, -1.14, -0.12, STABLE
+
+2026-07-10 00:02:28 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:02:29 [DEBUG] Hello World count = 44, Timer = 0
+2026-07-10 00:02:29 [DEBUG] BME280: Temp: 22.57 C, Pres: 990.85 hPa, Humi: 46.73 RH, Alti: 188.18 m
+2026-07-10 00:02:30 [DEBUG] MPU6050: Ax: 0.00 g, Ay: -0.02 g, Az: -1.00 g, Gx: -0.02 Deg/s, Gy: 0.17 Deg/s, Gz: -0.05 Deg/s
+2026-07-10 00:02:30 [DEBUG] MPU6050: Roll: -1.04 Deg, Pitch: -179.84 Deg, KalmanX: -1.04 Deg, KalmanY: 0.16 Deg, State:STABLE
+2026-07-10 00:02:30 [DEBUG] 
+2026-07-10 00:02:30 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:30, 22.57, 990.85, 46.73, 188.18, 0.00, -0.02, -1.00, -0.02, 0.17, -0.05, -1.04, -179.84, -1.04, 0.16, STABLE
+
+2026-07-10 00:02:30 [DEBUG] [INFO] Written 128 bytes to SD card
+2026-07-10 00:02:31 [DEBUG] Hello World count = 45, Timer = 0
+2026-07-10 00:02:31 [DEBUG] BME280: Temp: 22.58 C, Pres: 990.84 hPa, Humi: 46.78 RH, Alti: 188.25 m
+2026-07-10 00:02:32 [DEBUG] MPU6050: Ax: -0.00 g, Ay: -0.02 g, Az: -1.00 g, Gx: -0.09 Deg/s, Gy: -0.08 Deg/s, Gz: 0.07 Deg/s
+2026-07-10 00:02:32 [DEBUG] MPU6050: Roll: -0.93 Deg, Pitch: 179.95 Deg, KalmanX: -0.93 Deg, KalmanY: -0.05 Deg, State:STABLE
+2026-07-10 00:02:32 [DEBUG] 
+2026-07-10 00:02:32 [DEBUG] [INFO] Written string to SD card: 2026-07-10, 00:02:32, 22.58, 990.84, 46.78, 188.25, -0.00, -0.02, -1.00, -0.09, -0.08, 0.07, -0.93, 179.95, -0.93, -0.05, STABLE
+
+2026-07-10 00:02:33 [DEBUG] [INFO] Written 129 bytes to SD card
