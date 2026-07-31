@@ -106,3 +106,9 @@
 - Implemented Blue Push Button (B1) with state machine to start, stop, and restart test system  
 - start (B1) -> initialize devices -> running -> stop (B1) -> close devices -> restart (B1)
 - https://microcontrollerslab.com/gpio-external-interrupts-stm32-nucleo-stm32cubeide/
+
+## 2026-07-30
+- Implement ESP32 using ArduinoIDE 2
+- ESP32 -> UART <-> PC
+- ESP32 Wifi and Webserver 
+

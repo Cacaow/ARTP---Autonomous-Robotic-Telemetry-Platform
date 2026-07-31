@@ -61,6 +61,10 @@
 | OLED Address  |       3C      |
 |BME280 Address |       76      |
 
+## Notes
+- Pull-up resistors required for I2C SCL and SDA channels (10K pull-up resistors)
+- Power supply stability is critical
+
 ## SPI2 Settings
 |        Mode        |    Full-Duplex Master    |
 |Hardware NSS Signal |        Disable           |
@@ -68,6 +72,5 @@
 |    Prescaler       |            4             |
 |       FATFS        |       User-defined       |
 
-## Notes
-- Pull-up resistors required for I2C SCL and SDA channels (10K pull-up resistors)
-- Power supply stability is critical
+## ESP32 Settings
+|   Baud Rate   |    115200     |

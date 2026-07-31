@@ -102,3 +102,8 @@
 # Issue: No log messages written onto SD-Card LOG file
 - Cause: File handle not opened before calling log
 - Fix: Initialize SD-Card and open file as first step of main program
+
+# Issue: ESP32 Webpage update latency longer than 1 second
+- Cause: TBD
+- Fix: TBD
+
