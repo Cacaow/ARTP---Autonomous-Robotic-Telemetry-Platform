@@ -107,3 +107,7 @@
 - Cause: TBD
 - Fix: TBD
 
+# Issue: Unable to find webserver
+- Cause: Wiring on ESP32
+- Fix: TBD
+

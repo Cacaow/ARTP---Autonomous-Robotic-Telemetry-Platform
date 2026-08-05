@@ -70,3 +70,5 @@ Building a real-time embedded system with STM32 + ESP32 + Python dashboard.
 - Day 19: Added SPI interface for Micro SD Card
 
 - Day 20: Added ESP32 for ground station
+
+- Day 21: Added STM32 -> ESP32 UART communication

@@ -112,3 +112,7 @@
 - ESP32 -> UART <-> PC
 - ESP32 Wifi and Webserver 
 
+## 2026-08-04
+- Added UART for ESP32 and STM32 on ESP32 side
+- Added mDNS address for webpage
+

@@ -74,3 +74,4 @@
 
 ## ESP32 Settings
 |   Baud Rate   |    115200     |
+|      UART     |   Serial 2    |
