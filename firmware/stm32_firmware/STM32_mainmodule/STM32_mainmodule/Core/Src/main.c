@@ -64,6 +64,8 @@
 uint8_t count = 0;
 extern uint16_t timer;
 extern int enable_timer;
+extern uint16_t timer_ESP32;
+extern int enable_timer_ESP32;
 
 BME280_Data_t BME280;
 MPU6050_Data_t MPU6050;
@@ -198,6 +200,7 @@ int main(void)
   MX_SPI2_Init();
   MX_FATFS_Init();
   MX_RTC_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /*
@@ -245,7 +248,8 @@ int main(void)
 		  BME280_init();
 		  MPU6050_init();
 		  MPU6050_Calibrate(&MPU6050);
-
+		  UARTCom_initESP32();
+		  UARTCom_receivefromESP32();
 		  state = STATE_RUNNING;
 		  break;
 
@@ -262,6 +266,11 @@ int main(void)
 		  //entire data has been received
 		  timer = 0;
 		  enable_timer = 0;
+		}
+		if (timer_ESP32 >= 1000) {
+		  //entire data has been received
+		  timer_ESP32 = 0;
+		  enable_timer_ESP32 = 0;
 		}
 
 		LED_blink();
@@ -294,6 +303,10 @@ int main(void)
 		OLED_update(buffer, start_y, &end_y, 1);
 		start_y = end_y;
 
+		sprintf(buffer, "TEL,temp=%.2f,pres=%.2f,hum=%.2f,roll=%.2f,pitch=%.2f,state=%s\n",
+				BME280.Temperature, BME280.Pressure, BME280.Humidity, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
+		UARTCom_sendtoESP32(buffer);
+
 		my_printf("\n");
 
 		char CSVbuffer[1024];
@@ -315,6 +328,8 @@ int main(void)
 		  LED_close();
 		  BME280_close();
 		  MPU6050_close();
+		  UARTCom_close();
+		  UARTCom_closeESP32();
 		  OLED_close();
 		  SDCard_close_log();
 		  SDCard_close_csv();

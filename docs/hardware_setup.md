@@ -15,8 +15,8 @@
 |-----------------|---------------|
 |    LED GPIO     |      PA5      |
 |                 |               |
-|     UART TX     |      PA2      |
-|     UART RX     |      PA3      |
+|    UART2 TX     |      PA2      |
+|    UART2 RX     |      PA3      |
 |                 |               |
 |  I2C OLED VCC   |      3V3      |
 |  I2C OLED GND   |      GND      |
@@ -48,6 +48,8 @@
 |                 |               |
 |Blue Push Button |PC13/GPIO_EXTIT|
 |                 |               |
+| UART1(ESP32) TX |      PA9      |
+| UART1(ESP32) RX |     PA10      |
 
 ## UART Settings
 |   Baud Rate   |    115200     |

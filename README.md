@@ -71,4 +71,4 @@ Building a real-time embedded system with STM32 + ESP32 + Python dashboard.
 
 - Day 20: Added ESP32 for ground station
 
-- Day 21: Added STM32 -> ESP32 UART communication
+- Day 21 & 22: Added STM32 -> ESP32 UART communication

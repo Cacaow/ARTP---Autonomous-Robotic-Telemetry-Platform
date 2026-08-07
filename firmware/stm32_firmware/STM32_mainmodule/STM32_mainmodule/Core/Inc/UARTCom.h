@@ -43,6 +43,11 @@ int UARTCom_tx(uint8_t* tx_val);
 int UARTCom_rx();
 int UARTCom_close();
 
+int UARTCom_initESP32();
+int UARTCom_sendtoESP32(uint8_t* tx_val);
+int UARTCom_receivefromESP32();
+int UARTCom_closeESP32();
+
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

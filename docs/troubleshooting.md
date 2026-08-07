@@ -108,6 +108,6 @@
 - Fix: TBD
 
 # Issue: Unable to find webserver
-- Cause: Wiring on ESP32
+- Cause: Webpage Lag
 - Fix: TBD
 

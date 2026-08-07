@@ -116,3 +116,7 @@
 - Added UART for ESP32 and STM32 on ESP32 side
 - Added mDNS address for webpage
 
+## 2026-08-06
+- Connected ESP32 to STM32
+- Created functions for receiving and transmitting between ESP32 and STM32 through UART
+
