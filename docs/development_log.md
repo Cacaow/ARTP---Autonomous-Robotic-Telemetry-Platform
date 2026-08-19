@@ -120,3 +120,8 @@
 - Connected ESP32 to STM32
 - Created functions for receiving and transmitting between ESP32 and STM32 through UART
 
+## 2026-08-18
+- ESP32 Webserver designed with all sensor data and state
+- STM32 Blue button bouncing resolved
+- ESP32 data parsing issue resolved
+

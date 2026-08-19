@@ -108,6 +108,9 @@
 - Fix: TBD
 
 # Issue: Unable to find webserver
-- Cause: Webpage Lag
+- Cause: Web-browser refresh rate every 2 seconds
 - Fix: TBD
 
+# Issue: ESP32 unable to parse received data from STM32
+- Cause: Buffer for data is too small
+- Fix: Increase buffer size

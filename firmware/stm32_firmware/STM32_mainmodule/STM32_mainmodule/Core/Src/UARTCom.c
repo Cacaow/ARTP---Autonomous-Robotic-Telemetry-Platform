@@ -65,6 +65,7 @@ uint8_t sent_count = 0;
 uint8_t tx_values[MAXVALUES][2048];
 
 uint8_t isSent_ESP32 = 1;
+uint8_t tx_busy = 0;
 
 //RECIEVING CODE
 uint8_t isReceive = 1;
@@ -81,6 +82,8 @@ uint16_t temp_index = 0;
 uint16_t rx_index = 0;
 
 uint16_t rx_index_ESP32 = 0;
+uint8_t start_requested = 0;
+uint8_t stop_requested = 0;
 
 
 //DMA Idle Receive Normal Mode
@@ -98,6 +101,8 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
 					if (rx_val[0] != 0) {
 						sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val);
 						my_printf(temp_buffer);
+
+
 						/*add processed data*/
 						rx_index = 0;
 						rx_val[0] = 0;
@@ -261,18 +266,23 @@ int UARTCom_initESP32() {
 
   //UART TRANSMITTING VALUES
 int UARTCom_sendtoESP32(uint8_t* tx_val) {
-	  HAL_StatusTypeDef status = HAL_OK;
-	  char temp_buffer[512];
+	if (tx_busy) {
+		return 0;
+	}
+	HAL_StatusTypeDef status = HAL_OK;
+	char temp_buffer[512];
 
-	  if (isSent_ESP32 == 1) {
-	    	status = HAL_UART_Transmit_DMA(&huart1, tx_val, strlen((const char*)tx_val));
-	    	if (status != HAL_OK) {
-	    			sprintf(temp_buffer, "HAL_UART_Transmit_DMA Error - %d", status);
-	    			my_printf(temp_buffer);
-	    			return status;
-	    	}
-	    	isSent_ESP32 = 0;
-	  }
+	if (isSent_ESP32 == 1) {
+		tx_busy = 1;
+		status = HAL_UART_Transmit_DMA(&huart1, tx_val, strlen((const char*)tx_val));
+		if (status != HAL_OK) {
+				sprintf(temp_buffer, "HAL_UART_Transmit_DMA Error - %d", status);
+				my_printf(temp_buffer);
+				return status;
+		}
+		isSent_ESP32 = 0;
+		tx_busy = 0;
+	}
 
 	  return 0;
 }
@@ -295,6 +305,35 @@ int UARTCom_receivefromESP32() {
 int UARTCom_closeESP32() {
 	HAL_UART_DMAStop(&huart1);
 	return 0;
+}
+
+
+void UARTCom_HandleESP32Command(const char *command)
+{
+    if (strcmp(command, "PING") == 0)
+    {
+    	UARTCom_sendtoESP32((uint8_t*)"PONG\n");
+    }
+    else if (strcmp(command, "START") == 0)
+    {
+        start_requested = 1;
+        stop_requested = 0;
+    }
+    else if (strcmp(command, "STOP") == 0)
+    {
+        stop_requested = 1;
+        start_requested = 0;
+    }
+    else
+    {
+        /*
+         * Unknown commands are ignored.
+         *
+         * During debugging you can enable:
+         *
+         * ESP32_Link_Send("ERR,UNKNOWN_COMMAND\n");
+         */
+    }
 }
 
   /* USER CODE END 2 */

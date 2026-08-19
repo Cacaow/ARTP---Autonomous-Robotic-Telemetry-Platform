@@ -48,8 +48,10 @@
 |                 |               |
 |Blue Push Button |PC13/GPIO_EXTIT|
 |                 |               |
-| UART1(ESP32) TX |      PA9      |
-| UART1(ESP32) RX |     PA10      |
+| UART1(STM32) TX |      PA9      |
+| UART1(STM32) RX |     PA10      |
+| UART1(ESP32) TX |      G17      |
+| UART1(ESP32) RX |      G16      |
 
 ## UART Settings
 |   Baud Rate   |    115200     |

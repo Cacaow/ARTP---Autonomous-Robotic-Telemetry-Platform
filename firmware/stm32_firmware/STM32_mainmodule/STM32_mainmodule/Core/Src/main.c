@@ -73,6 +73,7 @@ int start_y = 20;
 int end_y = 0;
 static char line_buffer[512];
 static uint16_t line_idx = 0;
+static uint32_t last_button_tick = 0;
 
 typedef enum {
     STATE_STOPPED,
@@ -153,6 +154,13 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if (GPIO_Pin == GPIO_PIN_13)
     {
+    	//avoid counter edge bouncing
+    	uint32_t now = HAL_GetTick();
+    	if ((now - last_button_tick) < 500) {
+    		return;
+    	}
+    	last_button_tick = now;
+
         if (state == STATE_STOPPED)
         {
             state = STATE_START_REQUESTED;
@@ -303,8 +311,8 @@ int main(void)
 		OLED_update(buffer, start_y, &end_y, 1);
 		start_y = end_y;
 
-		sprintf(buffer, "TEL,temp=%.2f,pres=%.2f,hum=%.2f,roll=%.2f,pitch=%.2f,state=%s\n",
-				BME280.Temperature, BME280.Pressure, BME280.Humidity, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
+		sprintf(buffer, "TEL,temp=%.2f,pres=%.2f,hum=%.2f,alti=%.2f,roll=%.2f,pitch=%.2f,state=%s\n",
+				BME280.Temperature, BME280.Pressure, BME280.Humidity, BME280.AltitudeP, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, MPU6050.state);
 		UARTCom_sendtoESP32(buffer);
 
 		my_printf("\n");
