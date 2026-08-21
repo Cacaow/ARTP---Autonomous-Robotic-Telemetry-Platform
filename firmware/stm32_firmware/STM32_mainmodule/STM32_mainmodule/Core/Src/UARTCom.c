@@ -143,6 +143,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
 						sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val_ESP32);
 						my_printf(temp_buffer);
 						/*add processed data*/
+						UARTCom_HandleESP32Command((const char *) rx_val_ESP32);
 						rx_index_ESP32 = 0;
 						rx_val_ESP32[0] = 0;
 					}
@@ -160,13 +161,7 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
 		timer = 0;
 		rx_temp_ESP32[0] = 0;
 		//call the function again
-		status = HAL_UARTEx_ReceiveToIdle_DMA(&huart2, rx_temp_ESP32, MAXTEMPLEN);
-		  if (status != HAL_OK) {
-				sprintf(temp_buffer, "HAL_UARTEx_ReceiveToIdle_DMA Error - %d \n", status);
-				my_printf(temp_buffer);
-		  }
-		  //Important to prevent splicing in the middle of a message (can lead to busy error code)
-		  __HAL_DMA_DISABLE_IT(huart2.hdmarx, DMA_IT_HT);
+		UARTCom_receivefromESP32();
 	}
 }
 
@@ -313,19 +308,23 @@ void UARTCom_HandleESP32Command(const char *command)
     if (strcmp(command, "PING") == 0)
     {
     	UARTCom_sendtoESP32((uint8_t*)"PONG\n");
+    	my_printf("Send PONG");
     }
     else if (strcmp(command, "START") == 0)
     {
         start_requested = 1;
         stop_requested = 0;
+        my_printf("Acknowledge START");
     }
     else if (strcmp(command, "STOP") == 0)
     {
         stop_requested = 1;
         start_requested = 0;
+        my_printf("Acknowledge STOP");
     }
     else
     {
+    	my_printf("Undefined ESP32 Command");
         /*
          * Unknown commands are ignored.
          *

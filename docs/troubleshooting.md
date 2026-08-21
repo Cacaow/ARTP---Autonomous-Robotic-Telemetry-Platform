@@ -114,3 +114,11 @@
 # Issue: ESP32 unable to parse received data from STM32
 - Cause: Buffer for data is too small
 - Fix: Increase buffer size
+
+# Issue: STM32 Link display DISCONNECTED status
+- Cause: latestTelemetryMs is never updated and ESP32 loop refresh rate is too slow
+- Fix: Update latestTelemetryMs and set loop delay to 10 milliseconds
+
+# Issue: STM32 not sending PONG 
+- Cause: tx_busy from sending data discards PONG message
+- Fix: Implement a queue or list to line up messages to be sent

@@ -47,6 +47,7 @@ int UARTCom_initESP32();
 int UARTCom_sendtoESP32(uint8_t* tx_val);
 int UARTCom_receivefromESP32();
 int UARTCom_closeESP32();
+void UARTCom_HandleESP32Command(const char *command);
 
 /* USER CODE END EC */
 

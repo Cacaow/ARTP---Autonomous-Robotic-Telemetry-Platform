@@ -523,7 +523,7 @@ async function updateTelemetry() {
             document.getElementById("connection");
 
         connection.textContent =
-            "ESP32 REQUEST ERROR";
+            "ESP32 REQUEST ERROR: " + error;
 
         connection.className =
             "disconnected";
@@ -662,10 +662,11 @@ void loop() {
     {
         lastPingMs += PING_INTERVAL_MS;
         pingStatus = "PING sent, waiting for PONG";
+        Serial.println(pingStatus);
         sendToSTM32("PING");
     }
 
-  delay(1000);
+  delay(10);
 }  // put your setup code here, to run once:
 
 /* =========================================================
@@ -778,6 +779,9 @@ void setupWebServer()
 
             json += ",\"connected\":";
             json += connected ? "true" : "false";
+
+            Serial.println(telemetryValid);
+            Serial.println(age);
 
             json += ",\"temperature\":";
             json += String(temp, 1);
@@ -908,6 +912,7 @@ void readFromSTM32() {
         strcpy(state, tmpState);
 
         telemetryValid = true;
+        latestTelemetryMs = millis();
 
         return;
     }

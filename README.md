@@ -74,3 +74,5 @@ Building a real-time embedded system with STM32 + ESP32 + Python dashboard.
 - Day 21 & 22: Added STM32 -> ESP32 UART communication
 
 - Day 23: Updated ESP32 Webpage and communication with STM32
+
+- Day 24: Fix ESP32 and STM32 PING-PONG response issue

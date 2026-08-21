@@ -8298,3 +8298,241 @@ arm-none-eabi-size  STM32_mainmodule.elf
   87832	    516	  13304	 101652	  18d14	STM32_mainmodule.elf
 Finished building: default.size.stdout
  
+22:00:40 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  87832	    516	  13304	 101652	  18d14	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+22:01:28 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  87832	    516	  13304	 101652	  18d14	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+22:04:37 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  87832	    516	  13304	 101652	  18d14	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+22:13:21 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  87832	    516	  13304	 101652	  18d14	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+22:18:14 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/UARTCom.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/UARTCom.d" -MT"Core/Src/UARTCom.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/UARTCom.o"
+../Core/Src/UARTCom.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/UARTCom.c:144:101: warning: '%s' directive writing up to 4095 bytes into a region of size 482 [-Wformat-overflow=]
+  144 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val_ESP32);
+      |                                                                                                     ^~     ~~~~~~~~~~~~
+../Core/Src/UARTCom.c:144:49: note: 'sprintf' output between 32 and 4127 bytes into a destination of size 512
+  144 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val_ESP32);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/UARTCom.c:103:101: warning: '%s' directive writing up to 4095 bytes into a region of size 482 [-Wformat-overflow=]
+  103 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val);
+      |                                                                                                     ^~     ~~~~~~
+../Core/Src/UARTCom.c:103:49: note: 'sprintf' output between 32 and 4127 bytes into a destination of size 512
+  103 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  87848	    516	  13304	 101668	  18d24	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+22:21:26 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/UARTCom.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/UARTCom.d" -MT"Core/Src/UARTCom.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/UARTCom.o"
+../Core/Src/UARTCom.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/UARTCom.c:146:49: error: implicit declaration of function 'UARTCom_HandleESP32Command' [-Wimplicit-function-declaration]
+  146 |                                                 UARTCom_HandleESP32Command(rx_val_ESP32);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/UARTCom.c: At top level:
+../Core/Src/UARTCom.c:312:6: warning: conflicting types for 'UARTCom_HandleESP32Command'; have 'void(const char *)'
+  312 | void UARTCom_HandleESP32Command(const char *command)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/UARTCom.c:146:49: note: previous implicit declaration of 'UARTCom_HandleESP32Command' with type 'void(const char *)'
+  146 |                                                 UARTCom_HandleESP32Command(rx_val_ESP32);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:79: Core/Src/UARTCom.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+22:23:02 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/UARTCom.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/UARTCom.d" -MT"Core/Src/UARTCom.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/UARTCom.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/UARTCom.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/UARTCom.c:146:76: warning: pointer targets in passing argument 1 of 'UARTCom_HandleESP32Command' differ in signedness [-Wpointer-sign]
+  146 |                                                 UARTCom_HandleESP32Command(rx_val_ESP32);
+      |                                                                            ^~~~~~~~~~~~
+      |                                                                            |
+      |                                                                            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/UARTCom.c:23:
+../Core/Inc/UARTCom.h:50:45: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   50 | void UARTCom_HandleESP32Command(const char *command);
+      |                                 ~~~~~~~~~~~~^~~~~~~
+../Core/Src/UARTCom.c:143:101: warning: '%s' directive writing up to 4095 bytes into a region of size 482 [-Wformat-overflow=]
+  143 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val_ESP32);
+      |                                                                                                     ^~     ~~~~~~~~~~~~
+../Core/Src/UARTCom.c:143:49: note: 'sprintf' output between 32 and 4127 bytes into a destination of size 512
+  143 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val_ESP32);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/UARTCom.c:102:101: warning: '%s' directive writing up to 4095 bytes into a region of size 482 [-Wformat-overflow=]
+  102 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val);
+      |                                                                                                     ^~     ~~~~~~
+../Core/Src/UARTCom.c:102:49: note: 'sprintf' output between 32 and 4127 bytes into a destination of size 512
+  102 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:316:37: warning: pointer targets in passing argument 1 of 'UARTCom_sendtoESP32' differ in signedness [-Wpointer-sign]
+  316 |                 UARTCom_sendtoESP32(buffer);
+      |                                     ^~~~~~
+      |                                     |
+      |                                     char *
+In file included from ../Core/Src/main.c:35:
+../Core/Inc/UARTCom.h:47:34: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+   47 | int UARTCom_sendtoESP32(uint8_t* tx_val);
+      |                         ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:75:17: warning: 'line_idx' defined but not used [-Wunused-variable]
+   75 | static uint16_t line_idx = 0;
+      |                 ^~~~~~~~
+../Core/Src/main.c:74:13: warning: 'line_buffer' defined but not used [-Wunused-variable]
+   74 | static char line_buffer[512];
+      |             ^~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  87984	    516	  13304	 101804	  18dac	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+22:24:49 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  87984	    516	  13304	 101804	  18dac	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+22:25:45 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-size  STM32_mainmodule.elf 
+   text	   data	    bss	    dec	    hex	filename
+  87984	    516	  13304	 101804	  18dac	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+22:34:59 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/UARTCom.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/UARTCom.d" -MT"Core/Src/UARTCom.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/UARTCom.o"
+../Core/Src/UARTCom.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/UARTCom.c:146:76: warning: pointer targets in passing argument 1 of 'UARTCom_HandleESP32Command' differ in signedness [-Wpointer-sign]
+  146 |                                                 UARTCom_HandleESP32Command(rx_val_ESP32);
+      |                                                                            ^~~~~~~~~~~~
+      |                                                                            |
+      |                                                                            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/UARTCom.c:23:
+../Core/Inc/UARTCom.h:50:45: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   50 | void UARTCom_HandleESP32Command(const char *command);
+      |                                 ~~~~~~~~~~~~^~~~~~~
+../Core/Src/UARTCom.c:143:101: warning: '%s' directive writing up to 4095 bytes into a region of size 482 [-Wformat-overflow=]
+  143 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val_ESP32);
+      |                                                                                                     ^~     ~~~~~~~~~~~~
+../Core/Src/UARTCom.c:143:49: note: 'sprintf' output between 32 and 4127 bytes into a destination of size 512
+  143 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val_ESP32);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/UARTCom.c:102:101: warning: '%s' directive writing up to 4095 bytes into a region of size 482 [-Wformat-overflow=]
+  102 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val);
+      |                                                                                                     ^~     ~~~~~~
+../Core/Src/UARTCom.c:102:49: note: 'sprintf' output between 32 and 4127 bytes into a destination of size 512
+  102 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  87920	    516	  13304	 101740	  18d6c	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+23:07:35 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/UARTCom.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/UARTCom.d" -MT"Core/Src/UARTCom.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/UARTCom.o"
+../Core/Src/UARTCom.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/UARTCom.c:146:76: warning: pointer targets in passing argument 1 of 'UARTCom_HandleESP32Command' differ in signedness [-Wpointer-sign]
+  146 |                                                 UARTCom_HandleESP32Command(rx_val_ESP32);
+      |                                                                            ^~~~~~~~~~~~
+      |                                                                            |
+      |                                                                            uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/UARTCom.c:23:
+../Core/Inc/UARTCom.h:50:45: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   50 | void UARTCom_HandleESP32Command(const char *command);
+      |                                 ~~~~~~~~~~~~^~~~~~~
+../Core/Src/UARTCom.c:143:101: warning: '%s' directive writing up to 4095 bytes into a region of size 482 [-Wformat-overflow=]
+  143 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val_ESP32);
+      |                                                                                                     ^~     ~~~~~~~~~~~~
+../Core/Src/UARTCom.c:143:49: note: 'sprintf' output between 32 and 4127 bytes into a destination of size 512
+  143 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val_ESP32);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/UARTCom.c:102:101: warning: '%s' directive writing up to 4095 bytes into a region of size 482 [-Wformat-overflow=]
+  102 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val);
+      |                                                                                                     ^~     ~~~~~~
+../Core/Src/UARTCom.c:102:49: note: 'sprintf' output between 32 and 4127 bytes into a destination of size 512
+  102 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  88032	    516	  13304	 101852	  18ddc	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 
+23:12:44 **** Incremental Build of configuration Debug for project STM32_mainmodule ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/UARTCom.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I"C:/University/2026-Summer/Project/ARTP/firmware/stm32_firmware/STM32_mainmodule/STM32_mainmodule/Drivers/OLED" -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/UARTCom.d" -MT"Core/Src/UARTCom.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/UARTCom.o"
+../Core/Src/UARTCom.c: In function 'HAL_UARTEx_RxEventCallback':
+../Core/Src/UARTCom.c:143:101: warning: '%s' directive writing up to 4095 bytes into a region of size 482 [-Wformat-overflow=]
+  143 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val_ESP32);
+      |                                                                                                     ^~     ~~~~~~~~~~~~
+../Core/Src/UARTCom.c:143:49: note: 'sprintf' output between 32 and 4127 bytes into a destination of size 512
+  143 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val_ESP32);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/UARTCom.c:102:101: warning: '%s' directive writing up to 4095 bytes into a region of size 482 [-Wformat-overflow=]
+  102 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val);
+      |                                                                                                     ^~     ~~~~~~
+../Core/Src/UARTCom.c:102:49: note: 'sprintf' output between 32 and 4127 bytes into a destination of size 512
+  102 |                                                 sprintf(temp_buffer, "Buffer reset, Received Value: %s\n", rx_val);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "STM32_mainmodule.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\University\2026-Summer\Project\ARTP\firmware\stm32_firmware\STM32_mainmodule\STM32_mainmodule\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_mainmodule.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_mainmodule.elf
+ 
+arm-none-eabi-size  STM32_mainmodule.elf 
+arm-none-eabi-objdump -h -S STM32_mainmodule.elf  > "STM32_mainmodule.list"
+   text	   data	    bss	    dec	    hex	filename
+  88032	    516	  13304	 101852	  18ddc	STM32_mainmodule.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32_mainmodule.list
+ 

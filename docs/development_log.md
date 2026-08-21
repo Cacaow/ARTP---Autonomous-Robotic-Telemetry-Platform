@@ -125,3 +125,6 @@
 - STM32 Blue button bouncing resolved
 - ESP32 data parsing issue resolved
 
+## 2026-08-20
+- Fix Ping-Pong response issue where STM32 is not sending PONG
+- Fix STM32 Link disconnected issue
